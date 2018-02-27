@@ -1,0 +1,298 @@
+$brandBlack: #272727;
+$brandWhite: #ffffff;
+$brandYellow: #ffd900;
+
+$headerHeight: 60px;
+
+.header {
+
+  &__wrapper {
+    padding: 0 5px;
+    height: $headerHeight;
+  }
+
+  &__sticky {
+    .header__wrapper {
+      background: $brandYellow;
+      color: $brandBlack;
+    }
+  }
+
+  & a {
+    height: 100%;
+  }
+
+  & img {
+    height: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+//
+// .nav__link {
+//     color: $brandBlack;
+//     display: block;
+//     line-height: 1.6rem;
+//     font-family: "Open Sans";
+//     font-weight: 700;
+//     font-size: 18px;
+//     outline: 0!important;
+//     padding: .4rem;
+//     position: relative;
+//     transition: color .25s cubic-bezier(.625,.125,.305,.875),opacity .25s cubic-bezier(.625,.125,.305,.875)
+// }
+//
+// @media only screen and (min-width: 48rem) {
+//     .nav__link {
+//         padding:.675rem .8rem
+//     }
+// }
+//
+// @media only screen and (min-width: 64rem) {
+//     .nav__link {
+//         padding:.95rem .8rem
+//     }
+// }
+//
+// @media only screen and (max-width: 31.9375rem) {
+//     .nav__link {
+//         padding-left:0;
+//         padding-right: 0;
+//         text-align: center
+//     }
+// }
+//
+// @media only screen and (min-width: 32rem) {
+//     .nav__link:after {
+//         background: currentColor;
+//         bottom: .4rem;
+//         content: '';
+//         height: .1rem;
+//         max-width: calc(100% - 1.6rem);
+//         position: absolute;
+//         right: .4rem;
+//         -webkit-transform: scale(0,1);
+//         -ms-transform: scale(0,1);
+//         transform: scale(0,1);
+//         -webkit-transform-origin: center right;
+//         -ms-transform-origin: center right;
+//         transform-origin: center right;
+//         transition: .25s;
+//         transition-property: opacity,-webkit-transform;
+//         transition-property: opacity,transform;
+//         transition-property: opacity,transform,-webkit-transform;
+//         width: 1.9rem;
+//     }
+// }
+//
+// @media only screen and (min-width: 32rem) and (min-width:48rem) {
+//     .nav__link:after {
+//         bottom:.5rem;
+//         right: .8rem
+//     }
+// }
+//
+// @media only screen and (min-width: 32rem) and (min-width:64rem) {
+//     .nav__link:after {
+//         bottom:.8rem
+//     }
+// }
+//
+// .nav__link:hover,.nav__link:focus {
+//     color: #fff
+// }
+//
+// @media only screen and (max-width: 31.9375rem) {
+//     .nav__link:hover,.nav__link:focus {
+//         opacity:.66
+//     }
+// }
+//
+// .nav__link:hover:after,
+// .nav__link:focus:after {
+//     -webkit-transform: scale(.5,1);
+//     -ms-transform: scale(.5,1);
+//     transform: scale(.5,1)
+// }
+//
+// .nav__link--active:hover:after,
+// .nav__link--active:focus:after,
+// .nav__link--active:after {
+//     -webkit-transform: none;
+//     -ms-transform: none;
+//     transform: none
+// }
+
+:global {
+  @charset "UTF-8";
+  /*!
+   * Hamburgers
+   * @description Tasty CSS-animated hamburgers
+   * @author Jonathan Suh @jonsuh
+   * @site https://jonsuh.com/hamburgers
+   * @link https://github.com/jonsuh/hamburgers
+   */
+
+  // Settings
+  // ==================================================
+  $hamburger-padding-x                       : 15px !default;
+  $hamburger-padding-y                       : 15px !default;
+  $hamburger-layer-width                     : 40px !default;
+  $hamburger-layer-height                    : 4px !default;
+  $hamburger-layer-spacing                   : 6px !default;
+  $hamburger-layer-color                     : #000 !default;
+  $hamburger-layer-border-radius             : 4px !default;
+  $hamburger-hover-opacity                   : 0.7 !default;
+  $hamburger-hover-transition-duration       : 0.15s !default;
+  $hamburger-hover-transition-timing-function: linear !default;
+
+  // To use CSS filters as the hover effect instead of opacity,
+  // set $hamburger-hover-use-filter as true and
+  // change the value of $hamburger-hover-filter accordingly.
+  $hamburger-hover-use-filter: false !default;
+  $hamburger-hover-filter    : opacity(50%) !default;
+
+
+  // Base Hamburger (We need this)
+  // ==================================================
+  // Hamburger
+  // ==================================================
+  .hamburger {
+    transform: scale(0.85);
+    padding: $hamburger-padding-y $hamburger-padding-x;
+    display: inline-block;
+    cursor: pointer;
+
+    transition-property: opacity, filter;
+    transition-duration: $hamburger-hover-transition-duration;
+    transition-timing-function: $hamburger-hover-transition-timing-function;
+
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-hover-filter;
+      }
+      @else {
+        opacity: $hamburger-hover-opacity;
+      }
+    }
+  }
+
+  .hamburger-box {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: $hamburger-layer-height / -2;
+
+    &,
+    &::before,
+    &::after {
+      width: $hamburger-layer-width;
+      height: $hamburger-layer-height;
+      background-color: $hamburger-layer-color;
+      border-radius: $hamburger-layer-border-radius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    &::before {
+      top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+
+    &::after {
+      bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+  }
+
+
+  // Hamburger types
+  // ==================================================
+  /*
+   * Slider
+   */
+  .hamburger--slider {
+    .hamburger-inner {
+      top: $hamburger-layer-height / 2;
+
+      &::before {
+        top: $hamburger-layer-height + $hamburger-layer-spacing;
+        transition-property: transform, opacity;
+        transition-timing-function: ease;
+        transition-duration: 0.15s;
+      }
+
+      &::after {
+        top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
+      }
+    }
+
+    &.is-active {
+      .hamburger-inner {
+        $y-offset: $hamburger-layer-spacing + $hamburger-layer-height;
+
+        transform: translate3d(0, $y-offset, 0) rotate(45deg);
+
+        &::before {
+          transform: rotate(-45deg) translate3d($hamburger-layer-width / -7, $hamburger-layer-spacing * -1, 0);
+          opacity: 0;
+        }
+
+        &::after {
+          transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+
+  .menuWrapper {
+    background: #ffd900;
+    // background: #f4f4f7;
+    text-align: center;
+
+    position: absolute;
+    top: $headerHeight;
+    left: 0px;
+    right: 0px;
+    height: 0px;
+    opacity: 1;
+
+    transition: opacity .3s ease-out, top .1s ease-out, transform .3s ease-out;
+    will-change: transform, opacity;
+    overflow-y: auto;
+
+    transform: translateY(5%);
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 4px;
+  }
+
+  .menuWrapper.open {
+    height: calc(100vh - #{$headerHeight});
+
+    z-index: 100;
+    transform: translateY(0%);
+  }
+}

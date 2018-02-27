@@ -11,15 +11,20 @@ import IntlWrapper from 'modules/IntlWrapper'
 import Proofs from 'modules/landing/proofs'
 import pageTransitionWrapper from 'modules/PageTransitionWrapper'
 
+import Layout from 'modules/_layouts/layout'
+
 class Index extends Component {
   render () {
     return (
       <IntlWrapper>
-        <div className={'rmApp__fcontainer'}>
-          Hello test 3
-          <Link href='/about' as={process.env.BACKEND_URL + '/about'}><a>About</a></Link>
-          <Proofs />
-        </div>
+        <Layout>
+          <div className={'rmApp__fcontainer'}>
+            <h1>Index</h1>
+            <Link href='/about' as={process.env.BACKEND_URL + '/about'}><a>About</a></Link>
+            
+            <Proofs />
+          </div>
+        </Layout>
       </IntlWrapper>
     )
   }
