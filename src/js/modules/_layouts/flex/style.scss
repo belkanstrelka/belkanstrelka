@@ -1,0 +1,82 @@
+
+// Reflex is a flexbox grid which provides a way to take advantage of emerging
+// flexbox support while providing a fall back to inline-block on older browsers
+//
+// To disable legacy support and build a flexbox only grid, set the variable
+// $legacy-support in includes/variables to false
+//
+// Built by Lee Jordan
+// email: ldjordan@gmail.com
+// github: https://github.com/leejordan
+//
+// Structure and calculations are inspired by twitter bootstrap
+
+@import 'reflex/variables';
+@import 'reflex/mixins';
+@import 'reflex/grid';
+@import 'reflex/helpers';
+
+//
+// .resetWhitespaceHard() when (@legacy-support=true) {
+//   letter-spacing: normal !important;
+//   word-spacing: normal !important;
+//   white-space: normal !important;
+// }
+//
+// .grid {
+//   .resetWhitespaceHard();
+// }
+
+.flexHorizontal, .flexVertical {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-direction: normal
+}
+
+.flexVertical {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.flexVertical > .flexSpacer {
+    min-height: 1px
+}
+
+.flexHorizontal {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+
+.flexHorizontal > .flexSpacer {
+    min-width: 1px
+}
+
+.flexSpacer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+}
+
+//
+// .grid--space-between {
+//   > [class*="grid__col-"] {
+//     padding: 0 @spacing;
+//   }
+//
+//   > :first-child {
+//     padding-left: 0;
+//     padding-top: 0;
+//     padding-bottom: 0;
+//   }
+//
+//   > :last-child {
+//     padding-right: 0;
+//     padding-top: 0;
+//     padding-bottom: 0;
+//   }
+// }
