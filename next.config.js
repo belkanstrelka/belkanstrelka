@@ -11,5 +11,4 @@ module.exports = {
       '/about': { page: '/about' }
     }
   },
-  assetPrefix: !debug ? 'belkanstrelka.com' : ''
 }
