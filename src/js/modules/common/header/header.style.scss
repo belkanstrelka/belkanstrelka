@@ -292,7 +292,7 @@ a {
   .menuWrapper.open {
     height: calc(100vh - #{$headerHeight});
 
-    z-index: 100;
+    z-index: 1001;
     transform: translateY(0%);
   }
 }

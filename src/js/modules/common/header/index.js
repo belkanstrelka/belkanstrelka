@@ -59,7 +59,7 @@ class Header extends Component {
     return (
       <div className={cn({
         [css.header]: true,
-        [css.header__sticky]: this.props.isSticky,
+        [css.header__sticky]: this.props.isSticky || true,
         [css.header__isOpen]: isOpen,
       })}>
         <div style={style}>

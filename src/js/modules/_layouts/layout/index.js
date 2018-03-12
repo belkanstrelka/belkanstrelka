@@ -33,8 +33,9 @@ export default ({ children, className }) => {
         </Sticky>
 
         { children }
+        
+        <Footer />
       </StickyContainer>
-      <Footer />
     </div>
   )
 }
