@@ -12,7 +12,7 @@ import Link from 'next/link'
 import cssFlex from 'modules/_layouts/flex';
 import css from './header.style.scss';
 
-class HeaderMobile extends Component {
+class HeaderMenu extends Component {
   render () {
     const { isOpen, toogleMenu } = this.props
 
@@ -70,36 +70,44 @@ class Header extends Component {
               [cssFlex.flexHorizontal]: true,
               [cssFlex['align-center']]: true
             })}>
-              <div className={cssFlex.flexSpacer}>
+              <div>
                 <Link href={"/"}>
-                  <a href="/">
-                    belka & strelka
+                  <a href="/" className={cn(css.header__logo)}>
+                    <div>Belka & Strelka</div>
+                    <div className={cn(css.header__sublogo)}>design studio</div>
                   </a>
                 </Link>
               </div>
-
-              <HeaderMobile isOpen={isOpen} toogleMenu={toogleMenu} />
+              <div className={cn(cssFlex.flexSpacer)}>&nbsp;</div>
+              <HeaderMenu isOpen={isOpen} toogleMenu={toogleMenu} />
             </div>
           </div>
         </div>
+
         <div className={cn({
           'menuWrapper': true,
           'open': isOpen,
         })}>
           <h2>title</h2>
-          <nav>
-            <div>el</div>
-            <div>el2</div>
-          </nav>
-          <h2>title</h2>
-          <nav>
-            <div>el</div>
-            <div>el2</div>
-          </nav>
-          <h2>title</h2>
-          <nav>
-            <div>el</div>
-            <div>el2</div>
+          <nav className={cn(
+            css.nav,
+            cssFlex.flexHorizontal
+          )}>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/projects"}>
+                <a title="See our projects" className={css.nav__link} href="/projects">Projects</a>
+              </Link>
+            </div>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/people"}>
+                <a title="Find out about Kickpush" className={css.nav__link} href="/people">People</a>
+              </Link>
+            </div>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/contact"}>
+                <a title="Say hi" className={css.nav__link} href="/contact" >Contact</a>
+              </Link>
+            </div>
           </nav>
         </div>
       </div>

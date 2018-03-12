@@ -37,7 +37,7 @@ const webpackConfig = withSass({
                 loader: 'url-loader',
                 options: {
                   outputPath: 'static/',
-                  publicPath: '/_next/',
+                  publicPath: '/_next/static',
                   limit: 1000,
                   name: 'img/[name]___[hash:base64:5].[ext]'
                 }

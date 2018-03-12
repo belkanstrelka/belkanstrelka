@@ -20,8 +20,9 @@ class Index extends Component {
         <Layout>
           <div className={'rmApp__fcontainer'}>
             <h1>Index</h1>
+            <h1>Index2</h1>
             <Link href='/about' as={process.env.BACKEND_URL + '/about'}><a>About</a></Link>
-            
+
             <Proofs />
           </div>
         </Layout>

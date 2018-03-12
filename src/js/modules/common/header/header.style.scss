@@ -1,3 +1,6 @@
+@import "~variables";
+@import "~mixins";
+
 $brandBlack: #272727;
 $brandWhite: #ffffff;
 $brandYellow: #ffd900;
@@ -5,15 +8,34 @@ $brandYellow: #ffd900;
 $headerHeight: 60px;
 
 .header {
-
   &__wrapper {
     padding: 0 5px;
     height: $headerHeight;
   }
 
+  &__logo {
+    text-decoration: none;
+    color: $brandBlack;
+
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 24px;
+    }
+  }
+
+  &__sublogo {
+    display: none;
+    font-weight: normal;
+    font-size: 14px;
+  }
+
   &__sticky {
+    background: $brandYellow;
+
     .header__wrapper {
-      background: $brandYellow;
       color: $brandBlack;
     }
   }
@@ -26,10 +48,10 @@ $headerHeight: 60px;
     height: 100%;
   }
 }
-
-a {
-  text-decoration: none;
-}
+//
+// a {
+//   text-decoration: none;
+// }
 //
 // .nav__link {
 //     color: $brandBlack;
