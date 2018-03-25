@@ -2,6 +2,13 @@ $brandBlack: #272727;
 $brandWhite: #ffffff;
 $brandYellow: #ffd900;
 
+.proofs {
+  &__title {
+    text-align: center;
+    padding: 120px;
+  }
+}
+
 .proof {
   // position: relative;
   background: $brandWhite;

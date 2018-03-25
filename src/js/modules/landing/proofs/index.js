@@ -59,9 +59,9 @@ class Proofs extends Component {
   render () {
     return (
       <div className={cn(css.proofs)}>
-        <div className={cn(css.proofs__title)}>
+        <h2 className={cn(css.proofs__title)}>
           <I18N id={'proofs.title'} />
-        </div>
+        </h2>
       {proofList.map((proofItem, index) => {
         return (
           <div key={`proofItem${index}`} className={cn(css.proofs__item)}>

@@ -1,4 +1,17 @@
 const enTranslate = {
+  hero: {
+    title: 'We don’t even like the internet.',
+    description: 'Product design studio from sunny Helsinki.',
+  },
+
+  team: {
+    title: 'Our team',
+  },
+
+  projects: {
+    title: 'Our projects',
+  },
+
   proofs: {
     title: 'our principles',
     expertise: {

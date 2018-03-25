@@ -9,6 +9,44 @@ import css from './footer.style.scss';
 
 class Footer extends Component {
   render () {
+    // <footer className={cssFlex.flexHorizontal}>
+    //   <div className="group links--accent">
+    //     <div className="footer__col footer__col--left">
+    //       <p className="p s13 wm">© Kickpush ltd. <span data-replace-date="">2018</span><small> | <a className="wm" href="http://www.iubenda.com/privacy-policy/7773310">Privacy Policy</a></small></p>
+    //     </div>
+    //     <div className="footer__col">
+    //       <ul className="list--social">
+    //         <li className="list--social__item">
+    //           <a className="list--social__link" target="_blank" href="https://dribbble.com/kickpush">
+    //             <i className="list--social__icon">
+    //               yet
+    //             </i>
+    //             <span className="visuallyhidden">Follow us on Dribbble</span>
+    //           </a>
+    //         </li>
+    //         <li className="list--social__item">
+    //           <a className="list--social__link" target="_blank" href="https://twitter.com/kickpush">
+    //             <i className="list--social__icon">
+    //               another
+    //             </i>
+    //             <span className="visuallyhidden">Follow us on Twitter</span>
+    //           </a>
+    //         </li>
+    //         <li className="list--social__item">
+    //           <a className="list--social__link" target="_blank" href="https://instagram.com/kickpushteam">
+    //             <i className="list--social__icon">
+    //               stuff
+    //             </i>
+    //             <span className="visuallyhidden">Follow us on Instagram</span>
+    //           </a>
+    //         </li>
+    //       </ul>
+    //     </div>
+    //     <div className="footer__col footer__col--right">
+    //       <p className="p s18"><a href="mailto:hello@kickpush.co">hello@kickpush.co</a></p>
+    //     </div>
+    //   </div>
+    // </footer>
     return (
       <div className='rmApp__fcontainer'>
         <section>
@@ -29,45 +67,6 @@ class Footer extends Component {
             </div>
           </div>
         </section>
-
-        <footer className={cssFlex.flexHorizontal}>
-          <div className="group links--accent">
-            <div className="footer__col footer__col--left">
-              <p className="p s13 wm">© Kickpush ltd. <span data-replace-date="">2018</span><small> | <a className="wm" href="http://www.iubenda.com/privacy-policy/7773310">Privacy Policy</a></small></p>
-            </div>
-            <div className="footer__col">
-              <ul className="list--social">
-                <li className="list--social__item">
-                  <a className="list--social__link" target="_blank" href="https://dribbble.com/kickpush">
-                    <i className="list--social__icon">
-                      yet
-                    </i>
-                    <span className="visuallyhidden">Follow us on Dribbble</span>
-                  </a>
-                </li>
-                <li className="list--social__item">
-                  <a className="list--social__link" target="_blank" href="https://twitter.com/kickpush">
-                    <i className="list--social__icon">
-                      another
-                    </i>
-                    <span className="visuallyhidden">Follow us on Twitter</span>
-                  </a>
-                </li>
-                <li className="list--social__item">
-                  <a className="list--social__link" target="_blank" href="https://instagram.com/kickpushteam">
-                    <i className="list--social__icon">
-                      stuff
-                    </i>
-                    <span className="visuallyhidden">Follow us on Instagram</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer__col footer__col--right">
-              <p className="p s18"><a href="mailto:hello@kickpush.co">hello@kickpush.co</a></p>
-            </div>
-          </div>
-        </footer>
       </div>
     )
   }

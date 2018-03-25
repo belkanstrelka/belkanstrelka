@@ -1,4 +1,17 @@
 const ruTranslate = {
+  hero: {
+    title: 'Чуваки, которым можно доверять',
+    description: 'Дизайн студия из Хельсинки',
+  },
+
+  team: {
+    title: 'Наша команда',
+  },
+
+  projects: {
+    title: 'Наши проекты',
+  },
+
   proofs: {
     title: 'Наши принципы',
     expertise: {
