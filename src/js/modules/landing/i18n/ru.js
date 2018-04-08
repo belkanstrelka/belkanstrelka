@@ -1,6 +1,6 @@
 const ruTranslate = {
   hero: {
-    title: 'Чуваки, которым можно доверять',
+    title: 'Belka & Strelka',
     description: 'Дизайн студия из Хельсинки',
   },
 

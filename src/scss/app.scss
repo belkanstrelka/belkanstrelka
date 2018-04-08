@@ -13,6 +13,20 @@
 @import 'utils/type';
 
 :global {
+  .navigationAnchor {
+    display: block;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: #556270;
+    padding: 5px;
+    transition: all 0.2s;
+    transform: scale(0.6);
+
+    &.active {
+      transform: scale(1.1);
+    }
+  }
+
   .rmApp {
     &__fcontainer {
       // position: relative;

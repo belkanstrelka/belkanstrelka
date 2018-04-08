@@ -1,8 +1,101 @@
+@import "~variables";
+@import "~mixins";
+
 .hero {
-  text-align: center;
-  height: 40vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  background-image: url('./bg.png');
+  background-size: cover;
+
+  &__logo {
+    position: absolute;
+    background: url('./rocket.svg') no-repeat top left;
+    background-size: contain;
+
+    top: 20%;
+    right: -40vh;
+    width: 100vh;
+    height: 75vh;
+    transform: rotate(35deg);
+  }
+
+  &__descr {
+    font-size: 26px;
+    letter-spacing: 0px;
+    line-height: 1.1;
+    text-decoration: none;
+    text-transform: none;
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 6px;
+    padding-left: 0px;
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      font-weight: 300;
+      font-size: 30px;
+    }
+  }
 
   &__title {
-    padding-top: 140px;
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: -2px;
+    line-height: 0.85;
+    text-decoration: none;
+    text-transform: none;
+    padding-top: 9px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 20vh;
+      font-size: 86px;
+    }
+  }
+
+  &__email {
+    a {
+      color: white;
+
+      // font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 0px;
+      line-height: 0.85;
+      text-decoration: none;
+      text-transform: none;
+      padding-top: 9px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+
+      margin: 0;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 32px;
+        letter-spacing: -2px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 1.1;
+    text-decoration: none;
+    text-transform: none;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 28px;
+      letter-spacing: -2px;
+    }
   }
 }

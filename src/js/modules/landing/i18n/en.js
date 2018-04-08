@@ -1,6 +1,6 @@
 const enTranslate = {
   hero: {
-    title: 'We don’t even like the internet.',
+    title: 'Belka & Strelka',
     description: 'Product design studio from sunny Helsinki.',
   },
 
