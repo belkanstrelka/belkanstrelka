@@ -26,7 +26,7 @@ class Hero extends Component {
             </h2>
           </div>
           <div className={cn(cssFlex.flexSpacer)}></div>
-          <div style={{padding: '30px 20px'}}>
+          <div className={cn(css.hero__footer)}>
             <h3 className={cn(css.hero__subtitle)}>
               Say hi
             </h3>

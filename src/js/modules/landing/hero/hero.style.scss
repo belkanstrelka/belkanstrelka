@@ -55,13 +55,13 @@
     margin: 0;
 
     @include media-breakpoint-up(sm) {
-      margin-top: 20vh;
       font-size: 86px;
     }
   }
 
   &__email {
     a {
+      position: relative;
       color: white;
 
       // font-weight: 900;
@@ -76,12 +76,17 @@
       padding-left: 0px;
 
       margin: 0;
+      bottom: 0px;
 
       @include media-breakpoint-up(sm) {
         font-size: 32px;
         letter-spacing: -2px;
       }
     }
+  }
+
+  &__footer {
+    padding: 0px 20px 20px;
   }
 
   &__subtitle {
