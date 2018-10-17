@@ -1,0 +1,127 @@
+// @import "~variables";
+// @import "~mixins";
+
+$brandBlack: #272727;
+$brandWhite: #ffffff;
+$brandYellow: #ffd900;
+
+$headerHeight: 60px;
+
+.breadcrumbs {
+  margin-right: 25px;
+
+  // li:not(.isActive):after {
+  //   content: "";
+  //   display: inline-block;
+  //   background: url('https://app.talebook.io/static/img/arrow-right.47109e9.svg') no-repeat 0 0;
+  //   background-size: 100% 100%;
+  //   width: 5px;
+  //   height: 8px;
+  //   position: absolute;
+  //   right: -16px;
+  //   top: 50%;
+  //   margin-top: -3px;
+  // }
+}
+
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+
+  &__submenu {
+    vertical-align: middle;
+    // padding-inline-start: 40px;
+    margin-top: 3px;
+  }
+
+  &__submenuMenu {
+    display: inline-block;
+    font-size: 14px;
+    color: #4b5761;
+    text-transform: uppercase;
+    // padding: 22px 5px;
+    margin: 0 16px;
+    position: relative;
+    cursor: pointer;
+
+    &.isActive,
+    &:hover {
+      color: #4b5761;
+      text-decoration: none;
+
+      &:before, &:before {
+        right: auto;
+        left: 0;
+        width: 100%;
+        display: block;
+        content: "";
+      }
+    }
+
+    span {
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+    }
+
+    &.isActive {
+      font-weight: 700;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 0;
+      right: 0;
+      left: auto;
+      bottom: -7px;
+      height: 2px;
+      background: #4a4a4a;
+      display: block;
+      transition: all .2s ease;
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    height: 77px;
+  }
+
+  &__logo {
+    display: inline-block;
+    background-image: url('https://www.instagram.com/static/bundles/base/sprite_glyphs_2x.png/5645ce9a6227.png');
+    background-size: 241px 213px;
+    background-position: -50px -164px;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__separator {
+    display: inline-block;
+    background-color: #262626;
+    height: 28px;
+    margin: 0 16px;
+    width: 1px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #252729;
+
+    // display: inline-block;
+    // background-image: url('https://www.instagram.com/static/bundles/base/sprite_glyphs_2x.png/5645ce9a6227.png');
+    // background-size: 241px 213px;
+    // background-position: -57px 0;
+    // background-repeat: no-repeat;
+    // height: 29px;
+    // width: 103px;
+  }
+}

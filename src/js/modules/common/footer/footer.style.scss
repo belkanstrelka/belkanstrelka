@@ -1,12 +1,56 @@
-@import "~variables";
-@import "~mixins";
+// @import "~variables";
+// @import "~mixins";
+
+.footer {
+  font-size: 16px;
+  position: relative;
+  background: #FCBC1D;
+
+  &__copyright {}
+  &__address {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__title, &__copyright {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  &__separeteLine {
+    background: #161620;
+    height: 1px;
+  }
+
+  &__social,
+  &__payment {
+    margin-right: 8px;
+  }
+
+  &__link {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+
+  &__line {
+    padding: 32px 0;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 20px;
+    bottom: 0px;
+  }
+}
 
 .contactFooter {
   text-align: center;
 
-  @include media-breakpoint-up(sm) {
-    text-align: left;
-  }
+  // @include media-breakpoint-up(sm) {
+  //   text-align: left;
+  // }
 
   &__form {
     padding-right: 0.8rem;
@@ -26,25 +70,25 @@
 
     font-size: 2.6rem;
 
-    @include media-breakpoint-up(sm) {
-      font-size: 3rem;
-    }
-
-    @include media-breakpoint-up(lg) {
-      font-size: 3.6rem;
-    }
-
-    @include media-breakpoint-up(xl) {
-      font-size: 5rem;
-    }
+    // @include media-breakpoint-up(sm) {
+    //   font-size: 3rem;
+    // }
+    //
+    // @include media-breakpoint-up(lg) {
+    //   font-size: 3.6rem;
+    // }
+    //
+    // @include media-breakpoint-up(xl) {
+    //   font-size: 5rem;
+    // }
   }
 
   &__text {
     font-size: 1rem;
 
-    @include media-breakpoint-up(sm) {
-      font-size: 1.2rem;
-    }
+    // @include media-breakpoint-up(sm) {
+    //   font-size: 1.2rem;
+    // }
   }
 
   &__subtitle {
@@ -53,9 +97,9 @@
     letter-spacing: .015em;
     text-transform: uppercase;
 
-    @include media-breakpoint-up(sm) {
-      font-size: 1rem;
-    }
+    // @include media-breakpoint-up(sm) {
+    //   font-size: 1rem;
+    // }
   }
 
   &__email {
@@ -66,8 +110,8 @@
 
     font-size: 1.4rem;
 
-    @include media-breakpoint-up(lg) {
-      font-size: 2.2rem;
-    }
+    // @include media-breakpoint-up(lg) {
+    //   font-size: 2.2rem;
+    // }
   }
 }

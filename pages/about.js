@@ -1,32 +1,54 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-import css from 'scss/app.scss'
+class About extends Component {
+  static propTypes = {
+    pageTransitionReadyToEnter: PropTypes.func
+  }
 
-import withRedux from 'next-redux-wrapper'
-import { initStore } from 'store/configureStore'
-//
-// import IndexCntr from 'containers/index'
-import IntlWrapper from 'modules/IntlWrapper'
-import Proofs from 'modules/landing/proofs'
-import pageTransitionWrapper from 'modules/PageTransitionWrapper'
+  static defaultProps = {
+    pageTransitionReadyToEnter: () => {}
+  }
 
-import Layout from 'modules/_layouts/layout'
+  static pageTransitionDelayEnter = true
 
-class Index extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      loaded: false
+    }
+  }
+
+  componentDidMount () {
+    this.timeoutId = setTimeout(() => {
+      this.props.pageTransitionReadyToEnter()
+      this.setState({ loaded: true })
+    }, 2000)
+  }
+
+  componentWillUnmount () {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId)
+    }
+  }
+
   render () {
-    return (
-      <IntlWrapper>
-        <Layout>
-          <div className={'rmApp__fcontainer'}>
-            <h1>About</h1>
-            <Link href='/' as={process.env.BACKEND_URL + '/'}><a>Main</a></Link>
+    if (!this.state.loaded) return null
 
-          </div>
-        </Layout>
-      </IntlWrapper>
+    return (
+      <div className='container bg-success page'>
+        <h1>About us</h1>
+        <p>
+          Notice how a loading spinner showed up while my content was "loading"?
+          Pretty neat, huh?
+        </p>
+        <Link href='/index'>
+          <a className='btn btn-light'>Go back home</a>
+        </Link>
+      </div>
     )
   }
 }
 
-export default withRedux(initStore, null, null)(pageTransitionWrapper(Index));
+export default About

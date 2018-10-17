@@ -23,7 +23,7 @@ $phone-portrait-max: ($phone-landscape-min - 1); // 479px
     @media (max-width: $tablet-portrait-max) { @content; }
   }
   @else if $media == tabletLandscape {
-    @media (min-width: $tablet-landscape-min) and  (max-width: $tablet-landscape-max) { @content; }
+    @media (min-width: $tablet-landscape-min) and (max-width: $tablet-landscape-max) { @content; }
   }
   @else if $media == tablet {
     @media (min-width: $tablet-portrait-min) and (max-width: $tablet-portrait-max) { @content; }

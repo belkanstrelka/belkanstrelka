@@ -1,0 +1,121 @@
+import React, { Component } from 'react'
+
+import { connect } from 'react-redux'
+import toogleMenu from './actions'
+
+import cn from 'classnames'
+import Link from 'next/link'
+
+import cssFlex from 'modules/_layouts/flex';
+import css from './header.style.scss';
+
+class HeaderMenu extends Component {
+  render () {
+    const { isOpen, toogleMenu } = this.props
+
+    return (
+      <button className={cn({
+        'hamburger': true,
+        'hamburger--slider': true,
+        'is-active': isOpen,
+      })} type="button" onClick={() => toogleMenu(!isOpen) }>
+        <span className="hamburger-box">
+          <span className="hamburger-inner"></span>
+        </span>
+      </button>
+    )
+    // <nav className={cn(
+    //   css.nav,
+    //   cssFlex.flexHorizontal
+    // )}>
+    //   <div className={cssFlex['col-auto']}>
+    //     <Link href={"/projects"}>
+    //       <a title="See our projects" className={css.nav__link} href="/projects">Projects</a>
+    //     </Link>
+    //   </div>
+    //   <div className={cssFlex['col-auto']}>
+    //     <Link href={"/people"}>
+    //       <a title="Find out about Kickpush" className={css.nav__link} href="/people">People</a>
+    //     </Link>
+    //   </div>
+    //   <div className={cssFlex['col-auto']}>
+    //     <Link href={"/contact"}>
+    //       <a title="Say hi" className={css.nav__link} href="/contact" >Contact</a>
+    //     </Link>
+    //   </div>
+    // </nav>
+    //
+    // </div>
+  }
+}
+
+class Header extends Component {
+  render () {
+    const { style, isOpen, toogleMenu } = this.props
+
+    return (
+      <div className={cn({
+        [css.header]: true,
+        [css.header__sticky]: this.props.isSticky || true,
+        [css.header__isOpen]: isOpen,
+      })}>
+        <div style={style}>
+          <div>
+            <div className={cn({
+              [css.header__wrapper]: true,
+              rmApp__fcontainer: true,
+              [cssFlex.flexHorizontal]: true,
+              [cssFlex['align-center']]: true
+            })}>
+              <div>
+                <Link href={"/"}>
+                  <a href="/" className={cn(css.header__logo)}>
+                    <div>Belka & Strelka</div>
+                    <div className={cn(css.header__sublogo)}>design studio</div>
+                  </a>
+                </Link>
+              </div>
+              <div className={cn(cssFlex.flexSpacer)}>&nbsp;</div>
+              <HeaderMenu isOpen={isOpen} toogleMenu={toogleMenu} />
+            </div>
+          </div>
+        </div>
+
+        <div className={cn({
+          'menuWrapper': true,
+          'open': isOpen,
+        })}>
+          <h2>title</h2>
+          <nav className={cn(
+            css.nav,
+            cssFlex.flexHorizontal
+          )}>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/projects"}>
+                <a title="See our projects" className={css.nav__link} href="/projects">Projects</a>
+              </Link>
+            </div>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/people"}>
+                <a title="Find out about Kickpush" className={css.nav__link} href="/people">People</a>
+              </Link>
+            </div>
+            <div className={cssFlex['col-auto']}>
+              <Link href={"/contact"}>
+                <a title="Say hi" className={css.nav__link} href="/contact" >Contact</a>
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default connect(({ header }) => {
+  return {
+    isOpen: header.isOpen
+  }
+}, {
+  toogleMenu
+})(Header)

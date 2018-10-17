@@ -1,73 +1,75 @@
 // Belka & Strelka
 // design studio
 
-import React, { Component } from 'react'
+import { Component } from 'react'
 import cn from 'classnames'
 
+import appCss from 'scss/app.scss'
 import cssFlex from 'modules/_layouts/flex';
 import css from './footer.style.scss';
 
+import Fb from './img/fb.svg'
+import Inst from './img/inst.svg'
+import Linkedin from './img/linkedin.svg'
+
+import Planet from './img/footerPlanet.svg'
+
+import Hammer from './img/hammer.svg'
+
+import Visa from './img/visa.svg'
+import Master from './img/master.svg'
+import Amex from './img/amex.svg'
+import Stripe from './img/stripe.svg'
+
 class Footer extends Component {
   render () {
-    // <footer className={cssFlex.flexHorizontal}>
-    //   <div className="group links--accent">
-    //     <div className="footer__col footer__col--left">
-    //       <p className="p s13 wm">© Kickpush ltd. <span data-replace-date="">2018</span><small> | <a className="wm" href="http://www.iubenda.com/privacy-policy/7773310">Privacy Policy</a></small></p>
-    //     </div>
-    //     <div className="footer__col">
-    //       <ul className="list--social">
-    //         <li className="list--social__item">
-    //           <a className="list--social__link" target="_blank" href="https://dribbble.com/kickpush">
-    //             <i className="list--social__icon">
-    //               yet
-    //             </i>
-    //             <span className="visuallyhidden">Follow us on Dribbble</span>
-    //           </a>
-    //         </li>
-    //         <li className="list--social__item">
-    //           <a className="list--social__link" target="_blank" href="https://twitter.com/kickpush">
-    //             <i className="list--social__icon">
-    //               another
-    //             </i>
-    //             <span className="visuallyhidden">Follow us on Twitter</span>
-    //           </a>
-    //         </li>
-    //         <li className="list--social__item">
-    //           <a className="list--social__link" target="_blank" href="https://instagram.com/kickpushteam">
-    //             <i className="list--social__icon">
-    //               stuff
-    //             </i>
-    //             <span className="visuallyhidden">Follow us on Instagram</span>
-    //           </a>
-    //         </li>
-    //       </ul>
-    //     </div>
-    //     <div className="footer__col footer__col--right">
-    //       <p className="p s18"><a href="mailto:hello@kickpush.co">hello@kickpush.co</a></p>
-    //     </div>
-    //   </div>
-    // </footer>
     return (
-      <div className='rmApp__fcontainer'>
-        <section>
-          <div className={cn(css.contactFooter, cssFlex.flexHorizontal, cssFlex.grid)}>
-            <div className={cn(cssFlex['col-12'], cssFlex['col-xs-7'], css.contactFooter__form)}>
-              <h2 className={css.contactFooter__title}>Don’t be shy, <br /> talk to us.</h2>
-              <p className={css.contactFooter__text}>We reply to everyone right away. See for yourself.</p>
+      <footer id='content' className={cn(css.footer)}>
+        <Planet className={cn(css.footer__icon)} />
+        <div className={cn(appCss.bnsContainer, css.footer__line)}>
+          <div className={cssFlex.flexHorizontal}>
+            <div className={cssFlex.flexSpacer}>
+              <Fb className={css.footer__social} />
+              <Inst className={css.footer__social}/>
+              <Linkedin className={css.footer__social}/>
             </div>
-            <div className={cn(cssFlex['col-12'], cssFlex['col-xs-5'], css.contactFooter__emails)}>
-              <h3 className={css.contactFooter__subtitle}>Say hi</h3>
-              <p className={css.contactFooter__email}><a href="mailto:hello@belkanstrelka.com">hello@belkanstrelka.com</a></p>
-              <h3 className={css.contactFooter__subtitle}>Let’s meet</h3>
-              <p className={css.contactFooter__meet}>
-                We’re always on the move. Give us a shout and
-                if we’re in your city let’s catch up over a beer.
-                Coffee would do, too.
-              </p>
+            <div className={cssFlex.flexSpacer}>
+              <div className={css.footer__title}>
+                Get in touch
+              </div>
+              <div>hello@belkanstrelka.com</div>
+            </div>
+            <div className={cssFlex.flexSpacer} />
+          </div>
+        </div>
+        <div className={css.footer__separeteLine} />
+        <div className={cn(appCss.bnsContainer, css.footer__line)}>
+          <div className={cssFlex.flexHorizontal}>
+            <div className={cn(cssFlex.flexSpacer, css.footer__address)}>
+              <div className={css.footer__copyright}>© 2018 Belka & Strelka.</div>
+              3651 Regal Pl., Los Angeles, CA 90068  <br />
+              Made with <Hammer /> in California and Helsinki.
+
+            </div>
+            <div className={cssFlex.flexSpacer}>
+              <div className={css.footer__title}>More</div>
+              <a className={css.footer__link}>Terms & Conditions</a>
+              <a className={css.footer__link}>Privacy Policy</a>
+            </div>
+            <div className={cssFlex.flexSpacer}>
+              <div className={css.footer__title}>
+                Digital payments are protected:
+              </div>
+              <div>
+                <Visa className={css.footer__payment} />
+                <Master className={css.footer__payment}/>
+                <Amex className={css.footer__payment}/>
+                <Stripe className={css.footer__payment}/>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </footer>
     )
   }
 }

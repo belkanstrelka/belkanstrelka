@@ -1,8 +1,15 @@
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": [ "next/babel" ],
   "plugins": [
-    ["transform-define", "./env-config.js"]
+    [
+      "inline-react-svg", {
+        "svgo": {
+          "plugins": [
+            { "removeAttrs": { "attrs": "(data-name)" } },
+            { "cleanupIDs": true }
+          ]
+        }
+      }
+    ]
   ]
 }

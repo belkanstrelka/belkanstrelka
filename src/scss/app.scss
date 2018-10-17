@@ -10,57 +10,51 @@
 */
 
 @import 'base';
-@import 'utils/type';
+// @import 'common/type';
 
-:global {
-  .navigationAnchor {
-    display: block;
-    margin: 10px;
-    border-radius: 100%;
-    background-color: #556270;
-    padding: 5px;
-    transition: all 0.2s;
-    transform: scale(0.6);
+// :global {
+  // .navigationAnchor {
+  //   display: block;
+  //   margin: 10px;
+  //   border-radius: 100%;
+  //   background-color: #556270;
+  //   padding: 5px;
+  //   transition: all 0.2s;
+  //   transform: scale(0.6);
+  //
+  //   &.active {
+  //     transform: scale(1.1);
+  //   }
+  // }
 
-    &.active {
-      transform: scale(1.1);
+  .bnsContainer {
+    margin: 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: $container-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: $container-lg;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: $container-xl;
+    }
+
+    width: 100%;
+
+    &_w720 {
+      max-width: 720px;
+    }
+
+    &_w860 {
+      max-width: 860px;
     }
   }
-
-  .rmApp {
-    &__fcontainer {
-      // position: relative;
-      // padding-right: 5px;
-      // padding-left: 5px;
-
-      margin: 0 auto;
-
-      @include media-breakpoint-up(sm) {
-        padding-right: 15px;
-        padding-left: 15px;
-      }
-
-      @include media-breakpoint-up(md) {
-        width: $container-md;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: $container-lg;
-      }
-
-      @include media-breakpoint-up(xl) {
-        width: $container-xl;
-      }
-
-      width: 100%;
-
-      &_w720 {
-        max-width: 720px;
-      }
-
-      &_w860 {
-        max-width: 860px;
-      }
-    }
-  }
-}
+// }
