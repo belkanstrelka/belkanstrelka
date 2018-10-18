@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
 /***/ "./src/js/modules/_layouts/flex/style.scss":
 /*!*************************************************!*\
@@ -150,83 +150,7 @@ module.exports = {"breadcrumbs":"breadcrumbs___3YCMa","header":"header___2JlV2",
     }
   
 
-/***/ }),
-
-/***/ "./src/js/modules/landings/index/style.scss":
-/*!**************************************************!*\
-  !*** ./src/js/modules/landings/index/style.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {"parallaxChildren":"parallaxChildren___3gye6","blend2":"blend2___2mGp-","blend":"blend___jacpM","sideText":"sideText___3ByIS","forWhom":"forWhom___28nQg","forWhom__item":"forWhom__item___2Cn9u","forWhom__icon":"forWhom__icon___e1Fvc","forWhom__description":"forWhom__description___2zxAz","proceccItem":"proceccItem___1oRbj","proceccItem__title":"proceccItem__title___35vPQ","proceccItem__separator":"proceccItem__separator___2x7pe","proceccItem__text":"proceccItem__text___3zqjX","bnsIndexService__info":"bnsIndexService__info___3EcpP","bnsIndexService__ps":"bnsIndexService__ps___12q5R","bnsIndexService__bold":"bnsIndexService__bold___1t6zU","bnsIndexService":"bnsIndexService___2AFkj","bnsIndexService__statBlock":"bnsIndexService__statBlock___17b5W","bnsIndexService__statTitle":"bnsIndexService__statTitle___tyRyH","bnsIndexService__statsDescription":"bnsIndexService__statsDescription___3fAWr","onDemandItem":"onDemandItem___2ySOM","onDemandItem__icon":"onDemandItem__icon___33at-","onDemandItem__title":"onDemandItem__title___C0dPW","onDemandItem__text":"onDemandItem__text___EIP1h","bnsIndex":"bnsIndex___8JcSD","bnsIndex__sticky":"bnsIndex__sticky___3Grye","bnsIndex__heroPlanet":"bnsIndex__heroPlanet___kEc8b","bnsIndex__title":"bnsIndex__title___2pt3l","bnsIndex__description":"bnsIndex__description___2Gn-p","bnsIndex__WYSIWYG":"bnsIndex__WYSIWYG___l4GZ0","bnsIndex__misson":"bnsIndex__misson___3Anx4","bnsIndex__onDemand":"bnsIndex__onDemand___1GM6g","bnsIndex__hero":"bnsIndex__hero___2kMgF","bnsIndex__expertise":"bnsIndex__expertise___1aBDC","bnsIndex__service":"bnsIndex__service___2VVLX","bnsIndex__process":"bnsIndex__process___1o9gX","bnsIndex__forWhom":"bnsIndex__forWhom___1pzlt","bnsIndex__onDemandItems":"bnsIndex__onDemandItems___1CZMa","bnsIndex__expertiseBlocks":"bnsIndex__expertiseBlocks___UzHsH","bnsIndex__expertiseBlock":"bnsIndex__expertiseBlock___1mHCM"};;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1539832130353");
-          });
-      }
-    }
-  
-
-/***/ }),
-
-/***/ "./src/scss/app.scss":
-/*!***************************!*\
-  !*** ./src/scss/app.scss ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {"bnsContainer":"bnsContainer___1UN__","bnsContainer_w720":"bnsContainer_w720___1CRbI","bnsContainer_w860":"bnsContainer_w860___257zn"};;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1539822321770");
-          });
-      }
-    }
-  
-
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.4f1da2db9a45f6394c2f.hot-update.js.map

@@ -22538,13 +22538,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -23639,17 +23641,35 @@ function (_Component) {
   _inherits(Index, _Component);
 
   function Index() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, Index);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Index).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      init: false
+    });
+
+    return _this;
   }
 
   _createClass(Index, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       setTimeout(function () {
-        window.scrollTo(0, window.scrollY || 0 + 1);
-      }, 300);
+        _this2.setState({
+          init: true
+        });
+      }, 200);
     }
   }, {
     key: "renderHeroBlock",
@@ -23658,7 +23678,7 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__hero,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_1__["ParallaxBanner"], {
@@ -23669,47 +23689,47 @@ function (_Component) {
         }],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.parallaxChildren,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 54
         },
         __self: this
       }, "Design as a service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__description,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 55
         },
         __self: this
       }, "Easiest way for startups and enterpises to upgrade digital products and focus on building great companies."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_btn__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, "Brief us"))))));
@@ -23731,35 +23751,35 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__forWhom,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 82
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       }, "You brief. We do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__description,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       }, "AI-boosted design processes that never miss deadlines, increase transparency and promote collaboration not knockoffs."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexHorizontal, _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.forWhom),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 91
         },
         __self: this
       }, items.map(function (item, index) {
@@ -23769,27 +23789,27 @@ function (_Component) {
           key: "forWhome".concat(index),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 96
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.forWhom__icon,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 97
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 98
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.forWhom__description,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 100
           },
           __self: this
         }, item.text));
@@ -23799,13 +23819,13 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_btn__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 108
         },
         __self: this
       }, "Brief us"))));
@@ -23817,14 +23837,14 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__WYSIWYG,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 117
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 118
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -23834,45 +23854,45 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 119
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 120
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 121
         },
         __self: this
       }, "A WYSIWYG* process"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 124
         },
         __self: this
       }, "*what you see is what you get")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexSpacer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 128
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 129
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UrsaMajor, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 130
         },
         __self: this
       })))));
@@ -23884,14 +23904,14 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__misson,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 140
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 141
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -23901,39 +23921,39 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 142
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 143
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 144
         },
         __self: this
       }, "Mission control center")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexSpacer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 148
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 149
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Astronaut, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 150
         },
         __self: this
       })))));
@@ -23958,20 +23978,20 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__process,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 174
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171
+          lineNumber: 175
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 176
         },
         __self: this
       }, steps.map(function (processStep, index) {
@@ -23980,41 +24000,41 @@ function (_Component) {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexHorizontal, _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.proceccItem),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 175
+            lineNumber: 179
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.proceccItem__title,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 176
+            lineNumber: 180
           },
           __self: this
         }, index + 1, ". ", processStep.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.proceccItem__separator,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 177
+            lineNumber: 181
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexSpacer, _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.proceccItem__text),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 178
+            lineNumber: 182
           },
           __self: this
         }, processStep.description));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 187
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_btn__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 184
+          lineNumber: 188
         },
         __self: this
       }, "See in Action"))));
@@ -24043,35 +24063,35 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__onDemand,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 215
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212
+          lineNumber: 216
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 217
         },
         __self: this
       }, "Design studio on demand"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__description,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 216
+          lineNumber: 220
         },
         __self: this
       }, "First 100% online service that delivers Silicon Valley class design to your office."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].grid, _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__onDemandItems),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 223
         },
         __self: this
       }, steps.map(function (processStep, index) {
@@ -24081,61 +24101,61 @@ function (_Component) {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"]['col-6'], _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.onDemandItem),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 224
+            lineNumber: 228
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexHorizontal),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 225
+            lineNumber: 229
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.onDemandItem__icon,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 226
+            lineNumber: 230
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 227
+            lineNumber: 231
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexSpacer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 229
+            lineNumber: 233
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.onDemandItem__title),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 230
+            lineNumber: 234
           },
           __self: this
         }, processStep.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.onDemandItem__text),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 231
+            lineNumber: 235
           },
           __self: this
         }, processStep.description))));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 242
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_btn__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 243
         },
         __self: this
       }, "Summon our team"))));
@@ -24156,41 +24176,41 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__expertise,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 262
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 263
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 260
+          lineNumber: 264
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 265
         },
         __self: this
       }, "Core expertise"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__description,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 266
         },
         __self: this
       }, "Top notch skills and knoweledge at your conveniece")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__expertiseBlocks,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 266
+          lineNumber: 270
         },
         __self: this
       }, expertise.map(function (exp, index) {
@@ -24199,7 +24219,7 @@ function (_Component) {
           className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__expertiseBlock),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 269
+            lineNumber: 273
           },
           __self: this
         }, exp.title);
@@ -24212,85 +24232,64 @@ function (_Component) {
         className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(_style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__service, _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 282
+          lineNumber: 286
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: scss_app_scss__WEBPACK_IMPORTED_MODULE_7___default.a.bnsContainer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283
+          lineNumber: 287
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__["default"].flexHorizontal,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 288
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__info,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 289
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__bold,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 286
+          lineNumber: 290
         },
         __self: this
       }, "We are game changers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 291
         },
         __self: this
       }, "Our mission is to make best practicies in design, user experience and product managment accessible for enterprenuers all over the World, so they can focus on what matters."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 292
+          lineNumber: 296
         },
         __self: this
       }, "For designers, we are building an automative work environement that supports creative process."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__ps,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 296
+          lineNumber: 300
         },
         __self: this
       }, "Want to learn more abour Design, UX and Product Managment? Subscribe to our monthly newsletter.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__stats,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301
+          lineNumber: 305
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statBlock,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 302
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statTitle,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 303
-        },
-        __self: this
-      }, "27"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statDescription,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 304
-        },
-        __self: this
-      }, "missions completed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statBlock,
         __source: {
           fileName: _jsxFileName,
@@ -24304,14 +24303,14 @@ function (_Component) {
           lineNumber: 307
         },
         __self: this
-      }, "1428"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "27"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statDescription,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 308
         },
         __self: this
-      }, "hours elapsed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "missions completed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statBlock,
         __source: {
           fileName: _jsxFileName,
@@ -24325,11 +24324,32 @@ function (_Component) {
           lineNumber: 311
         },
         __self: this
-      }, "391"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "1428"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statDescription,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 312
+        },
+        __self: this
+      }, "hours elapsed")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statBlock,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 314
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statTitle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 315
+        },
+        __self: this
+      }, "391"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndexService__statDescription,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 316
         },
         __self: this
       }, "cups of coffee consumed"))))));
@@ -24337,37 +24357,46 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var init = this.state.init;
       var topOffset = typeof window !== 'undefined' ? window.innerHeight : 690;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_1__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 327
+          lineNumber: 333
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328
+          lineNumber: 334
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "hidden",
+        value: init,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 329
+          lineNumber: 335
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 336
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "top",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 330
+          lineNumber: 337
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Saturn, {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__heroPlanet,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331
+          lineNumber: 338
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -24375,7 +24404,7 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 332
+          lineNumber: 339
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stickynode__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -24386,27 +24415,27 @@ function (_Component) {
         releasedClass: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.blend2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 333
+          lineNumber: 340
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.sideText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 334
+          lineNumber: 341
         },
         __self: this
       }, "Belka & Strelka, Inc")), this.renderHeroBlock(), this.renderForWhomBlock(), this.renderWYSIWYGBlock(), this.renderProcessBlock(), this.renderOnDemandBlock(), this.renderExpertiseBlock(), this.renderMissonControlBlock(), this.renderServicesBlock()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "bottom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 347
+          lineNumber: 354
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 348
+          lineNumber: 355
         },
         __self: this
       })));
