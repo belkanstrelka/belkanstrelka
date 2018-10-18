@@ -11,7 +11,9 @@ import { connect } from 'react-redux'
 import BnSHeaderView from './views/bnsv1';
 
 export default connect(({ header }) => {
-  // return { isOpen: header.isOpen }
+  return {
+    // isOpen: header.isOpen 
+  }
 }, {
   // toogleMenu
 })(BnSHeaderView)

@@ -34,25 +34,23 @@ class BnSHeaderView extends Component {
 
     return (
       <div className={css.header}>
-        <div className={appCss.bnsContainer}>
-          <div className={cn(cssFlex.flexHorizontal, css.header__wrapper)}>
-            <div className={css.header__title}>
-              Belka & Strelka
-            </div>
-            <div className={css.header__separator}></div>
-            <div>
-              <ul className={cn(css.header__submenu, css.breadcrumbs)}>
-                {links.map((l) => {
-                  return (
-                    <li className={css.header__submenuMenu}>
-                      <span>{l.title}</span>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-            <div className={cssFlex.flexSpacer}></div>
+        <div className={cn(cssFlex.flexHorizontal, css.header__wrapper)}>
+          <div className={css.header__title}>
+            Belka & Strelka
           </div>
+          <div className={css.header__separator}></div>
+          <div>
+            <ul className={cn(css.header__submenu, css.breadcrumbs)}>
+              {links.map((l, index) => {
+                return (
+                  <li className={css.header__submenuMenu} key={'menuItem' + index}>
+                    <span>{l.title}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+          <div className={cssFlex.flexSpacer}></div>
         </div>
       </div>
     )

@@ -16,11 +16,11 @@ class Index extends Component {
       <div>
         <NextSeo
           config={{
-            title: 'Title C',
-            description: 'Description C',
+            title: 'Design as a Service | Belka & Strelka',
+            description: 'Easiest way for startups and enterpises to upgrade digital products and focus on building great companies.',
           }}
         />
-
+        
         <IndexLanding />
       </div>
     )

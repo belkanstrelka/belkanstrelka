@@ -313,19 +313,22 @@ class Index extends Component {
   }
 
   render () {
+    const topOffset = typeof window !== 'undefined'
+      ? window.innerHeight
+      : 690;
+
     return (
       <ParallaxProvider>
         <div>
           <Header />
+          <div id='top' />
           <Saturn className={css.bnsIndex__heroPlanet} />
             <div id='product-container' className={css.bnsIndex}>
-              <div className={css.sideText}>
-                Belka & Strelka, Inc
-              </div>
-              {
-                // <Sticky top={400} bottomBoundary="#product-container">
-                // </Sticky>
-              }
+              <Sticky top={topOffset} bottomBoundary="#bottom" topBoundary="#top" activeClass={css.blend} releasedClass={css.blend2}>
+                <div className={css.sideText}>
+                  Belka & Strelka, Inc
+                </div>
+              </Sticky>
               {this.renderHeroBlock()}
               {this.renderForWhomBlock()}
               {this.renderWYSIWYGBlock()}
@@ -335,6 +338,7 @@ class Index extends Component {
               {this.renderMissonControlBlock()}
               {this.renderServicesBlock()}
             </div>
+          <div id='bottom' />
           <Footer />
         </div>
       </ParallaxProvider>

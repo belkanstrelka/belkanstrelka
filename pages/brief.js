@@ -16,8 +16,7 @@ class Brief extends Component {
       <div>
         <NextSeo
           config={{
-            title: 'Brief',
-            description: 'Description C',
+            title: 'Brief | Belka & Strelka'
           }}
         />
 
