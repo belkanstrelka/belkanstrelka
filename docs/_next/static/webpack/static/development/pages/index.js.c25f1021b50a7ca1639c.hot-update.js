@@ -1148,8 +1148,8 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       setTimeout(function () {
-        window.scrollTo(0, 10);
-      }, 300);
+        window.scrollTo(0, window.scrollY + 10);
+      }, 200);
     }
   }, {
     key: "renderHeroBlock",
@@ -1921,4 +1921,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.64c0b5c847809f76bea4.hot-update.js.map
+//# sourceMappingURL=index.js.c25f1021b50a7ca1639c.hot-update.js.map

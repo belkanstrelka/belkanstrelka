@@ -23648,8 +23648,8 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       setTimeout(function () {
-        window.scrollTo(0, 1);
-      }, 100);
+        window.scrollTo(0, window.scrollY || 0 + 1);
+      }, 300);
     }
   }, {
     key: "renderHeroBlock",
