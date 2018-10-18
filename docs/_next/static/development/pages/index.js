@@ -23669,7 +23669,7 @@ function (_Component) {
         _this2.setState({
           init: true
         });
-      }, 200);
+      }, 50);
     }
   }, {
     key: "renderHeroBlock",
