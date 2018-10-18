@@ -21428,7 +21428,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-seo */ "./node_modules/next-seo/dist/index.js");
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _src_js_modules_landings_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../src/js/modules/landings/index */ "./src/js/modules/landings/index/index.js");
-var _jsxFileName = "/Users/slavik/Desktop/newNextJS/pages/index.js";
+var _jsxFileName = "/Users/slavik/Desktop/bextJs/pages/index.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -21476,8 +21476,8 @@ function (_Component) {
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_seo__WEBPACK_IMPORTED_MODULE_2___default.a, {
         config: {
-          title: 'Title C',
-          description: 'Description C'
+          title: 'Design as a Service | Belka & Strelka',
+          description: 'Easiest way for startups and enterpises to upgrade digital products and focus on building great companies.'
         },
         __source: {
           fileName: _jsxFileName,
@@ -21561,7 +21561,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/js/modules/common/btn/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/slavik/Desktop/newNextJS/src/js/modules/common/btn/index.js";
+var _jsxFileName = "/Users/slavik/Desktop/bextJs/src/js/modules/common/btn/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -21680,7 +21680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var modules_layouts_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! modules/_layouts/flex */ "./src/js/modules/_layouts/flex/index.js");
 /* harmony import */ var _footer_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer.style.scss */ "./src/js/modules/common/footer/footer.style.scss");
 /* harmony import */ var _footer_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_footer_style_scss__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/slavik/Desktop/newNextJS/src/js/modules/common/footer/index.js";
+var _jsxFileName = "/Users/slavik/Desktop/bextJs/src/js/modules/common/footer/index.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -22334,9 +22334,10 @@ __webpack_require__.r(__webpack_exports__);
 // import InstagramHeaderView from './views/instagram';
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(function (_ref) {// return { isOpen: header.isOpen }
-
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(function (_ref) {
   var header = _ref.header;
+  return {// isOpen: header.isOpen 
+  };
 }, {// toogleMenu
 })(_views_bnsv1__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
@@ -22362,7 +22363,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var modules_layouts_flex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! modules/_layouts/flex */ "./src/js/modules/_layouts/flex/index.js");
 /* harmony import */ var _header_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header.style.scss */ "./src/js/modules/common/header/views/bnsv1/header.style.scss");
 /* harmony import */ var _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_header_style_scss__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/slavik/Desktop/newNextJS/src/js/modules/common/header/views/bnsv1/index.js";
+var _jsxFileName = "/Users/slavik/Desktop/bextJs/src/js/modules/common/header/views/bnsv1/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -22432,58 +22433,52 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: scss_app_scss__WEBPACK_IMPORTED_MODULE_3___default.a.bnsContainer,
+        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_4__["default"].flexHorizontal, _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__wrapper),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(modules_layouts_flex__WEBPACK_IMPORTED_MODULE_4__["default"].flexHorizontal, _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__wrapper),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 38
         },
         __self: this
       }, "Belka & Strelka"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__separator,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 41
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(_header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__submenu, _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.breadcrumbs),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 43
         },
         __self: this
-      }, links.map(function (l) {
+      }, links.map(function (l, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: _header_style_scss__WEBPACK_IMPORTED_MODULE_5___default.a.header__submenuMenu,
+          key: 'menuItem' + index,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 46
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 47
           },
           __self: this
         }, l.title));
@@ -22491,10 +22486,10 @@ function (_Component) {
         className: modules_layouts_flex__WEBPACK_IMPORTED_MODULE_4__["default"].flexSpacer,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 53
         },
         __self: this
-      }))));
+      })));
     }
   }]);
 
@@ -22530,7 +22525,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var modules_layouts_flex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! modules/_layouts/flex */ "./src/js/modules/_layouts/flex/index.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.scss */ "./src/js/modules/landings/index/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/Users/slavik/Desktop/newNextJS/src/js/modules/landings/index/index.js";
+var _jsxFileName = "/Users/slavik/Desktop/bextJs/src/js/modules/landings/index/index.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -24335,29 +24330,37 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var topOffset = typeof window !== 'undefined' ? window.innerHeight : 690;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_1__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 317
+          lineNumber: 321
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 318
+          lineNumber: 322
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_header__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 319
+          lineNumber: 323
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "top",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 324
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Saturn, {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex__heroPlanet,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 320
+          lineNumber: 325
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -24365,20 +24368,38 @@ function (_Component) {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.bnsIndex,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 321
+          lineNumber: 326
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stickynode__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        top: topOffset,
+        bottomBoundary: "#bottom",
+        topBoundary: "#top",
+        activeClass: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.blend,
+        releasedClass: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.blend2,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 327
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _style_scss__WEBPACK_IMPORTED_MODULE_9___default.a.sideText,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 322
+          lineNumber: 328
         },
         __self: this
-      }, "Belka & Strelka, Inc"), this.renderHeroBlock(), this.renderForWhomBlock(), this.renderWYSIWYGBlock(), this.renderProcessBlock(), this.renderOnDemandBlock(), this.renderExpertiseBlock(), this.renderMissonControlBlock(), this.renderServicesBlock()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Belka & Strelka, Inc")), this.renderHeroBlock(), this.renderForWhomBlock(), this.renderWYSIWYGBlock(), this.renderProcessBlock(), this.renderOnDemandBlock(), this.renderExpertiseBlock(), this.renderMissonControlBlock(), this.renderServicesBlock()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "bottom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 338
+          lineNumber: 341
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 342
         },
         __self: this
       })));

@@ -1100,6 +1100,7 @@ q {
   margin-right: 25px; }
 
 .header___2JlV2 {
+  padding: 0 48px;
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975); }
   .header__submenu___12Jgv {
@@ -1564,6 +1565,12 @@ q {
   align-items: center;
   justify-content: center; }
 
+.blend2___2mGp-,
+.blend___jacpM {
+  backface-visibility: hidden;
+  color: #fdfffc;
+  mix-blend-mode: difference; }
+
 .sideText___3ByIS {
   z-index: 605;
   float: left;
@@ -1575,12 +1582,7 @@ q {
   text-decoration: none;
   transform-origin: left top;
   transform: translate3d(calc(var(--body-border-width, 20px) * 2 / 1 + 0px), 0, 0) rotate(-90deg);
-  transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
-  backface-visibility: hidden;
-  color: #fdfffc;
-  mix-blend-mode: difference; }
-  .sideText__abs___3FstA {
-    position: absolute; }
+  transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1); }
 
 .forWhom___28nQg {
   margin: 64px 0; }
