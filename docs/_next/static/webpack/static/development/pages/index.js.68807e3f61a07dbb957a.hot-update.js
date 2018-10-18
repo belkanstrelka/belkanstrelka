@@ -1872,6 +1872,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_stickynode__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        enabled: true,
         top: topOffset,
         bottomBoundary: "#bottom",
         topBoundary: "#top",
@@ -1914,4 +1915,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.5407a29dadfa2f737028.hot-update.js.map
+//# sourceMappingURL=index.js.68807e3f61a07dbb957a.hot-update.js.map

@@ -1889,17 +1889,17 @@ function (_Component) {
           lineNumber: 328
         },
         __self: this
-      }, "Belka & Strelka, Inc 123")), this.renderHeroBlock(), this.renderForWhomBlock(), this.renderWYSIWYGBlock(), this.renderProcessBlock(), this.renderOnDemandBlock(), this.renderExpertiseBlock(), this.renderMissonControlBlock(), this.renderServicesBlock()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Belka & Strelka, Inc")), this.renderHeroBlock(), this.renderForWhomBlock(), this.renderWYSIWYGBlock(), this.renderProcessBlock(), this.renderOnDemandBlock(), this.renderExpertiseBlock(), this.renderMissonControlBlock(), this.renderServicesBlock()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "bottom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 342
+          lineNumber: 341
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(modules_common_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 343
+          lineNumber: 342
         },
         __self: this
       })));
@@ -1914,4 +1914,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.f5cd44f4cfa54a2c9953.hot-update.js.map
+//# sourceMappingURL=index.js.29b6acda3e9c80a41e78.hot-update.js.map

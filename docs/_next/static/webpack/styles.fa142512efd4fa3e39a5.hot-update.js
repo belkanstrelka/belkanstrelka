@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
 /***/ "./src/js/modules/_layouts/flex/style.scss":
 /*!*************************************************!*\
@@ -188,45 +188,7 @@ module.exports = {"parallaxChildren":"parallaxChildren___3gye6","blend2":"blend2
     }
   
 
-/***/ }),
-
-/***/ "./src/scss/app.scss":
-/*!***************************!*\
-  !*** ./src/scss/app.scss ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-module.exports = {"bnsContainer":"bnsContainer___1UN__","bnsContainer_w720":"bnsContainer_w720___1CRbI","bnsContainer_w860":"bnsContainer_w860___257zn"};;
-    if (true) {
-      var injectCss = function injectCss(prev, href) {
-        var link = prev.cloneNode();
-        link.href = href;
-        link.onload = function() {
-          prev.parentNode.removeChild(prev);
-        };
-        prev.stale = true;
-        prev.parentNode.insertBefore(link, prev);
-      };
-      module.hot.dispose(function() {
-        window.__webpack_reload_css__ = true;
-      });
-      if (window.__webpack_reload_css__) {
-        module.hot.__webpack_reload_css__ = false;
-        console.log("[HMR] Reloading stylesheets...");
-        var prefix = document.location.protocol + '//' + document.location.host;
-        document
-          .querySelectorAll("link[href][rel=stylesheet]")
-          .forEach(function(link) {
-            if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1539821120715");
-          });
-      }
-    }
-  
-
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.fa142512efd4fa3e39a5.hot-update.js.map
