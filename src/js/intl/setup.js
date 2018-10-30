@@ -1,13 +1,26 @@
-import landingData from 'modules/landing/i18n'
+import { addLocaleData } from 'react-intl'
+
+import ru from 'react-intl/locale-data/ru'
+import en from 'react-intl/locale-data/en'
+
+import headerData from 'modules/common/header/i18n'
+import footerData from 'modules/common/footer/i18n'
+
+import landingData from 'modules/landings/index/i18n'
 // import authData from 'modules/auth/i18n'
 
-export const enabledLanguages = [
-  'en-US',
-  'ru-RU',
-]
+const enName = 'en-US';
+const ruName = 'ru-RU';
 
+export const enabledLanguages = [
+  enName,
+  ruName,
+]
 export const localizationData = {}
-import { addLocaleData } from 'react-intl'
+export const getBrowserLocale = () => {
+  return ruName
+  return enName
+}
 
 function flattenMessages(nestedMessages = {}, prefix = '') {
   return Object.keys(nestedMessages).reduce((messages, key) => {
@@ -24,34 +37,29 @@ function flattenMessages(nestedMessages = {}, prefix = '') {
   }, {})
 }
 
-// polyfill
-// import 'intl/locale-data/jsonp/en'
-import en from 'react-intl/locale-data/en'
-
 const enData = {
-  locale: 'en-US',
+  locale: enName,
   messages: {
     ...landingData.en,
+    ...headerData.en,
+    ...footerData.en,
     // ...authData.en,
   },
 }
-
 addLocaleData(en)
-localizationData['en-US'] = enData
-localizationData['en-US'].messages = flattenMessages(localizationData['en-US'].messages)
+localizationData[enName] = enData
+localizationData[enName].messages = flattenMessages(localizationData['en-US'].messages)
 
-// polyfill
-// import 'intl/locale-data/jsonp/fr'
-import fr from 'react-intl/locale-data/ru'
 
-const frData = {
-  locale: 'ru-RU',
+const ruData = {
+  locale: ruName,
   messages: {
     ...landingData.ru,
+    ...headerData.ru,
+    ...footerData.ru,
     // ...authData.ru,
   },
 }
-
-addLocaleData(fr)
-localizationData['ru-RU'] = frData
-localizationData['ru-RU'].messages = flattenMessages(localizationData['ru-RU'].messages)
+addLocaleData(ru)
+localizationData[ruName] = ruData
+localizationData[ruName].messages = flattenMessages(localizationData['ru-RU'].messages)

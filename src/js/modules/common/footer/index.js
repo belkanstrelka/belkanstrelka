@@ -4,6 +4,8 @@
 import { Component } from 'react'
 import cn from 'classnames'
 
+import { FormattedHTMLMessage as I18N } from 'react-intl'
+
 import appCss from 'scss/app.scss'
 import css from './footer.style.scss';
 
@@ -35,10 +37,10 @@ class Footer extends Component {
 
             <div className={css.footer__contactBlock}>
               <div className={css.footer__title}>
-                Get in touch
+                <I18N id={'footer.links.touch'} />
               </div>
               <div className={css.footer__text}>
-                hello@belkanstrelka.com
+                hello@bebelka.com
               </div>
             </div>
 
@@ -57,14 +59,20 @@ class Footer extends Component {
             </div>
 
             <div className={css.footer__privacyBlock}>
-              <div className={css.footer__title}>More</div>
-              <a className={cn(css.footer__link, css.footer__text)}>Terms & Conditions</a>
-              <a className={cn(css.footer__link, css.footer__text)}>Privacy Policy</a>
+              <div className={css.footer__title}>
+                <I18N id={'footer.links.more'} />
+              </div>
+              <a className={cn(css.footer__link, css.footer__text)}>
+                <I18N id={'footer.more.terms'} />
+              </a>
+              <a className={cn(css.footer__link, css.footer__text)}>
+                <I18N id={'footer.more.privacy'} />
+              </a>
             </div>
 
             <div className={css.footer__paymentsBlock}>
               <div className={css.footer__title}>
-                Digital payments are protected:
+                <I18N id={'footer.links.payments'} />
               </div>
               <div>
                 <Visa className={css.footer__payment} />

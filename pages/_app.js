@@ -4,12 +4,13 @@ import { PageTransition } from 'next-page-transitions'
 import withReduxStore from 'lib/with-redux-store'
 
 import { Provider } from 'react-redux'
+import { IntlProvider } from 'react-intl-redux';
 
 import NextSeo from 'next-seo';
 // import baseCss from 'scss/app.scss';
 // import Loader from '../src/js/components/Loader'
 
-import SEO from '../src/js/next-seo.config';
+import SEO from 'next-seo.config';
 
 const TIMEOUT = 350
 
@@ -63,7 +64,9 @@ class MyApp extends App {
             loadingClassNames='loading-indicator'
           >
             <Provider store={reduxStore}>
-              <Component {...pageProps} />
+              <IntlProvider>
+                <Component {...pageProps} />
+              </IntlProvider>
             </Provider>
           </PageTransition>
         )}

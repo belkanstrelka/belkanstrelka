@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
+import { FormattedHTMLMessage as I18N } from 'react-intl'
+
 import cn from 'classnames'
 import Link from 'next/link'
 // import Reveal from 'react-reveal/Reveal';
@@ -56,22 +58,8 @@ class BnSHeaderView extends Component {
   }
 
   render () {
-    const { style, isOpen, toogleMenu } = this.props
+    const { style, isOpen, toogleMenu, links } = this.props
     const { show } = this.state
-
-    const links = [{
-      href: '/brief',
-      title: 'Brief us'
-    }, {
-      href: '/#process',
-      title: 'Our Process'
-    }, {
-      href: '/#services',
-      title: 'Services'
-    }, {
-      href: '/#mission',
-      title: 'Mission'
-    }]
 
     return (
       <div className={cn({
@@ -91,7 +79,9 @@ class BnSHeaderView extends Component {
                 return (
                   <li className={css.header__submenuMenu} key={'menuItem' + index}>
                     <Link href={l.href} scroll={false}>
-                      <a>{l.title}</a>
+                      <a>
+                        <I18N id={l.title} />
+                      </a>
                     </Link>
                   </li>
                 )

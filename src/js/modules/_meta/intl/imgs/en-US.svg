@@ -1,0 +1,79 @@
+<svg width="23" height="16" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Mask Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-12731 -1296)">
+<g id="Mask Group">
+<g id="Rectangle 7">
+<use xlink:href="#en-US_a" transform="translate(12731 1299)" fill="#E83C3C"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_b" transform="translate(12731 1296)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_a" transform="translate(12731 1303)" fill="#E83C3C"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_a" transform="translate(12731 1301)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_a" transform="translate(12731 1307)" fill="#E83C3C"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_a" transform="translate(12731 1305)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 7">
+<use xlink:href="#en-US_c" transform="translate(12732 1309)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 5 (Stroke)">
+<use xlink:href="#en-US_d" transform="translate(12731 1296)" fill="#BDC6D0"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_e" transform="translate(12732 1297)" fill="#3C95E8"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12734 1298)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12736 1298)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12738 1298)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12740 1298)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12734 1300)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12736 1300)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12738 1300)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12740 1300)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12734 1302)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12736 1302)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12738 1302)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 11">
+<use xlink:href="#en-US_f" transform="matrix(-1 0 0 1 12740 1302)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="en-US_a" d="M 0 0L 23 0L 23 2L 0 2L 0 0Z"/>
+<path id="en-US_b" d="M 0 2C 0 0.895431 0.895431 0 2 0L 21 0C 22.1046 0 23 0.895431 23 2L 23 3L 0 3L 0 2Z"/>
+<path id="en-US_c" d="M 0 0L 21 0L 21 2L 0 2L 0 0Z"/>
+<path id="en-US_d" fill-rule="evenodd" d="M 21 1L 2 1C 1.44772 1 1 1.44772 1 2L 1 14C 1 14.5523 1.44772 15 2 15L 21 15C 21.5523 15 22 14.5523 22 14L 22 2C 22 1.44772 21.5523 1 21 1ZM 2 0C 0.895431 0 0 0.895431 0 2L 0 14C 0 15.1046 0.895431 16 2 16L 21 16C 22.1046 16 23 15.1046 23 14L 23 2C 23 0.895431 22.1046 0 21 0L 2 0Z"/>
+<path id="en-US_e" d="M 0 0L 9 0L 9 8L 0 8L 0 0Z"/>
+<path id="en-US_f" d="M 0 0L 1 0L 1 1L 0 1L 0 0Z"/>
+</defs>
+</svg>

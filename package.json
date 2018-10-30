@@ -15,6 +15,7 @@
   "dependencies": {
     "body-scroll-lock": "^2.5.10",
     "classnames": "^2.2.6",
+    "js-cookie": "^2.2.0",
     "next": "^7.0.0",
     "next-page-transitions": "^1.0.0-alpha.4",
     "next-seo": "^1.2.0",
@@ -23,6 +24,8 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.0.0",
     "react-dropzone": "^7.0.1",
+    "react-intl": "^2.7.2",
+    "react-intl-redux": "^2.0.2",
     "react-phone-number-input": "^2.2.15",
     "react-redux": "^5.0.1",
     "react-redux-form": "^1.16.10",

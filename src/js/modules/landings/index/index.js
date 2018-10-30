@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
+import { FormattedHTMLMessage as I18N } from 'react-intl'
+
 // import { StickyContainer, Sticky } from 'react-sticky'
 import Link from 'next/link'
 import Sticky from 'react-stickynode';
@@ -42,7 +44,7 @@ class Index extends Component {
   componentDidMount () {
     setTimeout(() => {
       this.setState({ init: true });
-    }, 50)
+    }, 10)
 
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -95,14 +97,13 @@ class Index extends Component {
         >
           <div className={css.bnsHero__parallaxChild}>
             <div className={appCss.bnsContainer}>
-              <h1 className={css.bnsIndex__title}>Design as a service</h1>
+              <h1 className={css.bnsIndex__title}><I18N id={'landing.index.hero.title'} /></h1>
               <div className={css.bnsIndex__description}>
-                Easiest way for startups and enterpises to upgrade
-                digital products and focus on building great companies.
+                <I18N id={'landing.index.hero.description'} />
               </div>
               <Link href={'/brief'}>
                 <Btn className={css.bnsIndex__action}>
-                  Brief us
+                  <I18N id={'landing.index.hero.btn'} />
                 </Btn>
               </Link>
             </div>
@@ -115,24 +116,23 @@ class Index extends Component {
   renderForWhomBlock () {
     const items = [{
       icon: Satellite,
-      text: 'Launching  products with early stage startups'
+      text: 'landing.index.forWhom.items.small'
     }, {
       icon: ManOnTheMoon,
-      text: 'Achieving new goals with medium business'
+      text: 'landing.index.forWhom.items.medium'
     }, {
       icon: Rocket,
-      text: 'Brainstorming creative solutions for corporations'
+      text: 'landing.index.forWhom.items.large'
     }];
 
     return (
       <div className={cn(css.bnsIndex__forWhom, css.bnsForWhom)}>
         <div className={appCss.bnsContainer}>
           <h2 className={css.bnsIndex__title}>
-            You brief. We do.
+            <I18N id={'landing.index.forWhom.title'} />
           </h2>
           <div className={css.bnsIndex__description}>
-            AI-boosted design processes that never miss deadlines,
-            increase transparency and promote collaboration not knockoffs.
+            <I18N id={'landing.index.forWhom.description'} />
           </div>
           <div className={css.bnsForWhom__items}>
             {items.map((item, index) => {
@@ -142,7 +142,7 @@ class Index extends Component {
                 <div className={cn(cssFlex.flexSpacer, css.bnsForWhom__item)} key={`forWhome${index}`}>
                   <Icon className={css.bnsForWhom__icon} />
                   <div className={css.bnsForWhom__description}>
-                    {item.text}
+                    <I18N id={item.text} />
                   </div>
                 </div>
               )
@@ -151,7 +151,7 @@ class Index extends Component {
           <div className={css.bnsIndex__actionWrapper}>
             <Link href={'/brief'}>
               <Btn className={css.bnsIndex__action}>
-                Brief us
+                <I18N id={'landing.index.forWhom.btn'} />
               </Btn>
             </Link>
           </div>
@@ -166,10 +166,10 @@ class Index extends Component {
           <div className={css.bnsWYSIWYG__wrapper}>
             <div className={css.bnsMission__titleBlock}>
               <h2 className={css.bnsIndex__title}>
-                A WYSIWYG* process
+                <I18N id={'landing.index.WYSIWYG.title'} />
               </h2>
               <div>
-                *what you see is what you get
+                <I18N id={'landing.index.WYSIWYG.description'} />
               </div>
             </div>
             <div className={css.bnsMission__iconBlock}>
@@ -182,17 +182,17 @@ class Index extends Component {
   }
   renderProcessBlock () {
     const steps = [{
-      title: 'Fill in a brief',
-      description: 'We will dispatch the right people right away.',
+      title: 'landing.index.process.steps.step1.title',
+      description: 'landing.index.process.steps.step1.description',
     }, {
-      title: 'Come to an interview',
-      description: 'Our team dives into your goals and layouts the project timeline.',
+      title: 'landing.index.process.steps.step2.title',
+      description: 'landing.index.process.steps.step2.description',
     }, {
-      title: 'Approve sprints & track',
-      description: 'We report after each sprint and take your feedback.',
+      title: 'landing.index.process.steps.step3.title',
+      description: 'landing.index.process.steps.step3.description',
     }, {
-      title: 'Get results & pay',
-      description: 'You only get charged for delivered work.',
+      title: 'landing.index.process.steps.step4.title',
+      description: 'landing.index.process.steps.step4.description',
     }];
 
     return (
@@ -202,15 +202,17 @@ class Index extends Component {
             {steps.map((processStep, index)=>{
               return (
                 <div key={'process' + index} className={cn(css.bnsProcess__item)}>
-                  <div className={css.bnsProcess__itemTitle}>{index + 1}. {processStep.title}</div>
+                  <div className={css.bnsProcess__itemTitle}>{index + 1}. <I18N id={processStep.title} /></div>
                   <div className={css.bnsProcess__itemSeparator}></div>
-                  <div className={css.bnsProcess__itemText}>{processStep.description}</div>
+                  <div className={css.bnsProcess__itemText}><I18N id={processStep.description} /></div>
                 </div>
               )
             })}
           </div>
           <Link href={'/brief'}>
-            <Btn className={css.bnsIndex__action}>See in Action</Btn>
+            <Btn className={css.bnsIndex__action}>
+              <I18N id={'landing.index.process.btn'} />
+            </Btn>
           </Link>
         </div>
       </div>
@@ -219,30 +221,30 @@ class Index extends Component {
   renderOnDemandBlock () {
     const steps = [{
       icon: Invoice,
-      title: 'Easy payments',
-      description: 'We do e-invoicing and accept all major credit cards online ',
+      title: 'landing.index.onDemand.items.item1.title',
+      description: 'landing.index.onDemand.items.item1.description',
     }, {
       icon: Calendar,
-      title: 'No holidays or lunch breaks',
-      description: '24/7 access to your project dashboard, materials, tracking, billing and support.',
+      title: 'landing.index.onDemand.items.item2.title',
+      description: 'landing.index.onDemand.items.item2.description',
     }, {
       icon: Paperless,
-      title: 'Paperless',
-      description: 'Digital contracts with liabilities in the US, EU, Singapore and Russia.',
+      title: 'landing.index.onDemand.items.item3.title',
+      description: 'landing.index.onDemand.items.item3.description',
     }, {
       icon: Earth,
-      title: 'Truly global',
-      description: 'Available virtually anywhere in English, Spanish, Chinese and Russian :)  ',
+      title: 'landing.index.onDemand.items.item4.title',
+      description: 'landing.index.onDemand.items.item4.description',
     }];
 
     return (
       <div id='services' className={cn(css.bnsIndex__onDemand, css.bnsOnDemand)}>
         <div className={appCss.bnsContainer}>
           <h2 className={css.bnsIndex__title}>
-            Design studio on demand
+            <I18N id={'landing.index.onDemand.title'} />
           </h2>
           <div className={css.bnsIndex__description}>
-            First 100% online service that delivers Silicon Valley class design to your office.
+            <I18N id={'landing.index.onDemand.description'} />
           </div>
           <div className={cn(css.bnsOnDemand__items)}>
             {steps.map((processStep, index)=>{
@@ -256,10 +258,10 @@ class Index extends Component {
                     </div>
                     <div className={cssFlex.flexSpacer}>
                       <div className={cn(css.bnsOnDemand__itemTitle)}>
-                        {processStep.title}
+                        <I18N id={processStep.title} />
                       </div>
                       <div className={cn(css.bnsOnDemand__itemText)}>
-                        {processStep.description}
+                        <I18N id={processStep.description} />
                       </div>
                     </div>
                   </div>
@@ -268,7 +270,9 @@ class Index extends Component {
             })}
           </div>
           <Link href={'/brief'}>
-            <Btn className={css.bnsIndex__action}>Summon our team</Btn>
+            <Btn className={css.bnsIndex__action}>
+              <I18N id={'landing.index.onDemand.btn'} />
+            </Btn>
           </Link>
         </div>
       </div>
@@ -277,29 +281,31 @@ class Index extends Component {
   renderExpertiseBlock () {
     const expertise = [{
       icon: Painting,
-      title: 'UX & Design',
-      description: 'From ideation and paper sketches to interactive prototypes and customer development.'
+      title: 'landing.index.expertise.items.item1.title',
+      description: 'landing.index.expertise.items.item1.description',
     }, {
       icon: Laptop,
-      title: 'Usability',
-      description: 'User testing, focus group interview, heuristic evaluation - everything to make sure your product works as expected.'
+      title: 'landing.index.expertise.items.item2.title',
+      description: 'landing.index.expertise.items.item2.description',
     }, {
       icon: Analytics,
-      title: 'Analytics',
-      description: 'An effective set of tools to learn about your target audience, competitors, product performance.'
+      title: 'landing.index.expertise.items.item3.title',
+      description: 'landing.index.expertise.items.item3.description',
     }, {
       icon: Consulting,
-      title: 'Consulting',
-      description: 'In case your business needs some tips on conquering digital channels.'
+      title: 'landing.index.expertise.items.item4.title',
+      description: 'landing.index.expertise.items.item4.description',
     }];
 
     return (
       <div id='expertise' className={cn(css.bnsIndex__expertise, css.bnsExpertise)}>
         <div className={appCss.bnsContainer}>
           <div>
-            <h2 className={css.bnsIndex__title}>Core expertise</h2>
+            <h2 className={css.bnsIndex__title}>
+              <I18N id={'landing.index.expertise.title'} />
+            </h2>
             <div className={css.bnsIndex__description}>
-              Top notch skills and knoweledge at your conveniece
+              <I18N id={'landing.index.expertise.description'} />
             </div>
           </div>
           <div className={css.bnsExpertise__items}>
@@ -311,10 +317,10 @@ class Index extends Component {
                   <Icon className={cn(css.bnsExpertise__itemIcon)} />
                   <div className={cn(css.bnsExpertise__itemInfo)}>
                     <div className={cn(css.bnsExpertise__itemTitle)}>
-                      {exp.title}
+                      <I18N id={exp.title} />
                     </div>
                     <div className={cn(css.bnsExpertise__itemText)}>
-                      {exp.description}
+                      <I18N id={exp.description} />
                     </div>
                   </div>
                 </div>
@@ -322,10 +328,12 @@ class Index extends Component {
             })}
           </div>
           <div className={css.bnsIndex__description}>
-            Need a tailored solution?
+            <I18N id={'landing.index.expertise.btnLbl'} />
           </div>
           <Link href={'/brief'}>
-            <Btn className={css.bnsIndex__action}>Let us know </Btn>
+            <Btn className={css.bnsIndex__action}>
+              <I18N id={'landing.index.expertise.btn'} />
+            </Btn>
           </Link>
         </div>
       </div>
@@ -338,7 +346,7 @@ class Index extends Component {
           <div className={css.bnsMission__wrapper}>
             <div className={css.bnsMission__titleBlock}>
               <h2 className={css.bnsIndex__title}>
-                Mission control center
+                <I18N id={'landing.index.mission.title'} />
               </h2>
             </div>
             <div className={css.bnsMission__iconBlock}>
@@ -355,34 +363,39 @@ class Index extends Component {
         <div className={appCss.bnsContainer}>
           <div className={css.bnsService__wrapper}>
             <div className={css.bnsService__infoBlock}>
-              <p className={css.bnsService__accent}>We are game changers.</p>
-              <p>
-                Our mission is to make best practicies in design,
-                user experience and product managment accessible for enterprenuers
-                all over the World, so they can focus on what matters.
+              <p className={css.bnsService__accent}>
+                <I18N id={'landing.index.mission.info.title'} />
               </p>
               <p>
-                For designers, we are building an automative work
-                environement that supports creative process.
+                <I18N id={'landing.index.mission.info.p1'} />
+              </p>
+              <p>
+                <I18N id={'landing.index.mission.info.p2'} />
               </p>
               <p className={css.bnsService__subscribtion}>
                 <span className={css.bnsService__accent}>
-                  Want to learn more abour Design, UX and Product Managment?
-                </span> Subscribe to our monthly newsletter.
+                  <I18N id={'landing.index.mission.subscribtion.title'} />
+                </span> <I18N id={'landing.index.mission.subscribtion.p'} />
               </p>
             </div>
             <div className={css.bnsService__statsBlock}>
               <div className={css.bnsService__statItem}>
                 <div className={css.bnsService__statItemTitle}>27</div>
-                <div className={css.bnsService__statItemDescription}>missions completed</div>
+                <div className={css.bnsService__statItemDescription}>
+                  <I18N id={'landing.index.mission.stats.completed'} />
+                </div>
               </div>
               <div className={css.bnsService__statItem}>
                 <div className={css.bnsService__statItemTitle}>1428</div>
-                <div className={css.bnsService__statItemDescription}>hours elapsed</div>
+                <div className={css.bnsService__statItemDescription}>
+                  <I18N id={'landing.index.mission.stats.hoursElapsed'} />
+                </div>
               </div>
               <div className={css.bnsService__statItem}>
                 <div className={css.bnsService__statItemTitle}>397</div>
-                <div className={css.bnsService__statItemDescription}>cups of coffee consumed</div>
+                <div className={css.bnsService__statItemDescription}>
+                  <I18N id={'landing.index.mission.stats.coffee'} />
+                </div>
               </div>
             </div>
           </div>

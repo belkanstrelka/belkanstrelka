@@ -5,7 +5,7 @@ import Header from 'modules/common/header'
 import Footer from 'modules/common/footer'
 import Btn from 'modules/common/btn'
 
-// import Dropzone from 'react-dropzone'
+import Dropzone from 'react-dropzone'
 
 import Input from 'modules/_forms/input';
 import Textarea from 'modules/_forms/textarea';
@@ -101,6 +101,15 @@ import css from './style.scss'
 
 
 class Brief extends Component {
+  constructor() {
+    super()
+    this.state = {
+      accept: '',
+      files: [],
+      dropzoneActive: false
+    }
+  }
+
   renderCheckboxList (props) {
     const { title, name, items } = props;
 
@@ -116,99 +125,144 @@ class Brief extends Component {
     )
   }
 
+  onDrop = (files) => {
+    this.setState({
+      files,
+      dropzoneActive: false
+    });
+  }
+
+  onDragEnter = () => {
+    this.setState({
+      dropzoneActive: true
+    });
+  }
+
+  onDragLeave = () => {
+    this.setState({
+      dropzoneActive: false
+    });
+  }
+
   render () {
+    const { accept, files, dropzoneActive } = this.state;
+    
+    const overlayStyle = {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      padding: '2.5em 0',
+      background: 'rgba(255, 255, 255, 0.95)',
+      textAlign: 'center',
+      zIndex: 100500,
+      color: '#000'
+    };
+
     return (
       <div>
         <Header />
-        <div className={cn(appCss.bnsContainer, css.bnsBrief)}>
-          <h1 className={css.bnsBrief__title}>Complete the brief</h1>
-          <p className={css.bnsBrief__description}>
-            or see our youtube video on why briefing is so important
-          </p>
+        <Dropzone
+          disableClick
+          style={{ position: "relative" }}
+          onDrop={this.onDrop}
+          onDragEnter={this.onDragEnter}
+          onDragLeave={this.onDragLeave}
+        >
+          { dropzoneActive && <div style={overlayStyle}>Drop files...</div> }
+          <div className={cn(appCss.bnsContainer)}>
+            <div className={cn(css.bnsBrief)}>
+              <h1 className={css.bnsBrief__title}>Complete the brief</h1>
+              <p className={css.bnsBrief__description}>
+                or see our youtube video on why briefing is so important
+              </p>
 
-          <div className={css.bnsBrief__form}>
-            { this.renderCheckboxList({
-              title: 'Where can we help?',
-              items: [
-                { name: 'UX & Design'},
-                { name: 'Usability'},
-                { name: 'Analytics'},
-                { name: 'UX & Design'},
-              ]
-            }) }
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                Tell us about your company in two sentences.
-              </label>
-              <Textarea placeholder='What you do and how you make money.' />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                Please share project URL, if any:
-              </label>
-              <Input
-                type='phone'
-                placeholder='What you do and how you make money.'
-              />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                What do you want to get as a result of our collaboration? (or upload specs)
-              </label>
-              <Textarea placeholder='What is there for us to do? Who is going to use it and how will it help your business.' />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              { this.renderCheckboxList({
-                title: 'Which channels are we going to work with? ',
-                items: [
-                  { name: 'Web'},
-                  { name: 'Mobile web'},
-                  { name: 'iOS'},
-                  { name: 'Android'},
-                ]
-              }) }
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                How is this project going to affect your business?
-              </label>
-              <Textarea placeholder='Please tell us about any interconnected business goals' />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                Who are your main competitors, please include links
-              </label>
-              <Input placeholder='https://' />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              { this.renderCheckboxList({
-                title: 'When are the deadlines approaching?',
-                items: [
-                  { name: 'Days'},
-                  { name: 'Weeks'},
-                  { name: 'Months'},
-                ]
-              }) }
-            </div>
-            {
-              // <DropzoneWithPreview />  
-            }
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                If any, links to great products you and your team like
-              </label>
-              <Input placeholder='https://' />
-            </div>
-            <div className={css.bnsBrief__formControl}>
-              <label className={css.bnsBrief__formLabel}>
-                Who should we contact regarding this brief?
-              </label>
-              <Input placeholder='Name' />
-              <Input placeholder='E-mail' />
-              <Input placeholder='Position' />
+              <div className={css.bnsBrief__form}>
+                { this.renderCheckboxList({
+                  title: 'Where can we help?',
+                  items: [
+                    { name: 'UX & Design'},
+                    { name: 'Usability'},
+                    { name: 'Analytics'},
+                    { name: 'UX & Design'},
+                  ]
+                }) }
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    Tell us about your company in two sentences.
+                  </label>
+                  <Textarea placeholder='What you do and how you make money.' />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    Please share project URL, if any:
+                  </label>
+                  <Input
+                    type='phone'
+                    placeholder='What you do and how you make money.'
+                  />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    What do you want to get as a result of our collaboration? (or upload specs)
+                  </label>
+                  <Textarea placeholder='What is there for us to do? Who is going to use it and how will it help your business.' />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  { this.renderCheckboxList({
+                    title: 'Which channels are we going to work with? ',
+                    items: [
+                      { name: 'Web'},
+                      { name: 'Mobile web'},
+                      { name: 'iOS'},
+                      { name: 'Android'},
+                    ]
+                  }) }
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    How is this project going to affect your business?
+                  </label>
+                  <Textarea placeholder='Please tell us about any interconnected business goals' />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    Who are your main competitors, please include links
+                  </label>
+                  <Input placeholder='https://' />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  { this.renderCheckboxList({
+                    title: 'When are the deadlines approaching?',
+                    items: [
+                      { name: 'Days'},
+                      { name: 'Weeks'},
+                      { name: 'Months'},
+                    ]
+                  }) }
+                </div>
+                {
+                  // <DropzoneWithPreview />
+                }
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    If any, links to great products you and your team like
+                  </label>
+                  <Input placeholder='https://' />
+                </div>
+                <div className={css.bnsBrief__formControl}>
+                  <label className={css.bnsBrief__formLabel}>
+                    Who should we contact regarding this brief?
+                  </label>
+                  <Input placeholder='Name' />
+                  <Input placeholder='E-mail' />
+                  <Input placeholder='Position' />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </Dropzone>
       </div>
     )
   }

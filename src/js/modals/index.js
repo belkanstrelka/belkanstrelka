@@ -5,7 +5,7 @@ const LoadingComp = {
 }
 
 const Templates = {
-  'common/menu': dynamic(import('modules/common/header/menu'))
+  'common/menu': dynamic(import('modules/common/header/views/mobileMenu'))
 };
 
 export default Templates;

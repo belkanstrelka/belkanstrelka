@@ -13,7 +13,22 @@ import { show, hide } from 'redux-modal';
 import BnSHeaderView from './views/bnsv1';
 
 export default connect(({ header }) => {
+  var links = [{
+    href: '/brief',
+    title: 'header.links.brief'
+  }, {
+    href: '/#process',
+    title: 'header.links.process'
+  }, {
+    href: '/#services',
+    title: 'header.links.services'
+  }, {
+    href: '/#mission',
+    title: 'header.links.mission'
+  }]
+
   return {
+    links
     // isOpen: header.isOpen
   }
 }, {
