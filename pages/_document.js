@@ -60,10 +60,80 @@ export default class MyDocument extends Document {
     return (
       <html lang='en'>
         <Head>
+          {
+            // <script dangerouslySetInnerHTML={{__html: `
+            //   (function(w,d,s,l,i){
+            //     w[l]=w[l]||[];
+            //     w[l].push({
+            //       'gtm.start': new Date().getTime(),
+            //       event: 'gtm.js'
+            //     });
+            //     var f = d.getElementsByTagName(s)[0],
+            //         j = d.createElement(s),
+            //         dl = l != 'dataLayer' ? ' &l=' + l : '';
+            //     j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            //     f.parentNode.insertBefore(j,f);
+            //   })(window,document,'script','dataLayer','GTM-N5P3Z6M');
+            // `}} />
+          }
+
           <meta name='viewport' content='initial-scale=1.0, width=device-width' />
           {this.renderFontLoader()}
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127784661-1"></script>
+          <script dangerouslySetInnerHTML={{__html: `
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length,c.length);
+                    }
+                }
+                return "";
+            }
+
+            if (window.location.hostname !== 'localhost') {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){ dataLayer.push(arguments); }
+
+              gtag('js', new Date());
+              gtag('config', 'UA-127784661-1', {
+                'custom_map': {
+                  'dimension1': 'clientId',
+                  'dimension2': 'userId',
+                  'dimension3': 'dateTime',
+                }
+              });
+
+              // gtag('set', {'user_id': 'USER_ID'}); // Set the user ID using signed-in user_id.
+
+              var _clientId = getCookie('_ga').split('.')
+              window.clientId = _clientId[2] + '.' + _clientId[3]
+
+              gtag('event', 'pageView', {
+                'clientId': clientId,
+                'dateTime': +(new Date())
+              });
+            }
+            
+          `}} />
         </Head>
         <body>
+          {
+            // <noscript>
+            //   <iframe
+            //     src="https://www.googletagmanager.com/ns.html?id=GTM-N5P3Z6M"
+            //     height="0"
+            //     width="0"
+            //     style="display:none;visibility:hidden"
+            //   />
+            // </noscript>
+          }
           <Main />
           <NextScript />
         </body>

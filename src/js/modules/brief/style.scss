@@ -1,185 +1,14 @@
-$ultraLightWeight: 300;
-$lightWeight: 400;
-$mediumWeight: 500;
-$demiBoldWeight: 600;
-$boldWeight: 700;
-$heavyWeight: 800;
+@import "~variables";
+@import "~respond";
 
-$black: #161620;
-$white: #ffffff;
-
-$gap: 8px;
-
-:local(.parallaxChildren) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.sideText {
-  z-index: 605;
-  float: left;
-  display: block;
-  position: fixed;
-  bottom: calc(var(--body-border-width, 20px) * 1.8 / 1 + 0px);
-  // bottom: 0;
-  left: -3px;
-  padding-top: 3px;
-  text-decoration: none;
-  transform-origin: left top;
-  transform: translate3d(calc(var(--body-border-width, 20px) * 2 / 1 + 0px), 0, 0) rotate(-90deg);
-  // transform: rotate(-90deg);
-  transition: opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
-  backface-visibility: hidden;
-  color: rgb(253, 255, 252);
-  mix-blend-mode: difference;
-
-  &__abs {
-    position: absolute;
-  }
-}
-
-.forWhom {
-  margin: 8 * $gap 0;
-
-  &__item {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__icon {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 170px;
-    margin-bottom: 2 * $gap;
-  }
-
-  &__description {
-    max-width: 224px;
-    font-size: 18px;
-    line-height: 25px;
-    font-weight: $boldWeight;
-  }
-}
-
-.proceccItem {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-
-  &__title {
-    font-size: 22px;
-    line-height: 30px;
-    width: 165px;
-    font-weight: $boldWeight;
-  }
-
-  &__separator {
-    display: inline-block;
-    background-color: #D8D8D8;
-    height: 50px;
-    margin: 0 3 * $gap;
-    width: 3px;
-  }
-
-  &__text {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-}
-
-.bnsIndexService {
-  &__info {
-    width: 60%;
-    margin-right: 15 * $gap;
-  }
-
-  &__ps {
-    font-weight: $demiBoldWeight;
-    margin-top: 8 * $gap;
-  }
-  &__bold {
-    font-weight: $demiBoldWeight;
-  }
-
-  p {
-    font-size: 22px;
-    line-height: 30px;
-    margin-bottom: 2 * $gap;
-  }
-
-  &__statBlock {
-    margin-bottom: 6 * $gap;
-  }
-
-  &__statTitle {
-    font-size: 64px;
-    font-weight: $heavyWeight;
-  }
-
-  &__statsDescription {
-    font-size: 22px;
-    line-height: 30px;
-  }
-}
-
-.onDemandItem {
-  margin-bottom: 9 * $gap;
-
-  &__icon {
-    width: 60px;
-    margin-right: 2 * $gap;
-  }
-
-  &__title {
-    font-size: 22px;
-    line-height: 30px;
-    font-weight: $boldWeight;
-    margin-bottom: $gap;
-  }
-
-  &__text {
-    font-size: 14px;
-    line-height: 19px;
-  }
-}
-
-.bnsIndex {
+.bnsBrief {
   color: $black;
   position: relative;
-
-  &__sticky {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-  }
-
-  &__heroPlanet {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: -70px;
-  }
+  padding: 3 * $gap 0;
 
   &__title {
     font-size: 48px;
-    line-height: 66px;
+    line-height: 48px;
     font-weight: $heavyWeight;
     margin: 0;
   }
@@ -190,87 +19,26 @@ $gap: 8px;
     font-weight: $mediumWeight;
   }
 
-  &__WYSIWYG {
-    padding: 6 * $gap 0;
+  &__form {
+    margin: 4 * $gap 0;
   }
 
-  &__misson {
-    svg {
-      margin: 6 * $gap 10 * $gap 0;
-    }
+  &__formControl {
+    margin-bottom: 3 * $gap;
   }
 
-  &__WYSIWYG,
-  &__misson,
-  &__onDemand,
-  &__hero {
-    color: $white;
-    background: $black;
-    background-blend-mode: screen;
+  &__checkbox {
+    display: inline-block;
+    margin-top: $gap;
+    margin-bottom: $gap;
+    margin-right: 2 * $gap;
   }
 
-  &__hero {
-    .bnsIndex__title,
-    .bnsIndex__description {
-      max-width: 55%;
-    }
-
-    .bnsIndex__title {
-      margin-bottom: 2 * $gap;
-    }
-
-    .bnsIndex__description {
-      margin-bottom: 4 * $gap;
-    }
-  }
-
-  &__onDemand {
-    padding: 9 * $gap 0;
-  }
-
-  &__expertise,
-  &__service,
-  &__process,
-  &__forWhom {
-    padding: 9 * $gap 0;
-    background: white;
-    background-blend-mode: screen;
-  }
-
-  &__onDemand {
-    &Items {
-      padding: 9 * $gap 0 0;
-    }
-  }
-  &__expertise {
-    background: #F9F9F9;
-
-    &Blocks {
-      display: flex;
-      flex-flow: row wrap;
-
-      margin: 0 -24px;
-    }
-
-    &Block {
-      cursor: pointer;
-      flex-grow: 1;
-      margin: 3 * $gap 0 0 2%;
-      width: calc(100% * (1/3) - 24px - 1px);
-
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
-
-      background: white;
-      height: 156px;
-      font-size: 20px;
-      font-weight: $demiBoldWeight;
-
-      &:last-child {
-        flex-grow: 0;
-      }
-    }
+  &__formLabel {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: $mediumWeight;
+    margin-bottom: $gap;
   }
 }

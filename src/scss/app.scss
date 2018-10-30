@@ -10,6 +10,7 @@
 */
 
 @import 'base';
+
 // @import 'common/type';
 
 // :global {
@@ -29,23 +30,31 @@
 
   .bnsContainer {
     margin: 0 auto;
+    // background: white;
+    padding-right: 2 * $gap;
+    padding-left: 2 * $gap;
 
-    @include media-breakpoint-up(sm) {
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-
-    @include media-breakpoint-up(md) {
+    @include respond(tablets) {
+      // background: red;
       width: $container-md;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include respond(desktop) {
+      // background: green;
       width: $container-lg;
     }
 
-    @include media-breakpoint-up(xl) {
-      width: $container-xl;
-    }
+    // @include media-breakpoint-up(md) {
+    //   width: $container-md;
+    // }
+    //
+    // @include media-breakpoint-up(lg) {
+    //   width: $container-lg;
+    // }
+    //
+    // @include media-breakpoint-up(xl) {
+    //   width: $container-xl;
+    // }
 
     width: 100%;
 

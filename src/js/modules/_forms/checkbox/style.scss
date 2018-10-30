@@ -1,0 +1,123 @@
+
+.checkbox {
+  cursor: pointer;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  & .disabled {
+    opacity: .3;
+    pointer-events: none
+  }
+
+  &-inner:not(.tagType) {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    vertical-align: top;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+
+    &:after,
+    &:before {
+      content: '';
+    }
+
+    & span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid #d7d7d7;
+      -webkit-transition: .24s;
+      transition: .24s;
+      border-radius: 2px;
+      box-sizing: border-box
+    }
+
+    & + span {
+      margin-left: 8px;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox]:checked + span {
+      background-color: #49ce7f;
+      border-color: #49ce7f;
+    }
+
+    input[type=checkbox]:checked + span:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      display: table;
+      width: 6px;
+      height: 11px;
+      border: 2px solid #fff;
+      border-top-width: 0;
+      border-left-width: 0;
+      transform: rotate(45deg);
+    }
+
+    input[type=checkbox]:disabled + span {
+      border-color: #cdcdcd;
+      background-color: #f3f3f3;
+      cursor: not-allowed;
+    }
+
+    input[type=checkbox]:checked:disabled + span {
+      background-color: #c9d2f0;
+      border-color: #c9d2f0;
+    }
+  }
+
+  &-inner.tagType {
+    // width: 20px;
+    // height: 40px;
+    position: relative;
+    // vertical-align: top;
+    // -ms-flex-negative: 0;
+    // flex-shrink: 0;
+
+    &:after,
+    &:before {
+      content: '';
+    }
+
+    & span {
+      padding: 8px 16px;
+      border-radius: 3px;
+      background: #f1f1f1;
+      // border: 1px solid #d7d7d7;
+      transition: .2s;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox]:checked + span {
+      background-color: #FCBC1D;
+      border-color: #FCBC1D;
+    }
+
+    input[type=checkbox]:disabled + span {
+      border-color: #cdcdcd;
+      background-color: #f3f3f3;
+      cursor: not-allowed;
+    }
+
+    input[type=checkbox]:checked:disabled + span {
+      background-color: #c9d2f0;
+      border-color: #c9d2f0;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "~variables";
+@import "~respond";
+
+.popupMenu {
+  position: absolute;
+  bottom: 2 * $gap;
+  left: 2 * $gap;
+  right: 2 * $gap;
+  top: 4 * $gap;
+
+  li {
+    margin-bottom: 2 * $gap;
+    
+    a {
+      font-size: 30px;
+      font-weight: $mediumWeight;
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+  &__footer {
+    border-top: 2px solid #F5A623;
+    padding: 2 * $gap 0 0;
+  }
+
+  &__email {
+    margin-bottom: 3 * $gap;
+
+    a {
+      font-size: 22px;
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 2 * $gap;
+    align-items: center;
+
+    &Info {}
+
+    &City {
+      font-size: 20px;
+      font-weight: $mediumWeight;
+      margin-bottom: $gap / 2;
+    }
+
+    &Number {
+      a {
+        color: #ADADAD;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+
+    &Available {
+      &.on {
+        color: #7B9E54;
+      }
+
+      &.off {
+        color: #D57480;
+      }
+    }
+  }
+}

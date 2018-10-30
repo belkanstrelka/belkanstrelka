@@ -1,0 +1,334 @@
+@import "~functions";
+@import "~mixins";
+
+@import "./_baseInput/css/vars.scss";
+@import "./_baseInput/css/mixins.scss";
+
+@import "~variables";
+
+$input-group-border:             #d7d7d7;
+$input-group-border-disabled:    transparent;
+$input-group-border-focus:       #9b9b9b;
+$input-group-border-error:       #fa7384;
+
+$enable-rounded: true;
+$input-border-radius: 4px;
+$input-placeholder-color:        #9B9B9B;
+
+// TODO: Разобраться для работы с float labels
+
+// $input-padding-x-sm: 0;
+// $input-padding-x: 0;
+// $input-padding-x-lg: 0;
+
+
+//
+// Base styles
+//
+.input-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  // flex-wrap: wrap; // For form validation feedback
+  // align-items: stretch;
+  align-items: center;
+  // align-items: flex-start;
+
+  // border-bottom: $input-border-width solid $input-border-color;
+  border: $input-border-width solid $input-border-color;
+
+  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  @if $enable-rounded {
+    // Manually use the if/else instead of the mixin to account for iOS override
+    border-radius: $input-border-radius;
+  } @else {
+    // Otherwise undo the iOS default
+    border-radius: 0;
+  }
+
+  &_error {
+    border: 1px solid $input-group-border-error;
+
+    .rmInput + label,
+    .rmInput_focus + label,
+    .rmInput:focus + label {
+      color: $input-group-border-error !important;
+    }
+  }
+
+  &_focus {
+    border: 1px solid $input-group-border-focus;
+  }
+
+  &_disabled {
+    border: 1px solid $input-group-border-disabled;
+  }
+
+  // Float Label
+
+  & > input,
+  & > textarea {
+    display: block;
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $font-size-base;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: none;
+
+    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    @if $enable-rounded {
+      // Manually use the if/else instead of the mixin to account for iOS override
+      border-radius: $input-border-radius;
+    } @else {
+      // Otherwise undo the iOS default
+      border-radius: 0;
+    }
+
+    // TODO:
+    // @include box-shadow($input-box-shadow);
+    // @include transition($input-transition);
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+
+    // Customize the `:focus` state to imitate native WebKit styles.
+    // TODO:
+    // @include form-control-focus();
+
+    // Placeholder
+    &::placeholder {
+      color: $input-placeholder-color;
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &:disabled,
+    &[readonly] {
+      background-color: $input-disabled-bg;
+      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+      opacity: 1;
+    }
+  }
+
+  &__float-label > label {
+    position: absolute;
+    color: rgba(0,0,0,.26);
+    text-overflow: clip;
+    cursor: text;
+    pointer-events: none;
+    background: white;
+  }
+
+  &-sm {
+    margin-bottom: 24px;
+
+    & > input,
+    & > textarea {
+      padding: $input-padding-y-sm $input-padding-x-sm;
+      font-size: $font-size-sm;
+      line-height: $input-line-height-sm;
+
+      // TODO:
+      // @include border-radius($input-border-radius-sm);
+    }
+
+    & > label {
+      font-size: $font-size-sm;
+      line-height: $input-line-height-sm;
+      -webkit-transform: translate($input-padding-x-sm, 0);
+      transform: translate($input-padding-x-sm, 0);
+    }
+
+    & > input:-webkit-autofill ~ label,
+    & > input:focus ~ label,
+    & > textarea:-webkit-autofill ~ label,
+    & > textarea:focus ~ label {
+      -webkit-transform: translate($input-padding-x-sm, -$font-size-sm - 0.2rem);
+      transform: translate($input-padding-x-sm, -$font-size-sm - 0.3rem);
+      text-overflow: ellipsis;
+    }
+
+    & > input:not(:focus) ~ .input-group__labelFloated,
+    & > input:not(:focus):not(:empty) ~ label,
+    & > textarea:not(:focus) ~ .input-group__labelFloated,
+    & > textarea:not(:focus):not(:empty) ~ label {
+      color: rgba(0,0,0,.54);
+      -webkit-transform: translate($input-padding-x-sm, -$font-size-sm - 0.4rem);
+      transform: translate($input-padding-x-sm, -$font-size-sm - 0.3rem);
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-md {
+    margin-bottom: 24px;
+
+    & > input,
+    & > textarea {
+      padding: $input-padding-y $input-padding-x;
+      font-size: $font-size-base;
+      line-height: $input-line-height;
+
+      // TODO:
+      // @include border-radius($input-border-radius);
+    }
+
+    & > label {
+      font-size: $font-size-base;
+      line-height: $input-line-height;
+      -webkit-transform: translate($input-padding-x, 0);
+      transform: translate($input-padding-x, 0);
+    }
+
+    & > input:-webkit-autofill ~ label,
+    & > input:focus ~ label,
+    & > textarea:-webkit-autofill ~ label,
+    & > textarea:focus ~ label {
+      -webkit-transform: translate($input-padding-x, -$font-size-base - 8px);
+      transform: translate($input-padding-x, -$font-size-base - 8px);
+      text-overflow: ellipsis;
+    }
+
+    & > input:not(:focus) ~ .input-group__labelFloated,
+    & > input:not(:focus):not(:empty) ~ label,
+    & > textarea:not(:focus) ~ .input-group__labelFloated,
+    & > textarea:not(:focus):not(:empty) ~ label {
+      color: rgba(0,0,0,.54);
+      -webkit-transform: translate($input-padding-x, -$font-size-base - 8px);
+      transform: translate($input-padding-x, -$font-size-base - 8px);
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-lg {
+    margin-bottom: 32px;
+
+    & > input,
+    & > textarea {
+      padding: $input-padding-y-lg $input-padding-x-lg;
+      font-size: $font-size-lg;
+      line-height: $input-line-height-lg;
+
+      // TODO:
+      // @include border-radius($input-border-radius-lg);
+    }
+
+    & > label {
+      font-size: $font-size-base + 2px;
+      line-height: $input-line-height;
+      -webkit-transform: translate($input-padding-x-lg, 0);
+      transform: translate($input-padding-x-lg, 0);
+    }
+
+    & > input:-webkit-autofill ~ label,
+    & > input:focus ~ label,
+    & > textarea:-webkit-autofill ~ label,
+    & > textarea:focus ~ label {
+      -webkit-transform: translate($input-padding-x-lg, -$font-size-lg - 0.4rem);
+      transform: translate($input-padding-x-lg, -$font-size-lg - 0.4rem);
+      text-overflow: ellipsis;
+    }
+
+    & > input:not(:focus) ~ .input-group__labelFloated,
+    & > input:not(:focus):not(:empty) ~ label,
+    & > textarea:not(:focus) ~ .input-group__labelFloated,
+    & > textarea:not(:focus):not(:empty) ~ label {
+      color: rgba(0,0,0,.54);
+      -webkit-transform: translate($input-padding-x-lg, -$font-size-lg - 0.4rem);
+      transform: translate($input-padding-x-lg, -$font-size-lg - 0.4rem);
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+// Prepend and append
+//
+// While it requires one extra layer of HTML for each, dedicated prepend and
+// append elements allow us to 1) be less clever, 2) simplify our selectors, and
+// 3) support HTML5 form validation.
+
+.input-group-prepend,
+.input-group-append {
+  display: flex;
+
+  padding: 0 8px;
+  // Ensure buttons are always above inputs for more visually pleasing borders.
+  // This isn't needed for `.input-group-text` since it shares the same border-color
+  // as our inputs.
+  .btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn + .btn,
+  .btn + .input-group-text,
+  .input-group-text + .input-group-text,
+  .input-group-text + .btn {
+    margin-left: -$input-border-width;
+  }
+}
+
+.input-group-prepend { margin-right: -$input-border-width; }
+.input-group-append { margin-left: -$input-border-width; }
+
+
+// Textual addons
+//
+// Serves as a catch-all element for any text or radio/checkbox input you wish
+// to prepend or append to an input.
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: $input-padding-y $input-padding-x;
+  margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
+  font-size: $font-size-base; // Match inputs
+  font-weight: $font-weight-normal;
+  line-height: $input-line-height;
+  color: $input-group-addon-color;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $input-group-addon-bg;
+  border: $input-border-width solid $input-group-addon-border-color;
+
+  // TODO:
+  // @include border-radius($input-border-radius);
+
+  // Nuke default margins from checkboxes and radios to vertically center within.
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+}
+
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  // TODO:
+  // @include border-right-radius(0);
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  // TODO:
+  // @include border-left-radius(0);
+}

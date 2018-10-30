@@ -1,12 +1,14 @@
 import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
-import withReduxStore from '../src/js/lib/with-redux-store'
+
+import withReduxStore from 'lib/with-redux-store'
+
 import { Provider } from 'react-redux'
 
 import NextSeo from 'next-seo';
-import baseCss from 'scss/app.scss';
+// import baseCss from 'scss/app.scss';
+// import Loader from '../src/js/components/Loader'
 
-import Loader from '../src/js/components/Loader'
 import SEO from '../src/js/next-seo.config';
 
 const TIMEOUT = 350
@@ -46,6 +48,8 @@ class MyApp extends App {
   render () {
     const { Component, pageProps, reduxStore } = this.props
 
+    // loadingComponent={<Loader />}
+
     return (
       <Container>
         <NextSeo config={SEO} />
@@ -54,7 +58,6 @@ class MyApp extends App {
           <PageTransition
             timeout={TIMEOUT}
             classNames='page-transition'
-            loadingComponent={<Loader />}
             loadingDelay={500}
             loadingTimeout={{ enter: TIMEOUT, exit: 0 }}
             loadingClassNames='loading-indicator'
@@ -92,7 +95,7 @@ class MyApp extends App {
             transition: opacity ${TIMEOUT}ms;
           }
         `}</style>
-        
+
       </Container>
     )
   }

@@ -71,3 +71,16 @@ $container-lg:                 $container-large-desktop;
 $container-xlarge-desktop:      (870px + $grid-gutter-width);
 //** For `@screen-lg-min` and up.
 $container-xl:                 $container-xlarge-desktop;
+
+
+$ultraLightWeight: 300;
+$lightWeight: 400;
+$mediumWeight: 500;
+$demiBoldWeight: 600;
+$boldWeight: 700;
+$heavyWeight: 800;
+
+$black: #161620;
+$white: #ffffff;
+
+$gap: 8px;

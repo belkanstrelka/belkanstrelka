@@ -1,0 +1,33 @@
+@import "~functions";
+@import "~mixins";
+
+@import "./css/vars.scss";
+@import "./css/mixins.scss";
+
+@import "~variables";
+
+$input-group-border:             #d7d7d7;
+$input-group-border-disabled:    transparent;
+$input-group-border-focus:       #9b9b9b;
+$input-group-border-error:       #fa7384;
+
+
+.rmInput {
+  &_filled,
+  &_error {
+    box-sizing: border-box;
+  }
+
+  //
+  // &_error + label,
+  // &_filled + label {
+  //   opacity: 1;
+  //   top: -9px;
+  // }
+  //
+  // // and we highlight the focused input label
+  // &_focus + label,
+  // &:focus + label {
+  //   color: $input-group-border-focus;
+  // }
+}

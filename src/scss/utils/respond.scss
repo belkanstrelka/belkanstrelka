@@ -25,16 +25,16 @@ $phone-portrait-max: ($phone-landscape-min - 1); // 479px
   @else if $media == tabletLandscape {
     @media (min-width: $tablet-landscape-min) and (max-width: $tablet-landscape-max) { @content; }
   }
-  @else if $media == tablet {
-    @media (min-width: $tablet-portrait-min) and (max-width: $tablet-portrait-max) { @content; }
-  }
+  // @else if $media == tablet {
+  //   @media (min-width: $tablet-portrait-min) and (max-width: $tablet-portrait-max) { @content; }
+  // }
   @else if $media == tablets {
-    @media (max-width: $tablet-portrait-max) { @content; }
+    @media (min-width: $tablet-portrait-min) { @content; }
   }
   @else if $media == phoneLandscape {
     @media (min-width: $phone-landscape-min) and (max-width: $phone-landscape-max) { @content; }
   }
   @else if $media == phones {
-    @media (max-width: $phone-portrait-max) { @content; }
+    @media (max-width: $phone-landscape-max) { @content; }
   }
 }
