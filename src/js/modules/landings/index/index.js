@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
-import { FormattedHTMLMessage as I18N } from 'react-intl'
+import { FormattedMessage as I18N } from 'react-intl'
 
 // import { StickyContainer, Sticky } from 'react-sticky'
 import Link from 'next/link'

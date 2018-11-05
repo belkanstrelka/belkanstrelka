@@ -1,15 +1,18 @@
 import React, { PureComponent } from 'react';
-import classNames from 'classnames';
+import cn from 'classnames';
 
 import css from './style.scss';
 
 class Radio extends PureComponent {
   render() {
-    const {children, ...props} = this.props;
+    const {
+      children,
+      ...props
+    } = this.props;
 
     return (
-      <div className={classNames(css.radio, {[css.disabled]: props.disabled})} onClick={this.handleClick}>
-        <div className={classNames(css['radio-inner'], {[css.default]: props.default})}>
+      <div className={cn(css.radio, {[css.disabled]: props.disabled})} onClick={this.handleClick}>
+        <div className={cn(css['radio-inner'], {[css.default]: props.default})}>
           <input {...props} type='radio' ref='radio' />
           <span />
         </div>
@@ -18,7 +21,7 @@ class Radio extends PureComponent {
     );
   }
 
-  handleClick() {
+  handleClick = () => {
     this.refs.radio.click();
   }
 }

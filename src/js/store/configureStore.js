@@ -5,6 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 import intl from 'modules/_meta/intl/reducers';
+import { formReducer as brieReducers } from 'modules/brief/metaInfo';
 
 import { combineForms } from 'react-redux-form';
 import { reducer as modal } from 'redux-modal';
@@ -16,7 +17,8 @@ const loggerMiddleware = createLogger({
 
 const reducers = combineForms({
   intl,
-  modal
+  modal,
+  ...brieReducers
 })
 
 export default function configureStore(initialState = {}) {

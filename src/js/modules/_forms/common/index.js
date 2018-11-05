@@ -1,12 +1,7 @@
-import RmFormErrorsControl from './RmFormErrorsControl';
-import RmFormControl from './RmFormControl';
-import RmFormFieldControl from './RmFormFieldControl';
+import RmFormControl from './formControl';
+import RmFormErrorsControl from './formErrorsControl';
+import RmFormFieldControl from './formFieldControl';
 
 export const FormErrorsControl = RmFormErrorsControl;
 export const FormControl = RmFormControl;
 export const FormFieldControl = RmFormFieldControl;
-// export default {
-//   RmFormErrorsControl,
-//   RmFormControl,
-//   RmFormFieldControl
-// };

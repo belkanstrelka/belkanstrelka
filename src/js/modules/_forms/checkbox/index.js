@@ -1,30 +1,13 @@
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
 
+import { FormattedMessage as I18N } from 'react-intl'
 import css from './style.scss';
 
 class Checkbox extends PureComponent {
-  state = {
-    isChecked: false
-  }
-
-  componentWillMount() {
-    this.setState({
-      isChecked: !!this.props.value
-    });
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    if (this.props.value !== nextProps.value) {
-      this.setState({
-        isChecked: nextProps.value
-      });
-    }
-  }
-
   render() {
-    const { children, disabled, isTag, className, ...restProps } = this.props;
-    const { isChecked } = this.state;
+    const { children, disabled, isTag, className, checked, ...restProps } = this.props;
+    const isChecked = !!checked;
 
     return (
       <div className={cn(css.checkbox, {
@@ -39,9 +22,7 @@ class Checkbox extends PureComponent {
               ref='checkbox'
               checked={isChecked}
             />
-            <span>
             {isTag && (children)}
-            </span>
           </div>
           <span className={css.checkbox__caption}>
             {!isTag && (children)}
@@ -52,12 +33,16 @@ class Checkbox extends PureComponent {
   }
 
   handleOnClick = () => {
-    const { onChange } = this.props;
-    const isChecked = !this.state.isChecked;
+    const { onChange, checked, value } = this.props;
+    const isChecked = !!!checked;
 
-    this.setState({isChecked});
-
-    onChange && onChange(isChecked);
+    if (value) {
+      onChange && onChange({
+        [value]: isChecked
+      });
+    } else {
+      onChange && onChange(isChecked);
+    }
   }
 }
 

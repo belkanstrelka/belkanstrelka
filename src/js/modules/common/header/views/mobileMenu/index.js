@@ -2,7 +2,7 @@ import { Component } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 
-import { FormattedHTMLMessage as I18N } from 'react-intl'
+import { FormattedMessage as I18N } from 'react-intl'
 
 import cssFlex from 'modules/_layouts/flex';
 import css from './menu.scss';
@@ -11,13 +11,13 @@ class HeaderMenu extends Component {
   render () {
     const links = [{
       href: '/#process',
-      title: 'What we do'
+      title: 'header.links.process'
     }, {
       href: '/#services',
-      title: 'Why us'
+      title: 'header.links.services'
     }, {
       href: '/#expertise',
-      title: 'Core expertise'
+      title: 'header.links.expertise'
     }];
 
     const phones = [{

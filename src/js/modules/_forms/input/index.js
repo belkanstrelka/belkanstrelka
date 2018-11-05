@@ -150,7 +150,6 @@ class RmInput extends Component {
       [css['input-group_disabled']]: inputProps.disabled,
       [css['input-group_focus']]: state === 'focused',
       [css['input-group_error']]: status.type === 'error',
-      [className]: true
     });
 
     // let placeholder = inputProps.placeholder;
@@ -158,18 +157,15 @@ class RmInput extends Component {
     //   placeholder = status.text;
     // }
 
-
     if (inputProps.type === 'phone') {
-      // onChange={(val)=> {
-      //   const _val = (val.indexOf('+') === 0 ? '' : '+') + val;
-      //
-      //   if (val === '') {
-      //     this.setState({ val: void 0 })
-      //   } else {
-      //     this.setState({ val: _val })
-      //   }
-      // }}
+      const { value } = inputProps;
 
+      let _val = undefined
+      if (value !== '' && value != undefined) {
+        _val = (value.indexOf('+') === 0 ? '' : '+') + value;
+      }
+
+      inputProps.value = _val
       inputProps.componentClass = SmartInput
     }
 
@@ -180,25 +176,34 @@ class RmInput extends Component {
     //     inputProps.value !== null
     //   })}
     // />
-    
-    return (
-      <div className={classNames}>
-        <BaseInput
-          {...inputProps}
-          size={size}
-          state={state}
-          status={status}
-          placeholder={placeholder}
-          value={this.state.val}
-          ref={(ref) => this._el = ref}
-        />
 
-        <RmInputStatus
-          status={status}
-          type={inputProps.type}
-          required={inputProps.required}
-          onClick={inputProps.onClick}
-        />
+    return (
+      <div className={cn({
+        [className]: true,
+        'errorField': status.type === 'error'
+      })}>
+        <div className={classNames}>
+          <BaseInput
+            {...inputProps}
+            size={size}
+            state={state}
+            status={status}
+            placeholder={placeholder}
+            ref={(ref) => this._el = ref}
+          />
+
+          <RmInputStatus
+            status={status}
+            type={inputProps.type}
+            required={inputProps.required}
+            onClick={inputProps.onClick}
+          />
+        </div>
+        {status.type === 'error' && (
+          <div style={{ color: '#fa7384' }}>
+            {status.text}
+          </div>
+        )}
       </div>
     );
   }

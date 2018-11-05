@@ -23,8 +23,8 @@ export default connect(({ header }) => {
     href: '/#services',
     title: 'header.links.services'
   }, {
-    href: '/#mission',
-    title: 'header.links.mission'
+    href: '/#expertise',
+    title: 'header.links.expertise'
   }]
 
   return {

@@ -4,7 +4,7 @@
 import { Component } from 'react'
 import cn from 'classnames'
 
-import { FormattedHTMLMessage as I18N } from 'react-intl'
+import { FormattedMessage as I18N } from 'react-intl'
 
 import appCss from 'scss/app.scss'
 import css from './footer.style.scss';
@@ -30,9 +30,15 @@ class Footer extends Component {
           <div className={cn(css.footer__row, css.footer__row_first)}>
 
             <div className={css.footer__socialBlock}>
-              <Fb className={css.footer__social} />
-              <Inst className={css.footer__social}/>
-              <Linkedin className={css.footer__social}/>
+              <a href='https://www.facebook.com/bebelkaDesign' target='_blank'>
+                <Fb className={css.footer__social} />
+              </a>
+              <a href='https://www.instagram.com/bebelkaDesign' target='_blank'>
+                <Inst className={css.footer__social} />
+              </a>
+              <a href='https://www.facebook.com/bebelkaDesign' target='_blank'>
+                <Linkedin className={css.footer__social} />
+              </a>
             </div>
 
             <div className={css.footer__contactBlock}>
@@ -40,7 +46,9 @@ class Footer extends Component {
                 <I18N id={'footer.links.touch'} />
               </div>
               <div className={css.footer__text}>
-                hello@bebelka.com
+                <a className={css.footer__link} href='mailto:hello@bebelka.com'>
+                  hello@bebelka.com
+                </a>
               </div>
             </div>
 

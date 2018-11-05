@@ -33,6 +33,7 @@
       }
     }
   }
+
   &__separeteLine {
     background: $black;
     height: 1px;
@@ -96,6 +97,11 @@
       order: 3;
       flex: 35;
     }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
   }
 
   &__text {

@@ -2,15 +2,24 @@
 @import "~respond";
 
 .popupMenu {
-  position: absolute;
-  bottom: 2 * $gap;
-  left: 2 * $gap;
-  right: 2 * $gap;
-  top: 4 * $gap;
+  background: white;
+  z-index: 100;
+  position: fixed;
+  padding: 80px 16px 16px 16px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  // position: absolute;
+  // bottom: 2 * $gap;
+  // left: 2 * $gap;
+  // right: 2 * $gap;
+  // top: 4 * $gap;
 
   li {
     margin-bottom: 2 * $gap;
-    
+
     a {
       font-size: 30px;
       font-weight: $mediumWeight;

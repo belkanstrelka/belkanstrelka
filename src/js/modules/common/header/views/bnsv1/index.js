@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-import { FormattedHTMLMessage as I18N } from 'react-intl'
+import { FormattedMessage as I18N } from 'react-intl'
 
 import cn from 'classnames'
 import Link from 'next/link'
 // import Reveal from 'react-reveal/Reveal';
 
 import appCss from 'scss/app.scss'
+
+import MobileMenu from 'modules/common/header/views/mobileMenu';
+import menuCss from 'modules/common/header/views/mobileMenu/menu.scss';
 
 import cssFlex from 'modules/_layouts/flex';
 import css from './header.style.scss';
@@ -27,33 +30,33 @@ class BnSHeaderView extends Component {
     self.setState({ show: needOpen });
 
     if (needOpen) {
-      // disableBodyScroll(
-      //   document.querySelector('.modal-body')
-      // );
+      disableBodyScroll(
+        document.querySelector(menuCss.popupMenu)
+      );
 
-      showModal('', {
-        id: 'common/menu',
-        message: 'This is a test modal',
-        className: css.modal,
-        cClassName: css.contentClassName,
-        backdropClassName: css.backdropClassName,
-        dialogClassName: css.dialogClassName,
-        hideModal: () => {
-          self.setState({ show: false });
-
-          hideModal('', {
-            id: 'common/menu'
-          })
-        },
-      })
+      // showModal('', {
+      //   id: 'common/menu',
+      //   message: 'This is a test modal',
+      //   className: css.modal,
+      //   cClassName: css.contentClassName,
+      //   backdropClassName: css.backdropClassName,
+      //   dialogClassName: css.dialogClassName,
+      //   hideModal: () => {
+      //     self.setState({ show: false });
+      //
+      //     hideModal('', {
+      //       id: 'common/menu'
+      //     })
+      //   },
+      // })
     } else {
-      // enableBodyScroll(
-      //   document.querySelector('.modal-body')
-      // );
+      enableBodyScroll(
+        document.querySelector(menuCss.popupMenu)
+      );
 
-      hideModal('', {
-        id: 'common/menu'
-      })
+      // hideModal('', {
+      //   id: 'common/menu'
+      // })
     }
   }
 
@@ -96,6 +99,9 @@ class BnSHeaderView extends Component {
             <span></span>
           </div>
         </div>
+        { show && (
+          <MobileMenu />
+        )}
       </div>
     )
   }

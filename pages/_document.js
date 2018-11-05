@@ -47,10 +47,6 @@ export default class MyDocument extends Document {
             src:url("./../src/fonts/da1464f4-1a39-4322-898c-c092aca16ebb.eot?#iefix");
             src:url("./../src/fonts/da1464f4-1a39-4322-898c-c092aca16ebb.eot?#iefix") format("eot"),url("./../src/fonts/61ad694c-30ec-421c-a08b-d8e714ec83b7.woff2") format("woff2"),url("./../src/fonts/545ef4b0-79ac-49bd-9582-55e682e61cf9.woff") format("woff"),url("./../src/fonts/48007d38-01d4-4101-a599-a95460b3ec12.ttf") format("truetype");
           }
-
-          body {
-            font-family: Avenir Next;
-          }
         `}
       </style>
     )
@@ -58,8 +54,15 @@ export default class MyDocument extends Document {
 
   render () {
     return (
-      <html lang='en'>
+      <html lang='en' prefix="og: http://ogp.me/ns#">
         <Head>
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fcbc1d" />
+          <meta name="msapplication-TileColor" content="#fcbc1d" />
+          <meta name="theme-color" content="#ffffff" />
           {
             // <script dangerouslySetInnerHTML={{__html: `
             //   (function(w,d,s,l,i){
@@ -120,7 +123,7 @@ export default class MyDocument extends Document {
                 'dateTime': +(new Date())
               });
             }
-            
+
           `}} />
         </Head>
         <body>

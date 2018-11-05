@@ -1,11 +1,59 @@
 @import "~variables";
 @import "~respond";
 
+.docPreviewRow {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 2 * $gap;
+
+  &__icon {
+    margin-right: $gap;
+  }
+
+  &__name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__action {
+    margin-left: 2 * $gap;
+    cursor: pointer;
+  }
+}
+
 .bnsBrief {
   color: $black;
   position: relative;
   padding: 3 * $gap 0;
   max-width: 510px;
+
+  &__formField {
+    margin-bottom: 2 * $gap;
+  }
+  
+  &__action {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    &Btn { }
+
+    &Description {
+      flex: 1;
+      padding-left: 2 * $gap;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    color: #4A90E2;
+    text-decoration: underline;
+  }
 
   &__title {
     font-size: 48px;
@@ -31,7 +79,7 @@
   &__checkbox {
     display: inline-block;
     margin-top: $gap;
-    margin-bottom: $gap;
+    margin-bottom: 3 * $gap;
     margin-right: 2 * $gap;
   }
 
@@ -40,6 +88,6 @@
     font-size: 20px;
     line-height: 28px;
     font-weight: $mediumWeight;
-    margin-bottom: $gap;
+    margin-bottom: 1.5 * $gap;
   }
 }

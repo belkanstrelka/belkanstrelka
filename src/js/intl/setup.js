@@ -7,6 +7,7 @@ import headerData from 'modules/common/header/i18n'
 import footerData from 'modules/common/footer/i18n'
 
 import landingData from 'modules/landings/index/i18n'
+import { i18n as briefData } from 'modules/brief/metaInfo'
 // import authData from 'modules/auth/i18n'
 
 const enName = 'en-US';
@@ -19,7 +20,7 @@ export const enabledLanguages = [
 export const localizationData = {}
 export const getBrowserLocale = () => {
   return ruName
-  return enName
+  // return enName
 }
 
 function flattenMessages(nestedMessages = {}, prefix = '') {
@@ -43,6 +44,7 @@ const enData = {
     ...landingData.en,
     ...headerData.en,
     ...footerData.en,
+    ...briefData.en,
     // ...authData.en,
   },
 }
@@ -57,6 +59,7 @@ const ruData = {
     ...landingData.ru,
     ...headerData.ru,
     ...footerData.ru,
+    ...briefData.ru,
     // ...authData.ru,
   },
 }

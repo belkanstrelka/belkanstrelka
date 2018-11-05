@@ -2,9 +2,9 @@ const enTranslate = {
   header: {
     links: {
       brief: 'Brief us',
-      process: 'Our process',
-      services: 'Services',
-      mission: 'Mission',
+      process: 'What we do',
+      services: 'Why us?',
+      expertise: 'Core expertise',
     }
   }
 };
