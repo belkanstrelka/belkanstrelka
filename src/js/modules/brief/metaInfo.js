@@ -96,6 +96,7 @@ export const i18n = {
       title: 'Complete the brief',
       description: 'or see our youtube video on why briefing is so important',
       linkUpload: 'upload specs',
+      uploadFiles: 'Drag and drop files here to add them to your brief',
       submitBtn: 'Submit',
       submitLbl: 'By submitting this brief you are agreeing with our Terms & Conditions and Privacy Policy.',
       fieldset: {
@@ -189,14 +190,15 @@ export const i18n = {
   },
   ru: {
     brief: {
-      title: 'Заполните бриф',
+      title: 'Расскажите о задаче',
       description: 'или посмотрите наше видео, чтобы понять почему это так важно',
       linkUpload: 'загрузите ТЗ',
+      uploadFiles: 'Перетащите файлы на страницу, чтобы добавить их к брифу',
       submitBtn: 'Отправить',
       submitLbl: 'Нажимая кнопку, вы соглашаетесь с нашими Terms & Conditions и Privacy Policy.',
       fieldset: {
         projectType: {
-          label: 'Как мы можем помочь?',
+          label: 'Какая услуга нужна?',
           items: {
             design: 'UX & Дизайн',
             usability: 'Usability',
@@ -210,17 +212,17 @@ export const i18n = {
             placeholder: 'Что делает компания и как зарабатывает деньги',
           },
           url: {
-            label: 'Ссылка на проект, если есть',
+            label: 'Ссылка на обсуждаемый проект, если есть',
             placeholder: 'https://',
           }
         },
         task: {
-          label: 'В чем будет суть нашего совместного проекта? (или {linkUpload})',
+          label: 'В чем состоит задача? (или {linkUpload})',
           placeholder: 'Что мы будем создавать или улучшать?',
         },
         files: undefined,
         channels: {
-          label: 'В каких проекция придется работать?',
+          label: 'Какие проекция нужны?',
           items: {
             web: 'Web',
             mobile: 'Мобильный web',
@@ -229,15 +231,15 @@ export const i18n = {
           },
         },
         goals: {
-          label: 'Как этот проект повлияет на ваш бизнес?',
-          placeholder: 'Расскажите о важных целях, которые мы будем приследовать.',
+          label: 'Какие цели нужно достичь?',
+          placeholder: 'Расскажите о важных бизнес-целях, на которые влияет задача.',
         },
         competitors: {
-          label: 'Кто основные конкуренты, укажите ссылки:',
+          label: 'Кто основные конкуренты проекта, укажите ссылки:',
           placeholder: 'https://',
         },
         deadline: {
-          label: 'Насколько сжатые сроки проекта?',
+          label: 'Насколько сжатые сроки у задачи?',
           items: {
             days: 'Дни',
             weeks: 'Недели',
@@ -245,11 +247,11 @@ export const i18n = {
           },
         },
         likes: {
-          label: 'Любые продукты,на которые мы должны равняться:',
+          label: 'Поделитесь продуктами, которые вам нравятся:',
           placeholder: 'https://',
         },
         contact: {
-          label: 'Кто будет работать с нами на проекте? ',
+          label: 'Ваши контакты',
           name: 'Имя',
           email: 'Email',
           company: 'Компания',

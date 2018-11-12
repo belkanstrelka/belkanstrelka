@@ -6,12 +6,11 @@ import modals from 'modals';
 
 import NextSeo from 'next-seo';
 
-import IndexLanding from './../src/js/modules/landings/index'
+import IndexLanding from 'modules/landings/index'
 
 class Index extends Component {
-  static getInitialProps ( /* { reduxStore, req } */ ) {
-    // const isServer = !!req
-    return {}
+  static async getInitialProps({ reduxStore, isServer, pathname, query }) {
+    return { };
   }
 
   render () {
@@ -26,7 +25,7 @@ class Index extends Component {
 
         <IndexLanding />
         <ModalHost templates={modals} />
-        
+
       </div>
     )
   }

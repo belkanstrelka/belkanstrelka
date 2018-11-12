@@ -220,13 +220,13 @@ class Index extends Component {
   }
   renderOnDemandBlock () {
     const steps = [{
-      icon: Invoice,
-      title: 'landing.index.onDemand.items.item1.title',
-      description: 'landing.index.onDemand.items.item1.description',
-    }, {
       icon: Calendar,
       title: 'landing.index.onDemand.items.item2.title',
       description: 'landing.index.onDemand.items.item2.description',
+    }, {
+      icon: Invoice,
+      title: 'landing.index.onDemand.items.item1.title',
+      description: 'landing.index.onDemand.items.item1.description',
     }, {
       icon: Paperless,
       title: 'landing.index.onDemand.items.item3.title',
@@ -392,7 +392,7 @@ class Index extends Component {
                 </div>
               </div>
               <div className={css.bnsService__statItem}>
-                <div className={css.bnsService__statItemTitle}>397</div>
+                <div className={css.bnsService__statItemTitle}>11</div>
                 <div className={css.bnsService__statItemDescription}>
                   <I18N id={'landing.index.mission.stats.coffee'} />
                 </div>

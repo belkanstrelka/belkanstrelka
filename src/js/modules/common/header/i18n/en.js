@@ -2,8 +2,8 @@ const enTranslate = {
   header: {
     links: {
       brief: 'Brief us',
-      process: 'What we do',
-      services: 'Why us?',
+      process: 'Process',
+      services: 'Why us',
       expertise: 'Core expertise',
     }
   }

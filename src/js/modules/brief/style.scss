@@ -33,19 +33,34 @@
   &__formField {
     margin-bottom: 2 * $gap;
   }
-  
+
   &__action {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-items: center;
 
-    &Btn { }
+    @include respond(tablets) {
+      flex-flow: row wrap;
+    }
+
+    &Btn {
+      width: 100%;
+      margin-bottom: 2 * $gap;
+
+      @include respond(tablets) {
+        margin-bottom: 0;
+        width: auto;
+      }
+    }
 
     &Description {
       flex: 1;
-      padding-left: 2 * $gap;
       font-size: 14px;
       line-height: 20px;
+
+      @include respond(tablets) {
+        padding-left: 2 * $gap;
+      }
     }
   }
 

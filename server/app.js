@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const routes = require('./routes');
+
 const express = require('express');
 const bodyParser = require('body-parser')
 const compression = require('compression')
@@ -28,7 +30,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
 
 const app = next({ dir: '.', dev });
-const handle = app.getRequestHandler();
+const handle = routes.getRequestHandler(app);
 
 // const getRoutes = require('./routes');
 // const routes = getRoutes();

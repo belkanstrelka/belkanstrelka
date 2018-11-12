@@ -28,7 +28,7 @@ export default function configureStore(initialState = {}) {
     composeWithDevTools(
       applyMiddleware(
         thunkMiddleware,
-        loggerMiddleware
+        // loggerMiddleware
       )
     )
   );

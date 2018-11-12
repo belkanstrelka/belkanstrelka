@@ -34,19 +34,19 @@
     font-size: 32px;
     line-height: 38px;
     font-weight: $heavyWeight;
-    margin: 0 0 $gap;
+    margin: 0 0 2 * $gap;
 
     @include respond(tablets) {
       font-size: 48px;
       line-height: 60px;
-      margin: 0;
+      // margin: 0;
     }
   }
 
   &__description {
     font-size: 20px;
     line-height: 28px;
-    font-weight: $mediumWeight;
+    font-weight: $lightWeight;
 
     @include respond(tablets) {
       font-size: 22px;
@@ -230,7 +230,7 @@
     &Title {
       font-size: 22px;
       line-height: 30px;
-      width: 165px;
+      width: 170px;
       font-weight: $boldWeight;
     }
 
@@ -286,6 +286,7 @@
       font-size: 16px;
       line-height: 22px;
       max-width: 320px;
+      font-weight: $lightWeight;
     }
   }
 }

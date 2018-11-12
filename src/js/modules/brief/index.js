@@ -10,6 +10,7 @@ import Header from 'modules/common/header'
 import Footer from 'modules/common/footer'
 import Btn from 'modules/common/btn'
 
+import FilesIcon from './img/files.svg'
 import PdfIcon from './img/pdfIcon.svg'
 import DocIcon from './img/docIcon.svg'
 import ExcelIcon from './img/excelIcon.svg'
@@ -80,10 +81,11 @@ class DropzoneFullscreen extends Component {
       right: 0,
       bottom: 0,
       left: 0,
-      padding: '2.5em 0',
-      background: 'rgba(255, 255, 255, 0.95)',
+      padding: '5em 0',
+      background: 'rgba(255, 255, 255, 0.98)',
       textAlign: 'center',
       zIndex: 100500,
+      fontSize: '20px',
       color: '#000'
     };
 
@@ -96,7 +98,14 @@ class DropzoneFullscreen extends Component {
         onDragLeave={this.onDragLeave}
         ref={this.props.refLink}
       >
-        { dropzoneActive && <div style={overlayStyle}>Drop files...</div> }
+        { dropzoneActive && (
+          <div style={overlayStyle}>
+            <FilesIcon />
+            <div style={{marginTop: '1em'}}>
+              <I18N id='brief.uploadFiles' />
+            </div>
+          </div>
+        )}
         {children}
       </Dropzone>
     )
@@ -241,17 +250,6 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.company.url.label' />
-                    </label>
-                    <FormFieldControl
-                      className={css.bnsBrief__formField}
-                      schema={schema}
-                      model='.companyUrl'
-                      component={Input}
-                    />
-                  </div>
-                  <div className={css.bnsBrief__formControl}>
-                    <label className={css.bnsBrief__formLabel}>
                       <I18N
                         id='brief.fieldset.task.label'
                         values={{
@@ -274,6 +272,17 @@ class Brief extends Component {
                       schema={schema}
                       model='.files'
                       component={FilesPreview}
+                    />
+                  </div>
+                  <div className={css.bnsBrief__formControl}>
+                    <label className={css.bnsBrief__formLabel}>
+                      <I18N id='brief.fieldset.company.url.label' />
+                    </label>
+                    <FormFieldControl
+                      className={css.bnsBrief__formField}
+                      schema={schema}
+                      model='.companyUrl'
+                      component={Input}
                     />
                   </div>
                   <div className={css.bnsBrief__formControl}>
@@ -374,7 +383,7 @@ class Brief extends Component {
                     />
                   </div>
                   <div className={css.bnsBrief__action}>
-                    <Btn type={'submit'} className={css.bnsIndex__actionBtn} onClick={this.onSbmt}>
+                    <Btn type={'submit'} className={css.bnsBrief__actionBtn} onClick={this.onSbmt}>
                       <I18N id={'brief.submitBtn'} />
                     </Btn>
                     <div className={css.bnsBrief__actionDescription}>

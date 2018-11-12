@@ -4,10 +4,10 @@ const enTranslate = {
       hero: {
         title: 'Design as a service',
         description: 'Easiest way for startups and enterpises to upgrade digital products and focus on building great companies.',
-        btn: 'Brief us',
+        btn: 'Try it now',
       },
       forWhom: {
-        title: 'You brief. We do.',
+        title: 'Smart and precise',
         description: 'AI-boosted design processes that never miss deadlines, increase transparency and promote collaboration not knockoffs.',
         btn: 'Brief us',
         items: {
@@ -48,7 +48,7 @@ const enTranslate = {
         items: {
           item1: {
             title: 'Easy payments',
-            description: 'We do e-invoicing and accept all major credit cards online ',
+            description: 'We do e-invoicing and accept all major credit cards online.',
           },
           item2: {
             title: 'No holidays or lunch breaks',
@@ -56,11 +56,11 @@ const enTranslate = {
           },
           item3: {
             title: 'Paperless',
-            description: 'Digital contracts with liabilities in the US, EU, Singapore and Russia.',
+            description: 'Digital contracts with liabilities in the US, EU and Singapore.',
           },
           item4: {
             title: 'Truly global',
-            description: 'Available virtually anywhere in English, Spanish, Chinese and Russian :)  ',
+            description: 'Ready to support your product in overseas markets.',
           },
         }
       },
@@ -102,7 +102,7 @@ const enTranslate = {
         stats: {
           completed: 'missions completed',
           hoursElapsed: 'hours elapsed',
-          coffee: 'cups of coffee consumed',
+          coffee: 'creatives aboard',
         },
       }
     }

@@ -1,9 +1,9 @@
 const ruTranslate = {
   header: {
     links: {
-      brief: 'Заполнить бриф',
-      process: 'Наш сервис',
-      services: 'Почему мы?',
+      brief: 'Поставить задачу',
+      process: 'Процесс',
+      services: 'Почему мы',
       expertise: 'Экспертиза',
     }
   }
