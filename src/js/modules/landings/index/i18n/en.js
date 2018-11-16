@@ -21,25 +21,31 @@ const enTranslate = {
         description: '*what you see is what you get',
       },
       process: {
+        title: 'Sprints with set deliverables',
+        description: 'Our team constantly initiates a dialog with stakeholders to make sure a tailord solution is ready on time.',
         steps: {
           step1: {
-            title: 'Fill in a brief',
-            description: 'We will dispatch the right people right away.',
+            title: 'Mon.',
+            description: 'We present last week’s sprint to your business and plan a new one.',
           },
           step2: {
-            title: 'Come to an interview',
-            description: 'Our team dives into your goals and layouts the project timeline.',
+            title: 'Tue.',
+            description: 'Our designers do task-specfic research and brainstorm for possible solutions.',
           },
           step3: {
-            title: 'Approve sprints & track',
-            description: 'We report after each sprint and take your feedback.',
+            title: 'Wed.',
+            description: 'We sketch our ideas and send them for your evaluation.',
           },
           step4: {
-            title: 'Get results & pay',
-            description: 'You only get charged for delivered work.',
+            title: 'Thu.',
+            description: 'The most promising sketch goes into final production.',
+          },
+          step5: {
+            title: 'Fri.',
+            description: 'A prototype and a straightforward presentation are camera ready.',
           },
         },
-        btn: 'See in Action',
+        btn: 'Plan first sprint',
       },
       onDemand: {
         title: 'Design studio on demand',

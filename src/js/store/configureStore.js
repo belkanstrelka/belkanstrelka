@@ -10,7 +10,6 @@ import { formReducer as brieReducers } from 'modules/brief/metaInfo';
 import { combineForms } from 'react-redux-form';
 import { reducer as modal } from 'redux-modal';
 
-
 const loggerMiddleware = createLogger({
   // ...options
 });

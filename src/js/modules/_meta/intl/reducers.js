@@ -1,36 +1,31 @@
-import Cookies from 'js-cookie';
+import { enabledLanguages, localizationData } from 'intl/setup'
+import { SWITCH_LANGUAGE } from './actions'
 
-import {
-  enabledLanguages,
-  localizationData,
-  getBrowserLocale
-} from 'intl/setup';
-
-import { SWITCH_LANGUAGE } from './actions';
-
-// const initLocale = 'ru-RU'
-const initLocale = Cookies.get('rmLocale') || getBrowserLocale();
-
+const initLocale = 'en'
 const initialState = {
+  location: '',
   locale: initLocale,
   enabledLanguages,
-  ...(localizationData[initLocale] || {})
-};
+  ...(localizationData[initLocale] || {}),
+}
 
 const IntlReducer = (state = initialState, action) => {
   switch (action.type) {
     case SWITCH_LANGUAGE: {
-      const { type, ...actionWithoutType } = action; // eslint-disable-line
+      const {
+        type,
+        ...actionWithoutType
+      } = action; // eslint-disable-line
 
       return {
         ...state,
         ...actionWithoutType
-      };
+      }
     }
 
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default IntlReducer;
+export default IntlReducer

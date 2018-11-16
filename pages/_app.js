@@ -14,36 +14,31 @@ import NextSeo from 'next-seo';
 import SEO from 'next-seo.config';
 const TIMEOUT = 350
 
-
 class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
     let pageProps = {}
-    const locationMap = {
-      // 'undefined': 'en-US',
-      'undefined': 'ru-RU',
-      'en': 'en-US',
-      'ru': 'ru-RU',
-    }
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
 
       await ctx.reduxStore.dispatch(
-        switchLanguage(locationMap[ctx.query.location])
+        switchLanguage(ctx.query.location)
       );
     }
 
-    return { pageProps }
+    return {
+      pageProps,
+      location: ctx.query.location
+    }
   }
 
   render () {
-    const { Component, pageProps, reduxStore } = this.props
+    const { Component, pageProps, reduxStore, location } = this.props
 
     // loadingComponent={<Loader />}
-
     return (
       <Container>
-        <NextSeo config={SEO} />
+        <NextSeo config={SEO[location]} />
 
         {true && (
           <PageTransition

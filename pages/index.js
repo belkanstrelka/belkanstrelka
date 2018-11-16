@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 
+import NextSeo from 'next-seo';
+import { injectIntl } from 'react-intl'
+
 import ModalHost from 'modules/_layouts/modalHost';
 import modals from 'modals';
-
-import NextSeo from 'next-seo';
 
 import IndexLanding from 'modules/landings/index'
 
@@ -14,12 +15,15 @@ class Index extends Component {
   }
 
   render () {
+    const { intl } = this.props;
+
     return (
       <div>
         <NextSeo
           config={{
-            title: 'Design as a Service | Belka & Strelka',
-            description: 'Easiest way for startups and enterpises to upgrade digital products and focus on building great companies.',
+            title: intl.formatMessage({
+              id: 'meta.index.title'
+            })
           }}
         />
 
@@ -31,4 +35,4 @@ class Index extends Component {
   }
 }
 
-export default connect(() => {}, {})(Index)
+export default connect(() => ({}), {})(injectIntl(Index))

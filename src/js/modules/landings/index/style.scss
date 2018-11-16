@@ -37,8 +37,9 @@
     margin: 0 0 2 * $gap;
 
     @include respond(tablets) {
-      font-size: 48px;
-      line-height: 60px;
+      font-size: 52px;
+      line-height: 58px;
+      // font-weight: $boldWeight;
       // margin: 0;
     }
   }
@@ -51,6 +52,14 @@
     @include respond(tablets) {
       font-size: 22px;
       line-height: 30px;
+    }
+  }
+
+  &__action {
+    width: 100%;
+
+    @include respond(tablets) {
+      width: auto;
     }
   }
 
@@ -108,6 +117,7 @@
     }
   }
 }
+
 .bnsHero {
   .bnsIndex__title,
   .bnsIndex__description {
@@ -118,7 +128,7 @@
     }
 
     @include respond(desktop) {
-      max-width: 55%;
+      max-width: 65%;
     }
   }
 
@@ -209,46 +219,63 @@
     flex: 3;
   }
 }
+
 .bnsProcess {
-  display: none;
-
-  @include respond(tablets) {
-    display: block;
-  }
-
   &__items {
-    margin-bottom: 48px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include respond(tablets) {
+      margin-top: 56px;
+      margin-bottom: 56px;
+    }
   }
 
   &__item {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     margin-bottom: 32px;
 
-    &Title {
-      font-size: 22px;
-      line-height: 30px;
-      width: 170px;
-      font-weight: $boldWeight;
+    @include respond(tablets) {
+      margin-bottom: 54px;
     }
 
-    &Separator {
-      display: inline-block;
-      background-color: #D8D8D8;
-      height: 50px;
-      margin: 0 3 * $gap;
-      width: 3px;
+    &Title {
+      padding-top: 12px;
+      font-size: 28px;
+      width: 70px;
+      font-weight: $demiBoldWeight;
+
+      @include respond(tablets) {
+        font-size: 42px;
+        width: 160px;
+        // margin-left: 160px;
+      }
     }
 
     &Text {
       flex: 1;
-      font-size: 22px;
-      line-height: 30px;
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 600px;
+
+      @include respond(tablets) {
+        font-size: 26px;
+        line-height: 38px;
+        // margin-left: 160px;
+      }
+    }
+  }
+
+  &__action {
+    @include respond(tablets) {
+      margin-left: 160px;
     }
   }
 }
+
 .bnsOnDemand {
   &__items {
     display: flex;

@@ -222,7 +222,7 @@ export const i18n = {
         },
         files: undefined,
         channels: {
-          label: 'Какие проекция нужны?',
+          label: 'Какие проекции нужны?',
           items: {
             web: 'Web',
             mobile: 'Мобильный web',

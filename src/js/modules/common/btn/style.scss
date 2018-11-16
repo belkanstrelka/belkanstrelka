@@ -255,7 +255,7 @@
 	z-index: 1
 }
 
-@media (max-width:1440px) {
+@media (min-width:640px) {
 	.btn__inner {
 		padding: 18px 32px
 	}

@@ -6,12 +6,13 @@ import en from 'react-intl/locale-data/en'
 import headerData from 'modules/common/header/i18n'
 import footerData from 'modules/common/footer/i18n'
 
+import metaData from 'i18n'
 import landingData from 'modules/landings/index/i18n'
 import { i18n as briefData } from 'modules/brief/metaInfo'
 // import authData from 'modules/auth/i18n'
 
-const enName = 'en-US';
-const ruName = 'ru-RU';
+const enName = 'en';
+const ruName = 'ru';
 
 export const enabledLanguages = [
   enName,
@@ -19,7 +20,7 @@ export const enabledLanguages = [
 ]
 export const localizationData = {}
 export const getBrowserLocale = () => {
-  return ruName
+  return enName
   // return enName
 }
 
@@ -41,6 +42,7 @@ function flattenMessages(nestedMessages = {}, prefix = '') {
 const enData = {
   locale: enName,
   messages: {
+    ...metaData.en,
     ...landingData.en,
     ...headerData.en,
     ...footerData.en,
@@ -50,12 +52,13 @@ const enData = {
 }
 addLocaleData(en)
 localizationData[enName] = enData
-localizationData[enName].messages = flattenMessages(localizationData['en-US'].messages)
+localizationData[enName].messages = flattenMessages(localizationData[enName].messages)
 
 
 const ruData = {
   locale: ruName,
   messages: {
+    ...metaData.ru,
     ...landingData.ru,
     ...headerData.ru,
     ...footerData.ru,
@@ -65,4 +68,4 @@ const ruData = {
 }
 addLocaleData(ru)
 localizationData[ruName] = ruData
-localizationData[ruName].messages = flattenMessages(localizationData['ru-RU'].messages)
+localizationData[ruName].messages = flattenMessages(localizationData[ruName].messages)

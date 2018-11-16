@@ -3,7 +3,8 @@ import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 import { FormattedMessage as I18N } from 'react-intl'
 
 // import { StickyContainer, Sticky } from 'react-sticky'
-import Link from 'next/link'
+// import Link from 'next/link'
+import Link from 'modules/common/link'
 import Sticky from 'react-stickynode';
 import cn from 'classnames'
 
@@ -159,6 +160,7 @@ class Index extends Component {
       </div>
     )
   }
+
   renderWYSIWYGBlock () {
     return (
       <div className={cn(css.bnsIndex__WYSIWYG, css.bnsWYSIWYG)}>
@@ -180,6 +182,7 @@ class Index extends Component {
       </div>
     )
   }
+
   renderProcessBlock () {
     const steps = [{
       title: 'landing.index.process.steps.step1.title',
@@ -193,24 +196,36 @@ class Index extends Component {
     }, {
       title: 'landing.index.process.steps.step4.title',
       description: 'landing.index.process.steps.step4.description',
+    }, {
+      title: 'landing.index.process.steps.step5.title',
+      description: 'landing.index.process.steps.step5.description',
     }];
 
     return (
       <div id='process' className={cn(css.bnsIndex__process, css.bnsProcess)}>
         <div className={appCss.bnsContainer}>
+          <h2 className={css.bnsIndex__title}>
+            <I18N id={'landing.index.process.title'} />
+          </h2>
+          <div className={css.bnsIndex__description}>
+            <I18N id={'landing.index.process.description'} />
+          </div>
           <div className={css.bnsProcess__items}>
             {steps.map((processStep, index)=>{
               return (
                 <div key={'process' + index} className={cn(css.bnsProcess__item)}>
-                  <div className={css.bnsProcess__itemTitle}>{index + 1}. <I18N id={processStep.title} /></div>
-                  <div className={css.bnsProcess__itemSeparator}></div>
-                  <div className={css.bnsProcess__itemText}><I18N id={processStep.description} /></div>
+                  <div className={css.bnsProcess__itemTitle}>
+                    <I18N id={processStep.title} />
+                  </div>
+                  <div className={css.bnsProcess__itemText}>
+                    <I18N id={processStep.description} />
+                  </div>
                 </div>
               )
             })}
           </div>
           <Link href={'/brief'}>
-            <Btn className={css.bnsIndex__action}>
+            <Btn className={cn(css.bnsIndex__action, css.bnsProcess__action)}>
               <I18N id={'landing.index.process.btn'} />
             </Btn>
           </Link>
@@ -412,7 +427,24 @@ class Index extends Component {
       <ParallaxProvider>
         <div>
           <input type='hidden' value={init} />
-          <Header hideModal={hideModal} showModal={showModal} />
+          <Header
+            hideModal={hideModal}
+            showModal={showModal}
+            links={[{
+                href: '/brief',
+                title: 'header.links.brief'
+              }, {
+                href: '/#process',
+                title: 'header.links.process'
+              }, {
+                href: '/#services',
+                title: 'header.links.services'
+              }, {
+                href: '/#expertise',
+                title: 'header.links.expertise'
+              }
+            ]}
+          />
 
           <div id='top' />
           <Saturn className={css.bnsIndex__heroPlanet} />

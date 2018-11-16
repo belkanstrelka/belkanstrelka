@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Cookies = require('cookies')
 
 const routes = require('./routes');
 
@@ -34,10 +35,46 @@ const handle = routes.getRequestHandler(app);
 
 // const getRoutes = require('./routes');
 // const routes = getRoutes();
+function locationMiddleware(req, res, next) {
+  if (req.originalUrl.indexOf('/_next/') === 0) {
+    return next();
+  }
+
+  const cookies = new Cookies(req, res)
+  const locale = cookies.get('belocale')
+  const baseUrl = req.originalUrl.replace('/ru', '').replace('/en', '')
+
+  if (locale) {
+    if(locale === 'ru' && req.originalUrl === baseUrl) {
+      return res.redirect(`https://bebelka.com/ru${baseUrl}`);
+    }
+
+    if(locale === 'en' && req.originalUrl !== baseUrl) {
+      return res.redirect(`https://bebelka.com${baseUrl}`);
+    }
+
+    return next();
+
+  } else {
+    const userIp = req.header('x-forwarded-for') || req.connection.remoteAddress
+
+    ipapi.location((c) => {
+      if(c.country === 'RU') {
+        cookies.set('belocale', 'ru');
+        return res.redirect(`https://bebelka.com/ru${baseUrl}`);
+      } else {
+        cookies.set('belocale', 'en');
+        return res.redirect(`https://bebelka.com${baseUrl}`);
+      }
+    }, userIp, '', '')
+  }
+}
+
 function redirectMiddleware(req, res, next) {
   if (req.hostname !== 'bebelka.com' && !dev) {
     return res.redirect(`https://bebelka.com${req.originalUrl}`);
   }
+
   return next();
 }
 
@@ -75,6 +112,11 @@ app.prepare().then(() => {
   server.use(bodyParser.json())
   server.use(express.static(__dirname + '/static'));
   server.use(redirectMiddleware);
+
+  if (!dev) {
+    server.use(locationMiddleware);
+  }
+  
   server.use('/api/brief', briefRouter);
 
   server.get('/country', (req, res) => {

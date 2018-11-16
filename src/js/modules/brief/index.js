@@ -200,7 +200,7 @@ class Brief extends Component {
   render () {
     return (
       <div>
-        <Header />
+        <Header header={(<I18N id='brief.title' />)} />
         <FormControl schema={schema} onFormSubmit={this.onBriefSubmit}>
           <FormFieldControl
             schema={schema}
@@ -400,6 +400,6 @@ class Brief extends Component {
   }
 }
 
-export default connect(()=>{}, {
+export default connect(() => ({}), {
   submitBrief: actions.submitBrief
 })(Brief)

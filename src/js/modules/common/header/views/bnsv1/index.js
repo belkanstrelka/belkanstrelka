@@ -4,7 +4,8 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { FormattedMessage as I18N } from 'react-intl'
 
 import cn from 'classnames'
-import Link from 'next/link'
+// import Link from 'next/link'
+import Link from 'modules/common/link'
 // import Reveal from 'react-reveal/Reveal';
 
 import appCss from 'scss/app.scss'
@@ -61,7 +62,7 @@ class BnSHeaderView extends Component {
   }
 
   render () {
-    const { style, isOpen, toogleMenu, links } = this.props
+    const { style, isOpen, toogleMenu, links, header, childrens } = this.props
     const { show } = this.state
 
     return (
@@ -71,26 +72,27 @@ class BnSHeaderView extends Component {
       })}>
         <div className={cn(cssFlex.flexHorizontal, css.header__wrapper)}>
           <Link href={'/'}>
-            <a className={css.header__title}>
-              be·belka
-            </a>
+            <a className={css.header__title}>be·belka</a>
           </Link>
-          <div className={css.header__separator}></div>
-          <div>
-            <ul className={cn(css.header__submenu, css.breadcrumbs)}>
-              {links.map((l, index) => {
-                return (
-                  <li className={css.header__submenuMenu} key={'menuItem' + index}>
-                    <Link href={l.href} scroll={false}>
-                      <a>
-                        <I18N id={l.title} />
-                      </a>
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+          { (links || header) && (<div className={css.header__separator}></div>)}
+          { links && (
+            <div>
+              <ul className={cn(css.header__submenu, css.breadcrumbs)}>
+                {links.map((l, index) => {
+                  return (
+                    <li className={css.header__submenuMenu} key={'menuItem' + index}>
+                      <Link href={l.href} scroll={false}>
+                        <a>
+                          <I18N id={l.title} />
+                        </a>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
+          { header && (<div className={css.header__text}>{header}</div>)}
           <div className={cssFlex.flexSpacer}></div>
           <div className={cn({
             [css.burger]: true,

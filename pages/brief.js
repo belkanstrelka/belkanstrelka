@@ -2,8 +2,12 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 
 import NextSeo from 'next-seo';
+import { injectIntl } from 'react-intl'
 
-import BriefPage from './../src/js/modules/brief'
+import ModalHost from 'modules/_layouts/modalHost';
+import modals from 'modals';
+
+import BriefPage from 'modules/brief'
 
 class Brief extends Component {
   static getInitialProps ( /* { reduxStore, req } */ ) {
@@ -12,18 +16,23 @@ class Brief extends Component {
   }
 
   render () {
+    const { intl } = this.props;
+
     return (
       <div>
         <NextSeo
           config={{
-            title: 'Brief | Belka & Strelka'
+            title: intl.formatMessage({
+              id: 'meta.brief.title'
+            })
           }}
         />
 
         <BriefPage />
+        <ModalHost templates={modals} />
       </div>
     )
   }
 }
 
-export default connect()(Brief)
+export default connect(() => ({}), {})(injectIntl(Brief))
