@@ -462,7 +462,7 @@ class Index extends Component {
             </div>
           <div id='bottom' />
 
-          <Footer />
+          <Footer intl={this.props.intl} />
         </div>
       </ParallaxProvider>
     )

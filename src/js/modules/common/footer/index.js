@@ -23,6 +23,8 @@ import Stripe from './img/stripe.svg'
 
 class Footer extends Component {
   render () {
+    const { intl } = this.props;
+
     return (
       <footer id='content' className={cn(css.footer)}>
         <Planet className={cn(css.footer__icon)} />
@@ -70,10 +72,14 @@ class Footer extends Component {
               <div className={css.footer__title}>
                 <I18N id={'footer.links.more'} />
               </div>
-              <a className={cn(css.footer__link, css.footer__text)}>
+              <a target='_blank' href={intl.formatMessage({
+                id: 'agreement.terms'
+              })} className={cn(css.footer__link, css.footer__text)}>
                 <I18N id={'footer.more.terms'} />
               </a>
-              <a className={cn(css.footer__link, css.footer__text)}>
+              <a target='_blank' href={intl.formatMessage({
+                id: 'agreement.privacy'
+              })} className={cn(css.footer__link, css.footer__text)}>
                 <I18N id={'footer.more.privacy'} />
               </a>
             </div>

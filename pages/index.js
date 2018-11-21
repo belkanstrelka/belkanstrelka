@@ -27,7 +27,7 @@ class Index extends Component {
           }}
         />
 
-        <IndexLanding />
+        <IndexLanding intl={intl} />
         <ModalHost templates={modals} />
       </div>
     )

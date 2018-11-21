@@ -98,7 +98,7 @@ export const i18n = {
       linkUpload: 'upload specs',
       uploadFiles: 'Drag and drop files here to add them to your brief',
       submitBtn: 'Submit',
-      submitLbl: 'By submitting this brief you are agreeing with our Terms & Conditions and Privacy Policy.',
+      submitLbl: 'By submitting this brief you are agreeing with our {terms} and {privacy}.',
       fieldset: {
         projectType: {
           label: 'Where can we help?',
@@ -195,7 +195,7 @@ export const i18n = {
       linkUpload: 'загрузите ТЗ',
       uploadFiles: 'Перетащите файлы на страницу, чтобы добавить их к брифу',
       submitBtn: 'Отправить',
-      submitLbl: 'Нажимая кнопку, вы соглашаетесь с нашими Terms & Conditions и Privacy Policy.',
+      submitLbl: 'Нажимая кнопку, вы соглашаетесь с нашими {terms} и {privacy}.',
       fieldset: {
         projectType: {
           label: 'Какая услуга нужна?',

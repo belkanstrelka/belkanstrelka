@@ -198,6 +198,8 @@ class Brief extends Component {
   }
 
   render () {
+    const { intl } = this.props;
+    
     return (
       <div>
         <Header
@@ -400,8 +402,27 @@ class Brief extends Component {
                     <Btn type={'submit'} className={css.bnsBrief__actionBtn} onClick={this.onSbmt}>
                       <I18N id={'brief.submitBtn'} />
                     </Btn>
+
                     <div className={css.bnsBrief__actionDescription}>
-                      <I18N id={'brief.submitLbl'} />
+                      <I18N
+                        id='brief.submitLbl'
+                        values={{
+                          terms: (
+                            <a target='_blank' href={intl.formatMessage({
+                              id: 'agreement.terms'
+                            })} className={cn(css.bnsBrief__link)}>
+                              <I18N id={'footer.more.terms'} />
+                            </a>
+                          ),
+                          privacy: (
+                            <a target='_blank' href={intl.formatMessage({
+                              id: 'agreement.privacy'
+                            })} className={cn(css.bnsBrief__link)}>
+                              <I18N id={'footer.more.privacy'} />
+                            </a>
+                          )
+                        }}
+                      />
                     </div>
                   </div>
                 </div>

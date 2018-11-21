@@ -28,7 +28,7 @@ class Brief extends Component {
           }}
         />
 
-        <BriefPage />
+        <BriefPage intl={intl} />
         <ModalHost templates={modals} />
       </div>
     )
