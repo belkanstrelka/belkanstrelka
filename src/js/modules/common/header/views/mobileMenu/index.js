@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import cn from 'classnames'
-import Link from 'next/link'
+// import Link from 'next/link'
+import Link from 'modules/common/link'
 
 import { FormattedMessage as I18N } from 'react-intl'
 
@@ -9,45 +10,16 @@ import css from './menu.scss';
 
 class HeaderMenu extends Component {
   render () {
-    const links = [{
-      href: '/#process',
-      title: 'header.links.process'
-    }, {
-      href: '/#services',
-      title: 'header.links.services'
-    }, {
-      href: '/#expertise',
-      title: 'header.links.expertise'
-    }];
-
-    const phones = [{
-      city: 'Москва',
-      phone: '+7 (916) 948-79-37',
-      phoneLink: '+79169487937',
-      isOnline: true,
-      enabled: true,
-    }, {
-      city: 'San Francisco',
-      phone: '+1 (612) 703-49-79',
-      phoneLink: '+16127034979',
-      isOnline: false,
-      enabled: true,
-    }, {
-      city: 'Helsinki',
-      phone: '+358 (46) 520-37-14',
-      phoneLink: '+358465203714',
-      isOnline: true,
-      enabled: false,
-    }];
+    const { links, hideMenu, phones } = this.props;
 
     return (
       <div className={cn(css.popupMenu, cssFlex.flexVertical)}>
         <ul>
-          {links.map((l, index) => {
+          {(links || []).map((l, index) => {
             return (
               <li key={'mobileMenuItem' + index}>
                 <Link href={l.href} scroll={false}>
-                  <a onClick={this.props.hideModal}>
+                  <a onClick={()=>{ hideMenu() }}>
                     <I18N id={l.title} />
                   </a>
                 </Link>
@@ -60,7 +32,8 @@ class HeaderMenu extends Component {
           <div className={css.popupMenu__email}>
             <a href='mailto:hello@bebelka.com'>hello@bebelka.com</a>
           </div>
-          {phones.map((phone, index) => {
+
+          {(phones || []).map((phone, index) => {
             if (!phone.enabled) {
               return null
             }

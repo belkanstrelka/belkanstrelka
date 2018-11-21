@@ -58,7 +58,7 @@ $headerHeight: 60px;
 
   &__submenu {
     vertical-align: middle;
-    margin-top: 3px;
+    margin-top: 5px;
   }
 
   &__text,
@@ -141,6 +141,10 @@ $headerHeight: 60px;
     background-repeat: no-repeat;
     height: 24px;
     width: 24px;
+  }
+
+  &__title {
+    padding-top: 4px;
   }
 
   &__text,

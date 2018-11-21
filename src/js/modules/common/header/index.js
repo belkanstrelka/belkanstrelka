@@ -13,7 +13,29 @@ import { show, hide } from 'redux-modal';
 import BnSHeaderView from './views/bnsv1';
 
 export default connect(({ header }) => {
-  return { }
+  const phones = [{
+    city: 'Москва',
+    phone: '+7 (916) 948-79-37',
+    phoneLink: '+79169487937',
+    isOnline: true,
+    enabled: true,
+  }, {
+    city: 'San Francisco',
+    phone: '+1 (612) 703-49-79',
+    phoneLink: '+16127034979',
+    isOnline: false,
+    enabled: true,
+  }, {
+    city: 'Helsinki',
+    phone: '+358 (46) 520-37-14',
+    phoneLink: '+358465203714',
+    isOnline: true,
+    enabled: false,
+  }];
+
+  return {
+    phones
+  }
 }, {
   showModal: show,
   hideModal: hide,

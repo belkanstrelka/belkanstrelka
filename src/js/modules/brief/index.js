@@ -200,7 +200,21 @@ class Brief extends Component {
   render () {
     return (
       <div>
-        <Header header={(<I18N id='brief.title' />)} />
+        <Header
+          header={(<I18N id='brief.title' />)}
+          links={[{
+              href: '/#process',
+              title: 'header.links.process'
+            }, {
+              href: '/#services',
+              title: 'header.links.services'
+            }, {
+              href: '/#expertise',
+              title: 'header.links.expertise'
+            }
+          ]}
+        />
+
         <FormControl schema={schema} onFormSubmit={this.onBriefSubmit}>
           <FormFieldControl
             schema={schema}

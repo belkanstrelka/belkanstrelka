@@ -427,6 +427,7 @@ class Index extends Component {
       <ParallaxProvider>
         <div>
           <input type='hidden' value={init} />
+
           <Header
             hideModal={hideModal}
             showModal={showModal}

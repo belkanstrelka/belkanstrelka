@@ -10,6 +10,7 @@ import Link from 'modules/common/link'
 
 import appCss from 'scss/app.scss'
 
+import Belogo from './belogo.svg'
 import MobileMenu from 'modules/common/header/views/mobileMenu';
 import menuCss from 'modules/common/header/views/mobileMenu/menu.scss';
 
@@ -32,7 +33,7 @@ class BnSHeaderView extends Component {
 
     if (needOpen) {
       disableBodyScroll(
-        document.querySelector(menuCss.popupMenu)
+        document.querySelector('.scrollTarget')
       );
 
       // showModal('', {
@@ -52,7 +53,7 @@ class BnSHeaderView extends Component {
       // })
     } else {
       enableBodyScroll(
-        document.querySelector(menuCss.popupMenu)
+        document.querySelector('.scrollTarget')
       );
 
       // hideModal('', {
@@ -62,20 +63,24 @@ class BnSHeaderView extends Component {
   }
 
   render () {
-    const { style, isOpen, toogleMenu, links, header, childrens } = this.props
+    const { style, isOpen, toogleMenu, links, phones, header, childrens } = this.props
     const { show } = this.state
 
     return (
       <div className={cn({
+        'scrollTarget': true,
         [css.header]: true,
         [css.header_fixed]: show,
       })}>
         <div className={cn(cssFlex.flexHorizontal, css.header__wrapper)}>
           <Link href={'/'}>
-            <a className={css.header__title}>be·belka</a>
+            <a className={css.header__title}>
+              <Belogo height="24" width="40" />
+              { /* be·belka */ }
+            </a>
           </Link>
           { (links || header) && (<div className={css.header__separator}></div>)}
-          { links && (
+          { (links && !header) && (
             <div>
               <ul className={cn(css.header__submenu, css.breadcrumbs)}>
                 {links.map((l, index) => {
@@ -102,7 +107,10 @@ class BnSHeaderView extends Component {
           </div>
         </div>
         { show && (
-          <MobileMenu />
+          <MobileMenu hideMenu={this.handleBurgerClick}
+            links={links}
+            phones={phones}
+          />
         )}
       </div>
     )
