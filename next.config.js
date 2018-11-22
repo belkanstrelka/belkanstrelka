@@ -1,3 +1,5 @@
+const withPlugins = require('next-compose-plugins');
+const optimizedImages = require('next-optimized-images');
 const withSass = require('@zeit/next-sass')
 
 const { resolve } = require('path');
@@ -5,13 +7,9 @@ const path = require('path');
 
 const rootDir = path.join(__dirname, './');
 
-module.exports = withSass({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: '[local]___[hash:base64:5]',
-  },
-  webpack(config, options) {
+
+const nextConfig = {
+  webpack: (config, options) => {
     return {
       ...config,
       resolve: {
@@ -30,4 +28,17 @@ module.exports = withSass({
       },
     }
   },
-})
+};
+
+module.exports = withPlugins([
+  [optimizedImages, {
+    /* config for next-optimized-images */
+  }],
+  [withSass, {
+    cssModules: true,
+    cssLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: '[local]___[hash:base64:5]',
+    }
+  }],
+], nextConfig);

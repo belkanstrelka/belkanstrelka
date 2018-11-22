@@ -16,10 +16,10 @@ import Linkedin from './img/linkedin.svg'
 import Planet from './img/footerPlanet.svg'
 import Hammer from './img/hammer.svg'
 
-import Visa from './img/visa.svg'
-import Master from './img/master.svg'
-
-import Stripe from './img/stripe.svg'
+import Visa from './img/visa.png'
+import Master from './img/mastercard.png'
+import Stripe from './img/stripe.png'
+import Amex from './img/amex.png'
 
 class Footer extends Component {
   render () {
@@ -89,9 +89,10 @@ class Footer extends Component {
                 <I18N id={'footer.links.payments'} />
               </div>
               <div>
-                <Visa className={css.footer__payment} />
-                <Master className={css.footer__payment} />
-                <Stripe className={css.footer__payment} />
+                <img src={Visa} className={css.footer__payment} />
+                <img src={Master} className={css.footer__payment} />
+                <img src={Amex} className={css.footer__payment} />
+                <img src={Stripe} style={{ marginBottom: '3px' }} className={css.footer__payment} />
               </div>
             </div>
 

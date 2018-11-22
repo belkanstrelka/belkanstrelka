@@ -46,6 +46,10 @@ function locationMiddleware(req, res, next) {
 
   if (locale) {
     if(locale === 'ru' && req.originalUrl === baseUrl) {
+      if (baseUrl === '/') {
+        return res.redirect(`https://bebelka.com/ru`);
+      }
+      
       return res.redirect(`https://bebelka.com/ru${baseUrl}`);
     }
 
@@ -116,7 +120,7 @@ app.prepare().then(() => {
   if (!dev) {
     server.use(locationMiddleware);
   }
-  
+
   server.use('/api/brief', briefRouter);
 
   server.get('/country', (req, res) => {
