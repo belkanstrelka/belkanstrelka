@@ -13,4 +13,4 @@ const locPattern = ':location(en|ru)';
 module.exports = routes()
   .add('index', `/${locPattern}`, 'index')
   .add('brief_index', `/${locPattern}/brief`, 'brief/index')
-  .add('brief_submited', `/${locPattern}/brief/submited`, 'brief/submited');
+  .add('brief_submitted', `/${locPattern}/brief/submitted`, 'brief/submitted');

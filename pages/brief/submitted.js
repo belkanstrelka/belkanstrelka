@@ -7,9 +7,10 @@ import { injectIntl } from 'react-intl'
 import ModalHost from 'modules/_layouts/modalHost';
 import modals from 'modals';
 
-import BriefPage from 'modules/brief'
 
-class Brief extends Component {
+import BriefSubmitted from 'modules/brief/views/submitted'
+
+class BriefSubmittedPage extends Component {
   static getInitialProps ( /* { reduxStore, req } */ ) {
     // const isServer = !!req
     return {}
@@ -28,13 +29,11 @@ class Brief extends Component {
           }}
         />
 
-        We’ve recieved the brief!
-        Our team will email you back within 48 business hours. Take care!
-        
+        <BriefSubmitted />
         <ModalHost templates={modals} />
       </div>
     )
   }
 }
 
-export default connect(() => ({}), {})(injectIntl(Brief))
+export default connect(() => ({}), {})(injectIntl(BriefSubmittedPage))

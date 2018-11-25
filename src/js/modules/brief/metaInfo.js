@@ -27,46 +27,46 @@ export const schema = {
     contactPhone: { },
   },
   placeholders: {
-    projectType: 'brief.fieldset.projectType.placeholder',
-    companyAbout: 'brief.fieldset.company.about.placeholder',
-    companyUrl: 'brief.fieldset.company.url.placeholder',
-    task: 'brief.fieldset.task.placeholder',
-    files: 'brief.fieldset.files.placeholder',
-    channels: 'brief.fieldset.channels.placeholder',
-    goals: 'brief.fieldset.goals.placeholder',
-    competitors: 'brief.fieldset.competitors.placeholder',
-    deadline: 'brief.fieldset.deadline.placeholder',
-    likes: 'brief.fieldset.likes.placeholder',
-    contactName: 'brief.fieldset.contact.name',
-    contactEmail: 'brief.fieldset.contact.email',
-    contactCompany: 'brief.fieldset.contact.company',
-    contactPhone: 'brief.fieldset.contact.phone',
+    projectType: 'brief.index.fieldset.projectType.placeholder',
+    companyAbout: 'brief.index.fieldset.company.about.placeholder',
+    companyUrl: 'brief.index.fieldset.company.url.placeholder',
+    task: 'brief.index.fieldset.task.placeholder',
+    files: 'brief.index.fieldset.files.placeholder',
+    channels: 'brief.index.fieldset.channels.placeholder',
+    goals: 'brief.index.fieldset.goals.placeholder',
+    competitors: 'brief.index.fieldset.competitors.placeholder',
+    deadline: 'brief.index.fieldset.deadline.placeholder',
+    likes: 'brief.index.fieldset.likes.placeholder',
+    contactName: 'brief.index.fieldset.contact.name',
+    contactEmail: 'brief.index.fieldset.contact.email',
+    contactCompany: 'brief.index.fieldset.contact.company',
+    contactPhone: 'brief.index.fieldset.contact.phone',
   },
   errorLbls: {
     '': {
-      isNullResp: 'brief.errors.isNullResp'
+      isNullResp: 'brief.index.errors.isNullResp'
     },
     projectType: {
-      isRequired: 'brief.errors.projectType.isRequired',
+      isRequired: 'brief.index.errors.projectType.isRequired',
     },
     companyAbout: {
-      isRequired: 'brief.errors.companyAbout.isRequired',
+      isRequired: 'brief.index.errors.companyAbout.isRequired',
     },
     task: {
-      isRequired: 'brief.errors.task.isRequired',
+      isRequired: 'brief.index.errors.task.isRequired',
     },
     channels: {
-      isRequired: 'brief.errors.channels.isRequired',
+      isRequired: 'brief.index.errors.channels.isRequired',
     },
     deadline: {
-      isRequired: 'brief.errors.deadline.isRequired',
+      isRequired: 'brief.index.errors.deadline.isRequired',
     },
     contactName: {
-      isRequired: 'brief.errors.contactName.isRequired',
+      isRequired: 'brief.index.errors.contactName.isRequired',
     },
     contactEmail: {
-      isRequired: 'brief.errors.contactEmail.isRequired',
-      isEmail: 'brief.errors.contactEmail.isEmail',
+      isRequired: 'brief.index.errors.contactEmail.isRequired',
+      isEmail: 'brief.index.errors.contactEmail.isEmail',
     },
   }
 };
@@ -92,12 +92,13 @@ export const formReducer = {
 
 export const i18n = {
   en: {
-    brief: {
+    index: {
       title: 'Complete the brief',
       description: 'or see our youtube video on why briefing is so important',
       linkUpload: 'upload specs',
       uploadFiles: 'Drag and drop files here to add them to your brief',
       submitBtn: 'Submit',
+      submittingBtn: 'Submitting...',
       submitLbl: 'By submitting this brief you are agreeing with our {terms} and {privacy}.',
       fieldset: {
         projectType: {
@@ -189,12 +190,13 @@ export const i18n = {
     }
   },
   ru: {
-    brief: {
+    index: {
       title: 'Расскажите о задаче',
       description: 'или посмотрите наше видео, чтобы понять почему это так важно',
       linkUpload: 'загрузите ТЗ',
       uploadFiles: 'Перетащите файлы на страницу, чтобы добавить их к брифу',
       submitBtn: 'Отправить',
+      submittingBtn: 'Отправляется...',
       submitLbl: 'Нажимая кнопку, вы соглашаетесь с нашими {terms} и {privacy}.',
       fieldset: {
         projectType: {

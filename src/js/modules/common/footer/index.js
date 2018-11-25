@@ -4,7 +4,7 @@
 import { Component } from 'react'
 import cn from 'classnames'
 
-import { FormattedMessage as I18N } from 'react-intl'
+import { FormattedMessage as I18N, injectIntl } from 'react-intl'
 
 import appCss from 'scss/app.scss'
 import css from './footer.style.scss';
@@ -103,4 +103,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default injectIntl(Footer)

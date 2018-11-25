@@ -8,7 +8,8 @@ import footerData from 'modules/common/footer/i18n'
 
 import metaData from 'i18n'
 import landingData from 'modules/landings/index/i18n'
-import { i18n as briefData } from 'modules/brief/metaInfo'
+
+import briefData from 'modules/brief/i18n'
 // import authData from 'modules/auth/i18n'
 
 const enName = 'en';

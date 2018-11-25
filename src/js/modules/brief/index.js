@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import Router from 'next/router'
+
 import cn from 'classnames'
 
 import { FormattedMessage as I18N } from 'react-intl'
@@ -9,6 +11,7 @@ import { isArray, isObject } from 'lodash'
 import Header from 'modules/common/header'
 import Footer from 'modules/common/footer'
 import Btn from 'modules/common/btn'
+import Link from 'modules/common/link'
 
 import FilesIcon from './img/files.svg'
 import PdfIcon from './img/pdfIcon.svg'
@@ -102,7 +105,7 @@ class DropzoneFullscreen extends Component {
           <div style={overlayStyle}>
             <FilesIcon />
             <div style={{marginTop: '1em'}}>
-              <I18N id='brief.uploadFiles' />
+              <I18N id='brief.index.uploadFiles' />
             </div>
           </div>
         )}
@@ -161,7 +164,7 @@ class FilesPreview extends Component {
 
 class Brief extends Component {
   onBriefSubmit = (value) => {
-    const { submitBrief } = this.props;
+    const { submitBrief, location } = this.props;
 
     let formData = new FormData();
     const keys = Object.keys(value);
@@ -184,7 +187,15 @@ class Brief extends Component {
       }
     });
 
-    submitBrief && submitBrief(formData)
+    submitBrief && submitBrief(formData).then((res) => {
+      if (res.data.result === "success") {
+        const prefix = location
+          ? '/' + location
+          : ''
+
+        Router.push(`${prefix}/brief/submitted`)
+      }
+    })
   }
 
   onSbmt = () => {
@@ -198,12 +209,12 @@ class Brief extends Component {
   }
 
   render () {
-    const { intl } = this.props;
-    
+    const { intl, formSubmitting } = this.props;
+
     return (
       <div>
         <Header
-          header={(<I18N id='brief.title' />)}
+          header={(<I18N id='brief.index.title' />)}
           links={[{
               href: '/#process',
               title: 'header.links.process'
@@ -227,35 +238,29 @@ class Brief extends Component {
             <div className={cn(appCss.bnsContainer)}>
               <div className={cn(css.bnsBrief)}>
                 <h1 className={css.bnsBrief__title}>
-                  <I18N id='brief.title' />
+                  <I18N id='brief.index.title' />
                 </h1>
-                {
-                  // <p className={css.bnsBrief__description}>
-                  //   <I18N id='brief.description' />
-                  // </p>
-                }
-
                 <div className={css.bnsBrief__form}>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.projectType.label' />
+                      <I18N id='brief.index.fieldset.projectType.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__checkbox}
                       schema={schema}
                       model='.projectType'
                       source={[
-                        { name: 'brief.fieldset.projectType.items.design', value: 'design' },
-                        { name: 'brief.fieldset.projectType.items.usability', value: 'usability' },
-                        { name: 'brief.fieldset.projectType.items.analytics', value: 'analytics' },
-                        { name: 'brief.fieldset.projectType.items.consulting', value: 'consulting' },
+                        { name: 'brief.index.fieldset.projectType.items.design', value: 'design' },
+                        { name: 'brief.index.fieldset.projectType.items.usability', value: 'usability' },
+                        { name: 'brief.index.fieldset.projectType.items.analytics', value: 'analytics' },
+                        { name: 'brief.index.fieldset.projectType.items.consulting', value: 'consulting' },
                       ]}
                       component={Tags}
                     />
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.company.about.label' />
+                      <I18N id='brief.index.fieldset.company.about.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -267,11 +272,11 @@ class Brief extends Component {
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
                       <I18N
-                        id='brief.fieldset.task.label'
+                        id='brief.index.fieldset.task.label'
                         values={{
                           linkUpload: (
                             <span className={css.bnsBrief__link} onClick={()=>{ this.dropzoneRef.open(); }}>
-                              <I18N id='brief.linkUpload' />
+                              <I18N id='brief.index.linkUpload' />
                             </span>
                           )
                         }}
@@ -292,7 +297,7 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.company.url.label' />
+                      <I18N id='brief.index.fieldset.company.url.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -303,24 +308,24 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.channels.label' />
+                      <I18N id='brief.index.fieldset.channels.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__checkbox}
                       schema={schema}
                       model='.channels'
                       source={[
-                        { name: 'brief.fieldset.channels.items.web', value: 'web' },
-                        { name: 'brief.fieldset.channels.items.mobile', value: 'mobile' },
-                        { name: 'brief.fieldset.channels.items.ios', value: 'ios' },
-                        { name: 'brief.fieldset.channels.items.android', value: 'android' },
+                        { name: 'brief.index.fieldset.channels.items.web', value: 'web' },
+                        { name: 'brief.index.fieldset.channels.items.mobile', value: 'mobile' },
+                        { name: 'brief.index.fieldset.channels.items.ios', value: 'ios' },
+                        { name: 'brief.index.fieldset.channels.items.android', value: 'android' },
                       ]}
                       component={Tags}
                     />
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.goals.label' />
+                      <I18N id='brief.index.fieldset.goals.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -331,7 +336,7 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.competitors.label' />
+                      <I18N id='brief.index.fieldset.competitors.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -342,23 +347,23 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.deadline.label' />
+                      <I18N id='brief.index.fieldset.deadline.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__checkbox}
                       schema={schema}
                       model='.deadline'
                       source={[
-                        { name: 'brief.fieldset.deadline.items.days', value: 'days' },
-                        { name: 'brief.fieldset.deadline.items.weeks', value: 'weeks' },
-                        { name: 'brief.fieldset.deadline.items.months', value: 'months' },
+                        { name: 'brief.index.fieldset.deadline.items.days', value: 'days' },
+                        { name: 'brief.index.fieldset.deadline.items.weeks', value: 'weeks' },
+                        { name: 'brief.index.fieldset.deadline.items.months', value: 'months' },
                       ]}
                       component={RadioList}
                     />
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.likes.label' />
+                      <I18N id='brief.index.fieldset.likes.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -369,7 +374,7 @@ class Brief extends Component {
                   </div>
                   <div className={css.bnsBrief__formControl}>
                     <label className={css.bnsBrief__formLabel}>
-                      <I18N id='brief.fieldset.contact.label' />
+                      <I18N id='brief.index.fieldset.contact.label' />
                     </label>
                     <FormFieldControl
                       className={css.bnsBrief__formField}
@@ -399,13 +404,14 @@ class Brief extends Component {
                     />
                   </div>
                   <div className={css.bnsBrief__action}>
-                    <Btn type={'submit'} className={css.bnsBrief__actionBtn} onClick={this.onSbmt}>
-                      <I18N id={'brief.submitBtn'} />
+                    <Btn type={'submit'} disabled={formSubmitting} className={css.bnsBrief__actionBtn} onClick={this.onSbmt}>
+                      {!formSubmitting && (<I18N id={'brief.index.submitBtn'} />)}
+                      {formSubmitting && (<I18N id={'brief.index.submittingBtn'} />)}
                     </Btn>
 
                     <div className={css.bnsBrief__actionDescription}>
                       <I18N
-                        id='brief.submitLbl'
+                        id='brief.index.submitLbl'
                         values={{
                           terms: (
                             <a target='_blank' href={intl.formatMessage({
@@ -435,6 +441,14 @@ class Brief extends Component {
   }
 }
 
-export default connect(() => ({}), {
+export default connect((state) => {
+  const form = state.forms[schema.model].$form
+  const formSubmitting = form.pending || form.validating
+
+  return {
+    formSubmitting,
+    location: state.intl.location
+  }
+}, {
   submitBrief: actions.submitBrief
 })(Brief)

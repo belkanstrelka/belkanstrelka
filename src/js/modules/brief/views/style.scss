@@ -1,0 +1,46 @@
+@import "~variables";
+@import "~respond";
+
+.bnsBriefSubmitted {
+  color: $black;
+  position: relative;
+  padding: 3 * $gap 0;
+  max-width: 510px;
+
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: $heavyWeight;
+    margin: 0;
+    margin-top: 6 * $gap;
+    margin-bottom: 3 * $gap;
+
+    @include respond(tablets) {
+      font-size: 42px;
+      line-height: 48px;
+      margin-top: 13 * $gap;
+    }
+  }
+
+  &__description {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 480px;
+    // font-weight: $mediumWeight;
+    margin-bottom: 3 * $gap;
+
+    @include respond(tablets) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  &__action {
+    width: 100%;
+    margin-bottom: 10 * $gap;
+
+    @include respond(tablets) {
+      width: auto;
+    }
+  }
+}
