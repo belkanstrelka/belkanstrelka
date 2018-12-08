@@ -1,8 +1,6 @@
 import { Component } from 'react'
-import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 import { FormattedMessage as I18N } from 'react-intl'
 
-// import { StickyContainer, Sticky } from 'react-sticky'
 // import Link from 'next/link'
 import Link from 'modules/common/link'
 import Sticky from 'react-stickynode';
@@ -11,6 +9,8 @@ import cn from 'classnames'
 import Header from 'modules/common/header'
 import Footer from 'modules/common/footer'
 import Btn from 'modules/common/btn'
+
+import HumanHero from './img/humanHero.png'
 
 import Saturn from './img/saturn.svg'
 import Satellite from './img/satellite.svg'
@@ -88,17 +88,15 @@ class Index extends Component {
   renderHeroBlock () {
     return (
       <div className={cn(css.bnsIndex__hero, css.bnsHero)}>
-        <ParallaxBanner
-          layers={[{
-            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner.jpg',
-            amount: 0.2,
-            slowerScrollRate: false,
-          }]}
-          className={css.bnsHero__parallaxBanner}
-        >
-          <div className={css.bnsHero__parallaxChild}>
-            <div className={appCss.bnsContainer}>
-              <h1 className={css.bnsIndex__title}><I18N id={'landing.index.hero.title'} /></h1>
+        <div className={appCss.bnsContainer}>
+          <div className={css.bnsHero__content}>
+            <div className={css.bnsHero__contentImage}>
+              <img src={HumanHero} />
+            </div>
+            <div className={css.bnsHero__contentText}>
+              <h1 className={css.bnsIndex__title}>
+                <I18N id={'landing.index.hero.title'} />
+              </h1>
               <div className={css.bnsIndex__description}>
                 <I18N id={'landing.index.hero.description'} />
               </div>
@@ -109,7 +107,7 @@ class Index extends Component {
               </Link>
             </div>
           </div>
-        </ParallaxBanner>
+        </div>
       </div>
     )
   }
@@ -424,47 +422,44 @@ class Index extends Component {
     const { init } = this.state;
 
     return (
-      <ParallaxProvider>
-        <div>
-          <input type='hidden' value={init} />
+      <div>
+        <input type='hidden' value={init} />
 
-          <Header
-            hideModal={hideModal}
-            showModal={showModal}
-            links={[{
-                href: '/brief',
-                title: 'header.links.brief'
-              }, {
-                href: '/#process',
-                title: 'header.links.process'
-              }, {
-                href: '/#services',
-                title: 'header.links.services'
-              }, {
-                href: '/#expertise',
-                title: 'header.links.expertise'
-              }
-            ]}
-          />
+        <Header
+          hideModal={hideModal}
+          showModal={showModal}
+          links={[{
+              href: '/brief',
+              title: 'header.links.brief'
+            }, {
+              href: '/#process',
+              title: 'header.links.process'
+            }, {
+              href: '/#services',
+              title: 'header.links.services'
+            }, {
+              href: '/#expertise',
+              title: 'header.links.expertise'
+            }
+          ]}
+        />
 
-          <div id='top' />
-          <Saturn className={css.bnsIndex__heroPlanet} />
-            <div id='product-container' className={css.bnsIndex}>
-              {this.renderStickyBlock()}
-              {this.renderHeroBlock()}
-              {this.renderForWhomBlock()}
-              {this.renderWYSIWYGBlock()}
-              {this.renderProcessBlock()}
-              {this.renderOnDemandBlock()}
-              {this.renderExpertiseBlock()}
-              {this.renderMissonControlBlock()}
-              {this.renderServicesBlock()}
-            </div>
-          <div id='bottom' />
+        <div id='top' />
+          <div id='product-container' className={css.bnsIndex}>
+            {this.renderStickyBlock()}
+            {this.renderHeroBlock()}
+            {this.renderForWhomBlock()}
+            {this.renderWYSIWYGBlock()}
+            {this.renderProcessBlock()}
+            {this.renderOnDemandBlock()}
+            {this.renderExpertiseBlock()}
+            {this.renderMissonControlBlock()}
+            {this.renderServicesBlock()}
+          </div>
+        <div id='bottom' />
 
-          <Footer />
-        </div>
-      </ParallaxProvider>
+        <Footer />
+      </div>
     )
   }
 }

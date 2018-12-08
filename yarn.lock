@@ -3252,6 +3252,14 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+frappe-gantt-codeelves@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/frappe-gantt-codeelves/-/frappe-gantt-codeelves-0.2.6.tgz#daf6fc579f01459216d8619c29dd637a42aa59c4"
+
+frappe-gantt@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/frappe-gantt/-/frappe-gantt-0.3.0.tgz#0c718be2a5b5602be4ceb35ecc2093f9af59bea2"
+
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -7027,6 +7035,10 @@ shell-quote@^1.6.1:
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+size-sensor@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/size-sensor/-/size-sensor-0.2.2.tgz#aa416d86d019a4fbb8e606780ce37820f0172022"
 
 slash@^1.0.0:
   version "1.0.0"

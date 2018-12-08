@@ -2,7 +2,7 @@ const enTranslate = {
   landing: {
     index: {
       hero: {
-        title: 'Design as a service',
+        title: 'User Centered Design Sprints as a service',
         description: 'Easiest way for startups and enterpises to upgrade digital products and focus on building great companies.',
         btn: 'Try it now',
       },

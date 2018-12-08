@@ -10,7 +10,7 @@ import Link from 'modules/common/link'
 
 import appCss from 'scss/app.scss'
 
-import Belogo from './belogo.svg'
+import Belogo from './belogo.png'
 import MobileMenu from 'modules/common/header/views/mobileMenu';
 import menuCss from 'modules/common/header/views/mobileMenu/menu.scss';
 
@@ -75,8 +75,7 @@ class BnSHeaderView extends Component {
         <div className={cn(cssFlex.flexHorizontal, css.header__wrapper)}>
           <Link href={'/'}>
             <a className={css.header__title}>
-              <Belogo height="24" width="40" />
-              { /* be·belka */ }
+              <img src={Belogo} width="40" />
             </a>
           </Link>
           { (links || header) && (<div className={css.header__separator}></div>)}

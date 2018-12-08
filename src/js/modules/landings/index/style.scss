@@ -13,27 +13,27 @@
     top: 0;
   }
 
-  &__heroPlanet {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: -70px;
-
-    @include respond(tablets) {
-      display: block;
-      width: 300px;
-    }
-
-    @include respond(desktop) {
-      width: auto;
-    }
-  }
+  // &__heroPlanet {
+  //   display: none;
+  //   position: absolute;
+  //   z-index: 1;
+  //   right: 0;
+  //   top: -70px;
+  //
+  //   @include respond(tablets) {
+  //     display: block;
+  //     width: 300px;
+  //   }
+  //
+  //   @include respond(desktop) {
+  //     width: auto;
+  //   }
+  // }
 
   &__title {
     font-size: 32px;
     line-height: 38px;
-    font-weight: $heavyWeight;
+    font-weight: $boldWeight;
     margin: 0 0 2 * $gap;
 
     @include respond(tablets) {
@@ -77,13 +77,13 @@
 
   &__WYSIWYG,
   &__misson,
-  &__onDemand,
-  &__hero {
+  &__onDemand {
     color: $white;
     background: $black;
     background-blend-mode: screen;
   }
 
+  &__hero,
   &__expertise,
   &__service,
   &__process,
@@ -119,25 +119,84 @@
 }
 
 .bnsHero {
+  &__content {
+    margin: 24px 0;
+
+    @include respond(tablets) {
+      margin: 48px 0px 0 -80px;
+    }
+
+    @include respond(desktop) {
+      margin: 48px -80px 0;
+    }
+
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+
+    @include respond(tablets) {
+      flex-flow: row wrap;
+    }
+
+    &Image {
+      z-index: 1;
+      font-weight: $demiBoldWeight;
+      position: absolute;
+      top: -24px;
+      text-align: right;
+
+      @include respond(tablets) {
+        width: 45%;
+        padding-right: 48px;
+        position: relative;
+      }
+
+      img {
+        width: 80%;
+        opacity: 0.2;
+
+        @include respond(tablets) {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+
+      @include respond(tablets) {
+        font-size: 42px;
+        // margin-left: 160px;
+      }
+    }
+
+    &Text {
+      z-index: 2;
+      margin-top: 32px;
+      flex: 1;
+
+      @include respond(desktop) {
+        margin-top: -42px;
+      }
+    }
+  }
+
   .bnsIndex__title,
   .bnsIndex__description {
     max-width: 100%;
 
     @include respond(tablets) {
-      max-width: 70%;
+      // max-width: 70%;
     }
 
     @include respond(desktop) {
-      max-width: 65%;
+      // max-width: 65%;
     }
   }
 
   .bnsIndex__title {
-    margin-bottom: 2 * $gap;
+    margin-bottom: 3 * $gap;
   }
 
   .bnsIndex__description {
-    margin-bottom: 4 * $gap;
+    margin-bottom: 5 * $gap;
   }
 
   &__parallaxBanner {
