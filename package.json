@@ -14,7 +14,7 @@
     "deploy": "next build && next export -o docs && touch docs/.nojekyll && cp CNAME docs/CNAME && git add docs/ && git commit -m \"Deploy belkanstrelka\" && git push origin master"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "body-scroll-lock": "^2.5.10",
     "classnames": "^2.2.6",
     "compression": "^1.7.3",
