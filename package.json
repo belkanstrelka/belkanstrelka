@@ -19,7 +19,7 @@
     "classnames": "^2.2.6",
     "compression": "^1.7.3",
     "cookies": "^0.7.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "frappe-gantt": "^0.3.0",
     "frappe-gantt-codeelves": "^0.2.6",
     "ipapi.co": "^0.2.3",
